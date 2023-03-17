@@ -1,0 +1,19 @@
+#payedCard {
+    background-image: url('/img/icons/credit-card.jpg');
+    background-size: 15vh;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#payedCash {
+    background-image: url('/img/icons/money.jpg');
+    background-size: 13.5vh;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1.5);
+    background-repeat: no-repeat;
+    background-position: center;    
+}
+
+#textPagForm {
+    margin-left: 3em;
+}

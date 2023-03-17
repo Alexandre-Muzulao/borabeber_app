@@ -1,0 +1,147 @@
+<div class="space"></div>
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu()"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Opções de Pagamento</h1>
+    </div>
+    <div id="mainUserMenu"></div>
+    <div class="content has-header grey-900">
+        <div class="list no-border full">
+            <div class="item" style="margin-bottom: -2em;">
+                <div class="row center">
+                    <div class="col">
+                        <h1 class="text-white text-strong align-center padding">Cartão</h1>
+                    </div>
+                    <div class="col">
+                        <h1 class="text-white text-strong align-center padding">Dinheiro</h1>
+                    </div>
+                </div>
+                <div class="row center" style="height: 8em;">
+                    <div class="col blend-soft-light radius margin no-padding" onclick="paySelect('payedCard')" id="payedCard"></div>
+                    <div class="col blend-soft-light radius margin no-padding" onclick="paySelect('payedCash')" id="payedCash"></div>
+                </div>
+            </div>
+            <div class="item" id="payedCardFlag">
+                <h1 class="text-white text-strong align-center padding">Bandeiras Disponíveis</h1>
+                <div class="row" style="height: 3em;">
+                    <div class="col">
+                        <div class="col blend-soft-light radius margin no-padding" id="payedCardMaster"></div>
+                    </div>
+                    <div class="col">
+                        <div class="col blend-soft-light radius margin no-padding" id="payedCardVisa"></div>
+                    </div>
+                    <div class="col">
+                        <div class="col blend-soft-light radius margin no-padding" id="payedCardElo"></div>
+                    </div>
+                    <div class="col">
+                        <div class="col blend-soft-light radius margin no-padding" id="payedCardCooper"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="margin-bottom: -2em;">
+                <div class="row align-center padding">
+                    <div class="col">
+                        <h2>Vai raxar com o Pessoal ?</h2>
+                    </div>
+                    <div class="col" onclick="showPaymentDivisionPeople()">
+                        <div class="right">
+                            <input type="checkbox" class="switch green" id="payOptionPeopleDivide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item padding" id="payPeopleDivision">
+                <div class="row">
+                    <div class="col-75 margin">
+                        <p>Quantas Pessoas ?</p>
+                    </div>
+                    <div class="col margin">
+                        <div class="label-fixed">
+                            <i class="icon ion-minus-circled text-red" onclick="remPaying()"></i>
+                            <input type="number" min="2" class="align-center text-white" value="2" id="splitValue" onchange="updateSplitvalue()" readonly>
+                            <i class="icon ion-plus-circled text-green" onclick="addPaying()"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="item green radius-big" data="SPLIT">
+                    <label class="text-big" id="splitCartValue">Valor por pessoa: R$ ${value}</label>
+                </div>
+            </div>
+            <div class="item" id="payedCashChange">
+                <h1 class="text-white text-strong align-center">Troco ?</h1>
+
+                <div class="row align-center">
+                    <div class="col-50">
+                        <div class="column align-center">
+                            <div class="col">
+                                <p>Valor em Dinheiro</p>
+                            </div>
+                            <div class="col">
+                                <div class="item radius-big icon ion-cash green text-white-300 text-big">
+                                    <input class="placeholder-white text-white text-big" type="number" placeholder="0,00" id="payValueCash">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="margin-left: 0.5em;">
+                        <div class="column align-center">
+                            <div class="col">
+                                <p>Troco em Dinheiro</p>
+                            </div>
+                            <div class="col">
+                                <div class="item green radius-big" data="CHANGE">
+                                    <label class="text-big" placeholder="0,00">R$ ${value}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer has-content" data="CART">
+        <div class="list no-border" style="margin-top: -0.5em;">
+            <div class="item">
+                <button class="grey-700 radius full" onclick="loadDeliveryPage()">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <p style="font-size: 20px; margin-left: -20%;">Total: R$</p>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">        
+                                            <p style="margin-left: -20%; font-size: 35px;">${vTotalInt},</p>
+                                        </div>
+                                        <div class="col">
+                                            <p style="margin-left: -93%; font-size: 25px;">${vTotalCent}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <i class="icon ion-cash text-green text-big" style="margin-top: -0.5em; margin-left: -0.8em;"></i>
+                                </div>
+                                <div class="col">
+                                    <p style="margin-right: -1em;">Pedido</p>
+                                </div>
+                                <div class="col">
+                                    <i class="icon ion-chevron-right text-green text-big" style="margin-top: -0.5em; margin-left: -0.2em;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

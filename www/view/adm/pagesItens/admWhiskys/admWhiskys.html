@@ -1,0 +1,49 @@
+<div class="space"></div>
+<div class="list no-border">
+    <div class="item">
+        <button class="radius shadow full grey-800 text-center" onclick="getAllWhiskys()">
+            <p><i class="text-strong white icon ion-plus-circled text-big"></i>Adicionar Whisky</p>
+        </button>
+    </div>    
+    <!-- <div class="item shadow radius icon grey-800 ion-search icon-left">
+        <input type="text" class="text-white placeholder-white" placeholder="Buscar Rótulo, Recipiente ou Tamanho">
+    </div> -->
+    <div class="item" data="WHISKY">
+        <div class="row" style="height: 270px;">
+            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgPar}'); background-size: 7em;">
+                <div class="bottom gradient padding radius">
+                    <p class="text-white" id="descricaoWhisky${idWhiskyPar}">${tituloPar} ${recipientePar} ${medidaPar}</p>
+                    <h1 class="text-white" onclick="updateQtdItemWhisky('${idWhiskyPar}')" id="h1QtdWhisky${idWhiskyPar}">Qtd.: ${qtdWhiskyPar}</h1>
+                    <div id="input${idWhiskyPar}" class="row" style="margin-top: 5px;"></div>
+                    <h1 class="text-white" onclick="updateValueItemWhisky('${idWhiskyPar}')" id="h1PriceWhisky${idWhiskyPar}">R$ ${precoWhiskyPar}</h1>
+                    <div id="input${idWhiskyPar}" class="row" style="margin-top: 5px;"></div>
+                </div>
+                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteWhisky{idWhiskyPar}">
+                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idWhiskyPar}" onclick="dellItemVodka('${idWhiskyPar}', '${tituloPar} de ${recipientePar} ${medidaPar}', '${precoWhiskyPar}')"></button>
+                    <div style="margin-top: 7%;">
+                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idWhiskyPar}" onclick="whiskySaveUpdate('${idWhiskyPar}')" style="display: none;"></button>
+                        <button class="ion-close-round text-big text-red strong" id="btnCancel${idWhiskyPar}" onclick="whiskyCancellUpdate('${idWhiskyPar}')" style="display: none;"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-55 cover radius margin no-padding"
+                style="background-image:url('${imgImpar}'); background-size: 7em;"
+                valid-bind="${precoWhiskyImpar}">
+                <div class="bottom gradient padding radius">
+                    <p class="text-white" id="descricaoWhisky${idWhiskyImpar}">${tituloImpar} ${recipienteImpar} ${medidaImpar}</p>
+                    <h1 class="text-white" onclick="updateQtdItemWhisky('${idWhiskyImpar}')" id="h1QtdWhisky${idWhiskyImpar}">Qtd.: ${qtdWhiskyImpar}</h1>
+                    <div id="input${idWhiskyImpar}" class="row" style="margin-top: 5px;"></div>
+                    <h1 class="text-white" onclick="updateValueItemWhisky('${idWhiskyImpar}')" id="h1PriceWhisky${idWhiskyImpar}">R$ ${precoWhiskyImpar}</h1>
+                    <div id="input${idWhiskyImpar}" class="row" style="margin-top: 5px;"></div>
+                </div>
+                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteWhisky{idWhiskyImpar}">
+                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idWhiskyImpar}" onclick="dellItemVodka('${idWhiskyImpar}', '${tituloImpar} de ${recipienteImpar} ${medidaImpar}', '${precoWhiskyImpar}')"></button>
+                    <div style="margin-top: 7%;">
+                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idWhiskyImpar}" onclick="whiskySaveUpdate('${idWhiskyImpar}')" style="display: none;"></button>
+                        <button class="ion-close-round text-big text-red strong" id="btnCancel${idWhiskyImpar}" onclick="whiskyCancellUpdate('${idWhiskyImpar}')" style="display: none;"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

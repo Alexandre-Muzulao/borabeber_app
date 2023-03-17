@@ -1,0 +1,34 @@
+<div class="page">
+    <div class="content grey-900 cover blend-overlay align-center padding" id="contentLogin" style="background-image: url('./img/backgrounds/castelo.png')">
+        <div class="list no-border align-left" id="contentLoginList">
+            <div class="item align-center">
+                <img src="./img/logo.png" id="logoLogin">
+            </div>
+            <div class="item label-float border-grey border-bottom margin-top">
+                <label class="icon ion-android-contact">Usuário</label>
+                <input class="text-white" type="text" id="loginEmailName">
+            </div>
+            <div class="item label-float border-grey border-bottom">
+                <label class="icon ion-locked">Senha</label>
+                <input class="text-white" type="password" id="loginPswrd">
+            </div>
+            <div class="item">
+                <label class="text-strong">Manter-se Logado ?</label>
+                <input type="checkbox" id="keepLoged" class="switch green" style="margin-left: 2em; margin-top: 2%;">
+            </div>
+        </div>
+        
+        
+        <div class="item">
+            <button class="blue radius full" onclick="login()">Login</button>
+        </div>
+        <h2 class="text-grey-100 text-strong text-small" style="margin-bottom: 2%; margin-top: 5%">Entrar com</h2>
+        <div class="item no-border row ">
+            <button class="icon ion-social-facebook text-blue white-opacity-90 text-small shadow radius full" onclick="openPage('view/user/menu/menu')"> Facebook</button>
+        </div>
+        <div class="item">
+            <button class="text-white text-strong radius full" id="btnCaduser" onclick="openPage('view/user/menu/menu')">Cadastre-se !</button>
+        </div>  
+
+    </div>
+</div>

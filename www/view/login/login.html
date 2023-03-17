@@ -1,0 +1,55 @@
+<div class="page">
+    <div class="header align-center">
+        <div class="space-big"></div>
+        <div>            
+            <img src="./img/icons/borabeber_logovertical.png" class="logoBoraBeber">
+        </div>
+        <div style='position:absolute; top:10%;'>
+            <img src="./img/icons/bebidas_ico.png" class="loginIconBebidas1">
+            <img src="./img/icons/pizza_ico.png" class="loginIconPizza">
+            <img src="./img/icons/oriental_ico.png" class="loginIconOriental">
+            <img src="./img/icons/narguile_ico.png" class="loginIconBebidas">
+            <img src="./img/icons/lanches_ico.png" class="loginIconLanches">
+        </div>
+    </div>
+    <div class="content align-center has-header padding">
+        <div class="list no-border align-left" id="contentLoginList">
+            <div class="item label-float border-grey border-bottom margin-top" id="labelLoginName">
+                <label class="icon ion-android-contact">Usuário ou E-mail</label>
+                <input class="strong" type="text" id="loginEmailName">
+            </div>
+            <div class="item label-float border-grey border-bottom" id="labelLoginSenha">
+                <label class="icon ion-locked">Senha</label>
+                <input class="strong" type="password" id="loginPswrd">
+                <div class="right">
+                    <button class="icon ion-eye text-huge" id="seePswButton" onclick="seePasword()"></button>
+                </div>
+            </div>
+            <div class="item">
+                <label class="text-strong">Manter-se Logado ?</label>
+                <input type="checkbox" id="keepLoged" class="switch green" style="margin-left: 2em; margin-top: 2%;">
+            </div>
+        </div>
+    </div>
+    <div class="footer align-center padding has-content">
+        <div class="loginButtons">
+            <div class="space"></div>
+            <div class="item">
+                <button class="orange-800 radius full" onclick="logar()" id="btnLogin">Entrar</button>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="item">
+                <button class="icon ion-paper-airplane text-blue white-opacity-90 text-small shadow radius full" onclick="loginWithoutData()"> <strong>Só Quero pedir e beber</strong></button>
+            </div>
+            <div class="space"></div>
+            <div class="item">
+                <button class="icon ion-trophy text-blue white-opacity-90 text-small shadow radius full" onclick="createCompany()"><strong>Minha empresa no BoraBeber</strong></button>
+            </div>
+            <div class="space"></div>
+            <div class="item">
+                <button class="icon ion-android-bicycle text-blue white-opacity-90 text-small shadow radius full" onclick="openPageTest()"><strong>Quero entregar e Faturar</strong></button>
+            </div>
+        </div>
+    </div>
+</div>

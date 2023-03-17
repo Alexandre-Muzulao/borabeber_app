@@ -1,0 +1,10 @@
+#enderecoLoader {
+    z-index: 999; 
+    position: absolute;
+    margin: 12em 3em 0em;
+}
+
+#loaderEnderecoImg {
+    width: 16em;
+}
+

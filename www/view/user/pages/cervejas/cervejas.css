@@ -1,0 +1,15 @@
+#itemCerveja {
+    height: 10em;
+}
+
+#rowCervejasList {
+    height: 14em;
+}
+
+#cevejaImparValidBind [valid-bind=''] {
+    visibility: hidden;
+}
+
+#cervejaPrice {
+    margin-left: 4em;
+}

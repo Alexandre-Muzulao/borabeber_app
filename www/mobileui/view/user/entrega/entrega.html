@@ -1,0 +1,78 @@
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu('userMenu')"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong">Local de Entrega</h1>
+    </div>
+    <div class="content has-header grey-900 padding">
+        <div class="list no-border">
+            <div class="item">
+                <button class="full shadow radius grey-200">Selecionar no Mapa
+                    <i class="ion-map text-big"></i>
+                </button>
+            </div>
+            <div class="row">
+                <div class="col" id="rowLeft">
+                    <div class="item label-float grey-200 radius text-center" id="Cep">
+                        <label>Qual CEP de onde quer que entregue ?</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="item label-float grey-200 radius text-center" id="Nro">
+                        <label>Número onde quer que entregue ?</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="item label-float grey-200 radius text-center" id="Logradouro">
+                <label>Logradouro de onde quer que entregue ?</label>
+                <input type="text">
+            </div>
+            <div class="item label-float grey-200 radius text-center" id="Bairro">
+                <label>Bairro onde quer que entregue ?</label>
+                <input type="text">
+            </div>
+            <div class="item label-float grey-200 radius text-center" id="Cidade">
+                <label>Cidade de onde quer que entregue ?</label>
+                <input type="text">
+            </div>
+            <div class="item label-float grey-200 radius text-center" id="Estado">
+                <label>Estado de onde quer que entregue ?</label>
+                <input type="text">
+            </div>
+        </div>
+    </div>
+    <div class="footer no-padding grey-700">
+        <button class="grey-700 full" style="max-height: 3em;">
+            <div class="row">
+                <div class="col right">
+                    <div class="row">
+                        <div class="col">
+                            <p style="font-size: 20px; margin-left: -20%;">Total: R$</p>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+
+                                    <p style="margin-left: -20%; font-size: 35px;">10000,</p>
+                                </div>
+                                <div class="col">
+                                    <p style="margin-left: -115%; font-size: 25px;">00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col padding orange-300 radius" style="margin-top: 0.5em; margin-bottom: -0.5em;" onclick="openPage('./view/user/pagamento/pagamento')">
+                    <p>Pagamento</p>
+                    <i class="icon ion-cash text-green float-bottom-right" style="margin-right: -9%; margin-bottom: 11%;"></i>
+                </div>
+            </div>
+        </button>
+    </div>
+</div>

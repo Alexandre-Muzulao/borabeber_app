@@ -1,0 +1,107 @@
+<div class="space"></div>
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu('userMenu')"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong">Opções de Pagamento</h1>
+    </div>
+    <div class="content has-header grey-900">
+        <div class="list no-border full">
+            <div class="item">
+                <div class="row center">
+                    <div class="col">
+                        <p class="padding" id="textPagForm">Cartão</p>
+                    </div>
+                    <div class="col">
+                        <p class="padding" id="textPagForm">Dinheiro</p>
+                    </div>
+                </div>
+                <div class="row center" style="height: 8em;">
+                    <div class="col blend-soft-light radius margin no-padding" onclick="paySelect('payedCard')" id="payedCard"></div>
+                    <div class="col blend-soft-light radius margin no-padding" onclick="paySelect('payedCash')" id="payedCash"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="row center">
+                    <div class="col">
+                        <h2>Vai raxar com o Pessoal ?</h2>  
+                    </div>
+                    <div class="col" onclick="showPaymentDivisionPeople()">
+                        <div class="right">
+                            <input type="checkbox" class="switch green" id="payOptionPeopleDivide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item padding" id="payPeopleDivision" style="display: none">
+                <div class="row">
+                    <div class="col-75 margin">
+                        <p>Quantas Pessoas ?</p>
+                    </div>
+                    <div class="col margin">
+                        <div class="label-fixed">
+                            <label>Value</label>
+                            <input type="number" min="2" class="align-center text-white" value="2">
+                        </div>
+                    </div>
+                </div>
+                <div class="item range">
+                    <div class="left">
+                        <i class="icon ion-woman text-huge"></i>
+                    </div>
+                    <input type="range" min="0" max="100" value="50">
+                    <div class="right">
+                        <i class="icon ion-man text-huge"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col margin">
+                        <div class="item label-float pink ">
+                            <label class="icon ion-woman text-small">R$ / Menina</label>
+                            <input class="text-white" type="tel" value="5000,00">
+                        </div>
+                    </div>
+                    <div class="col margin">
+                        <div class="item label-float blue text-pink-300">
+                            <label class="icon ion-man text-small">R$ / Menino</label>
+                            <input class="text-white" type="tel" value="5000,00">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer no-padding grey-700">
+        <button class="grey-700 full" style="max-height: 3em;">
+            <div class="row">
+                <div class="col right">
+                    <div class="row">
+                        <div class="col">
+                            <p style="font-size: 20px; margin-left: -20%;">Total: R$</p>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+
+                                    <p style="margin-left: -20%; font-size: 35px;">10000,</p>
+                                </div>
+                                <div class="col">
+                                    <p style="margin-left: -115%; font-size: 25px;">00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col padding orange-300 radius" style="margin-top: 0.5em; margin-bottom: -0.5em;">
+                    <p>Concluir</p>
+                    <i class="icon ion-cash text-green float-bottom-right" style="margin-right: -9%; margin-bottom: 11%;"></i>
+                </div>
+            </div>
+        </button>
+    </div>
+</div>

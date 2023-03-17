@@ -1,0 +1,41 @@
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu('userMenu')"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Histórico de Pedidos</h1>
+    </div>
+    <div class="content has-header has-sub-header grey-900 padding">
+        <div class="list white radius">
+            <div class="item" onclick="openDetailHistory('${_id}')" data="USERPEDIDOS">
+                <div class="left">
+                    <img class="avatar circle" src="./img/icons/bebedor.png">
+                </div>
+                <h2 class="strong">${user.name}</h2>
+                <div class="space"></div>
+                <!-- <p class="text-grey">(44) 9 9745 17 35</p> -->
+                <small class="text-grey">
+                    <i class="icon ion-clock text-green"></i>
+                    ${pedido.createdAt}
+                </small>
+                <div class="right column">
+                    <div class="col" style="margin-bottom: -0.5em;">
+                        Nº ${pedido.nro}
+                    </div>
+                    <div class="col">
+                        <span class="text-small ${pedido.color} radius padding">${pedido.status}</span>
+                    </div>
+                    <div class="col">
+                        R$ ${pagamento.payValueTot}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="bottom: 3em;">
+        
+    </div>
+</div>

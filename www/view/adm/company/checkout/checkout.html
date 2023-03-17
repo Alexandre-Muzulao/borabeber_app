@@ -1,0 +1,88 @@
+<div class="page">
+  <div class="header grey-900">
+    <div class="left">
+      <button class="icon ion-chevron-left" onclick="backPage()"></button>
+    </div>
+    <h1 class="text-white text-strong align-center">Dados do Cartão</h1>
+  </div>
+  <div class="content has-header grey-900" id="formCheckout">
+    <div class="list shadow radius no-border padding grey-900">
+      <div class="item full">            
+        <input type="checkbox" id="switch" />
+
+        <label class="flip-container" for="switch" >
+          <div class="flipper">
+            <div class="front">
+              <img src="./img/credtcardfrontmodel.png">
+              <label type="tel" id="companyImgCardNumber">**** **** **** ****</label>
+              <label type="tel" id="companyImgCardName"></label>
+              <label type="tel" id="companyImgCardValid">MM/AA</label>
+            </div>
+            <div class="back">
+              <img src="./img/credtcardbackmodel.png">
+              <label type="tel" id="companyImgCardCVC" class="text-black">***</label>
+            </div>
+          </div>
+        </label>
+      </div>
+      <div class="space-big"></div>
+      <div class="item">
+        <div class="item label-float radius grey-200">
+          <h1 class="right text-red strong" style="font-size: 1em; z-index:7; margin-right: 3%; padding-bottom: 7%;">*</h1>
+          <label>Número do cartão</label>
+          <input id="companyFrontCardNumber" onkeydown="setLabelText('companyFrontCardNumber', 'companyImgCardNumber')">
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row" id="dadosEndCadBar">
+          <div class="col" style="margin-right: 5px;">
+            <div class="item label-float radius grey-200">
+              <h1 class="right text-red strong" style="font-size: 1em; z-index:7; margin-right: 3%; padding-bottom: 7%;">*</h1>
+              <label>Expiração</label>
+              <input id="companyFrontCardExpiration" onkeydown="setLabelText('companyFrontCardExpiration', 'companyImgCardValid')">
+            </div>
+          </div>
+          <div class="col">
+
+            <div class="item label-float radius grey-200">
+              <h1 class="right text-red strong" style="font-size: 1em; z-index:7; margin-right: 3%; padding-bottom: 7%;">*</h1>
+              <label>CVC</label>
+              <input id="companyFrontCardCvC" onkeydown="setLabelText('companyFrontCardCvC', 'companyImgCardCVC')">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="item">        
+
+        <div class="item label-float radius grey-200">
+          <h1 class="right text-red strong" style="font-size: 1em; z-index:7; margin-right: 3%; padding-bottom: 7%;">*</h1>
+          <label>Nome do titular</label>
+          <input id="companyFrontCardName" onkeydown="setLabelText('companyFrontCardName', 'companyImgCardName')">
+        </div>
+
+      </div>
+      <div class="item">
+
+        <div class="item label-float radius grey-200">
+          <h1 class="right text-red strong" style="font-size: 1em; z-index:7; margin-right: 3%; padding-bottom: 7%;">*</h1>
+          <label>CPF ou CNPJ titular</label>
+          <input id="companyFrontCardDoc" onkeydown="setLabelText('companyFrontCardName', 'companyImgCardName')">
+        </div>
+
+      </div>
+      <div class="item">
+        <div class="item label-float radius grey-200">
+          <label>Apelido do cartão</label>
+          <input id="companyFrontCardAlias" onkeydown="setLabelText('companyFrontCardName', 'companyImgCardName')">
+        </div>
+      </div>      
+
+      <div class="item">
+          <button class="shadow radius full icon ion-clipboard text-grey-900 white-opacity-90 text-small" onclick="companycheckOpenPage()"><strong>Conferir e contratar</strong></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="menu white" id="userMenu">
+    <div class="list no-border">
+        <div class="item black align-center">
+            <div class="arrowReturn right" style="margin-top: -17%" onclick="closeMenu('userMenu')">
+                <i class="icon ion-ios-arrow-thin-left text-white text-strong"></i>
+            </div>
+            <div class="left" style="margin-right: 3px;">
+                <img class="avatar radius" style="width: 30vw; height: 18vh;" src="${imgUser}" data="USER">
+            </div>
+            <div data="USER">
+                <h1 style="margin-top: 5vh;">${nomeUser}</h1>
+            </div>
+        </div>
+        <a onclick="openPage('./view/user/main/main')" class="item">
+            <div class="left">
+                <i class="icon ion-android-home grey-500"></i>
+            </div>
+            <h1>Inicio</h1>
+        </a>
+        <a onclick="openPage('./view/user/cart/cart')" class="item">
+            <div class="left">
+                <i class="icon ion-android-person grey-500"></i>
+            </div>
+            <h1>Perfil</h1>
+        </a>
+        <a onclick="trackOrder('${_id}', '${status}')" class="item" data="PEDIDO">
+            <div class="left">
+                <i class="icon ion-ios-eye"></i>
+            </div>
+            <h1>Acompanhar Pedido</h1>
+        </a>
+        <a onclick="openHistoryRequests()" class="item">
+            <div class="left">
+                <i class="icon ion-ios-list-outline"></i>
+            </div>
+            <h1>Histórico de Pedidos</h1>
+        </a>
+        <a href="https://api.whatsapp.com/send?text=Venha também para o App Império Beer!! ?">
+            <div class="item">
+                <div class="left">
+                    <i class="icon ion-person-add grey-500"></i>
+                </div>
+                <h1>Convidar amigos para o App</h1>
+            </div>
+        </a>
+        <a onclick="openFeedBackPage('user')" class="item">
+            <div class="left">
+                <i class="icon ion-compose grey-500"></i>
+            </div>
+            <h1>Fale Conosco - Feedback</h1>
+        </a>
+        <a onclick="exitApp()" class="item">
+            <div class="left">
+                <i class="icon ion-ios-close-outline"></i>
+            </div>
+            <h1>Sair do App</h1>
+        </a>
+    </div>
+</div>

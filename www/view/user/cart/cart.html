@@ -1,0 +1,113 @@
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu()"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Carrinho</h1>
+    </div>
+    <div id="mainUserMenu"></div>
+    <div class="content has-header padding grey-900">
+        <div class="list radius" style="margin-top: 1em; margin-bottom: 4em;">
+            <div class="item white center" data="ITENSCART">
+                <div class="left">
+                    <img class="radius" id="drinkImage" src="${imagem}">            
+                </div>
+                <div class="center">
+                    <h2 class="text-strong text-black">${titulo}</h2>
+                </div>        
+                <div class="row" id="drinkValue">
+                    <div class="col-10">
+                        <p id="drinkSifra">R$</p>
+                    </div>
+                    <div class="col-10">
+                        <p id="drinkValInt">${precoInt}</p>
+                    </div>
+                    <div class="col-10">
+                        <p id="drinkValFloat">,${precoCent}</p>
+                    </div>
+                </div>
+                <div id="qtdItemList">
+                    <p>${qtdTotal} Unidade(s)</p>
+                </div>
+                <div class="bottom" id="drinkOptions">
+                    <h2>Recipiente: ${recipiente}</h2>
+                    <h2>Medida: ${medida}</h2>
+                </div>                
+
+                <!-- <div class="right" id="divCaixas">
+                    <div class="right">
+                        <p style="margin-left: -3em;margin-right: -2em; margin-bottom: 3em;">6 Unidades</p>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-right: 0.5em; z-index: 9;" onclick="addQtdUnid('${titulo}', '${precoInt}', '${precoCent}', '6')">
+                            <i class="icon ion-plus-circled text-green"></i>
+                        </div>
+                        <div class="col" style="z-index: 9;" onclick="remMultipleUnid('${titulo}', '${precoInt}', '${precoCent}')">
+                            <i class="icon ion-minus-circled text-red"></i>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="right" id="divUnidade">
+                    <div class="right">
+                        <p style="margin-left: -3em;margin-right: -2em; margin-bottom: 3em;">1 Unidade</p>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="margin-right: 0.5em;" onclick="addQtdUnid('${id}', '${precoInt}', '${precoCent}', '1')">
+                            <i class="icon ion-plus-circled text-green"></i>
+                        </div>
+                        <div class="col" onclick="remQtdUnid('${id}', '${precoInt}', '${precoCent}')" style="z-index: 7;">
+                            <i class="icon ion-minus-circled text-red"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <i class="icon ion-trash-a text-red text-huge" id="cartTrashButton" onclick="trash('${id}')"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer has-content" data="CART">
+        <div class="list no-border" style="margin-top: -0.5em;">
+            <div class="item">
+                <button class="grey-700 radius full" onclick="loadDeliveryPag()">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <p style="font-size: 20px; margin-left: -20%;">R$</p>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">        
+                                            <p style="margin-left: -20%; font-size: 35px;">${vTotalInt},</p>
+                                        </div>
+                                        <div class="col">
+                                            <p style="margin-left: -93%; font-size: 25px;">${vTotalCent}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <i class="icon ion-location text-green text-big" style="margin-top: -0.5em; margin-left: -0.3em;"></i>
+                                </div>
+                                <div class="col">
+                                    <p style="margin-right: -1em;">Entrega</p>
+                                </div>
+                                <div class="col">
+                                    <i class="icon ion-chevron-right text-green text-big" style="margin-top: -0.5em;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

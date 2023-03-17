@@ -1,0 +1,75 @@
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu('admMenu')"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Pedido</h1>
+    </div>
+    <div class="header sub grey-900 center" data="USERPEDIDODETAIL">
+        <div class="left">
+            <img class="circle" id="requestPeopleImg" src="./img/icons/bebedor.png">
+        </div>
+        <h2 class="align-center">${user.name}</h2>
+    </div>
+    <div id="mainUserMenu"></div>
+    <div class="content has-header has-sub-header grey-900">
+        <h1 class="text-white text-strong grey-800 align-center padding">Itens</h1>
+        <div class="list no-border radius" data="USERPEDIDODETAIL.itens">
+            <div class="item border-bottom">
+                <div class="left">
+                  <img class="avatar radius" src="${imagem}">
+                </div>
+                <h2>${titulo} ${medida}</h2>
+                <div style="margin-left: 13em;">
+                    <p>${qtd} Unidades</p>
+                    <p>R$ ${precoInt},${precoCent}</p>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-white text-strong grey-800 align-center padding">Pagamento</h1>
+        <div class="list no-border radius" data="USERPEDIDODETAIL.pagamento">
+            <div class="item border-bottom">
+                <div class="row">
+                    <div class="col">
+                        <div class="column align-left">
+                            <div class="col">
+                                <p>SubTotal</p>
+                                <p>Taxa de Entrega</p>
+                                <p>${payResumTitle}</p>
+                                <p class="text-strong" style="font-size: 21px;">Total</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="column align-right">
+                            <div class="col">
+                                <p>R$ ${payValueSubTot}</p>
+                                <p>${payDeliveryTaxi}</p>
+                                <p>${payResumValue}</p>
+                                <p class="text-strong" style="font-size: 21px;">R$ ${payValueTot}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-white text-strong grey-800 align-center padding">Endereço de Entrega</h1>
+        <div class="list no-border radius" data="USERPEDIDODETAIL.entrega">
+            <div class="item" style="margin-bottom: 3em;">
+                <p class="text-center">${logradouro} nº ${nro}</p>
+                <p class="text-center">Bairro: ${bairro} - CEP ${cep}</p>
+                <p class="text-center">Complemento: ${complemento}</p>
+                <p class="text-center">Cidade: ${cidade} - ${estado}</p>
+                <p class="text-center">Ponto de referência: ${referencia}</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer has-content no-padding grey-700 align-center">
+        <div class="button" data="USERPEDIDODETAIL" onclick="updataStateRequest('${_id}', '${company}', '${pedido.status}', '${pedido.statusPos}')">
+            <p class="padding strong"> ${pedido.statusPos}</p>
+        </div>
+    </div>
+</div>

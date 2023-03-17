@@ -1,0 +1,21 @@
+<div class="page">
+    <div class="header black" data="PAGENAME">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Meus Produtos</h1>
+    </div>
+    <div id="mainUserMenu"></div>
+    <div class="header grey-900 sub shadow tab scrollmenu">
+        <div class="scrollmenu">
+            <button class="text-white" id="btntab${subscription}" onclick="setViewtpProds('${subscription}')" style="font-size: 9px!important;" data="TPPRODS">${subscription}</button>
+        </div>
+    </div>
+    <div class="content has-header has-sub-header grey-900 padding">
+        <div class="tab-content swiper-slide" id="tab${subscription}" data="TPPRODS">
+            <div id="inc${subscription}"></div>
+        </div>
+    </div>
+    <div class="footer" style="bottom: 3em;">
+    </div>
+</div>

@@ -1,0 +1,45 @@
+{
+    "company" : "5cbf93a6f8c28b70a607ae85",
+    "user" : {
+        "_id" : "5d17c849756753584912137d",
+        "name" : "João das Dores",
+        "localDefault" : {
+            "lat" : "-23.542385",
+            "lon" : "-46.6912508"
+        },
+        "phone" : "44997451735"
+    },
+    "createdAt" : "2019-04-23T19:37:24-03:00",
+    "requestCart" : {
+        "_id" : "5c6f5f3469299e9de986aae1",
+        "type" : "beer",
+        "qtd" : 26,
+        "price" : 108.95
+    },
+    "delivery" : {
+        "local" : {
+            "lat" : "-23.542385",
+            "lon" : "-46.6912508"
+        },
+        "cep" : "87025-645",
+        "logradouro" : "Rua",
+        "endereco" : "Nestor Narciso de Souza",
+        "numero" : "207",
+        "bairro" : "Jd. Licce",
+        "cidade" : "Maringá",
+        "estado" : "Paraná",
+        "pais" : "Brasil",
+        "complemento" : "",
+        "refencia" : "pode ser um audio COROLEO"
+    },
+    "pagamento" : {
+        "tipo" : "cartao/dinheiro",
+        "dinheiro" : {
+            "enviado" : 120.00,
+            "troco" : 11.05
+        },
+        "cartao" : {
+            "tipo" : "debito/credito"
+        }
+    }
+}

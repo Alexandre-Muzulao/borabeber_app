@@ -1,0 +1,133 @@
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu('admMenu')"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong">Pedido</h1>
+    </div>
+    <div class="header sub grey-900 center" id="reqDetailSubHeader">
+        <div class="left">
+            <img class="circle" id="requestPeopleImg" src="./img/icons/bebedor.png">
+        </div>
+        <h2 id="requestPeopleName">Carter Hudson</h2>
+    </div>
+    <div class="content has-header has-sub-header grey-900 padding">
+        <div class="list white shadow radius" style="margin-top: 1em; margin-bottom: 4.5em;">
+        <!-- <div class="list green-200 shadow radius" style="margin-top: 1em;"> -->
+            <div class="item center" style="margin-top: 1em; margin-bottom: -1.5em;">
+                <div class="left">
+                    <img class="radius" id="drinkImage" src="https://borabeber-production-serverlessdeploymentbucket-1r44sesmo61it.s3.amazonaws.com/borabeber_imgbeers/heineken-garrafa-330ml.png">
+                </div>
+                <div class="center">
+                    <h2 class="text-strong text-black">Cerveja Heineken</h2>
+                </div>        
+                <div class="row" id="drinkReqValue">
+                    <div class="col-10">
+                        <p id="drinkSifra">R$</p>
+                    </div>
+                    <div class="col-10">
+                        <p id="drinkValInt">181</p>
+                    </div>
+                    <div class="col-10">
+                        <p id="drinkValFloat">,90</p>
+                    </div>
+                </div>
+                <div id="qtdItemList">
+                    <p>Quantidades:</p>
+                    <p>2 Caixas e 2 Unidades</p>
+                    <p>26 Unidades</p>
+                </div>
+                <div class="bottom" id="drinkReqOptions">
+                    <h2>Recipiente: Garrafa</h2>
+                    <h2>Medida: 300ml</h2>
+                </div>
+            </div>
+            <div class="item center" style="margin-top: 1em; margin-bottom: -1.5em;">
+                <div class="left">
+                    <img class="radius" id="drinkImage" src="https://borabeber-production-serverlessdeploymentbucket-1r44sesmo61it.s3.amazonaws.com/borabeber_imgbeers/heineken-garrafa-330ml.png">
+                </div>
+                <div class="center">
+                    <h2 class="text-strong text-black">Cerveja Heineken</h2>
+                </div>        
+                <div class="row" id="drinkReqValue">
+                    <div class="col-10">
+                        <p id="drinkSifra">R$</p>
+                    </div>
+                    <div class="col-10">
+                        <p id="drinkValInt">181</p>
+                    </div>
+                    <div class="col-10">
+                        <p id="drinkValFloat">,90</p>
+                    </div>
+                </div>
+                <div id="qtdItemList">
+                    <p>Quantidades:</p>
+                    <p>2 Caixas e 2 Unidades</p>
+                    <p>26 Unidades</p>
+                </div>
+                <div class="bottom" id="drinkReqOptions">
+                    <h2>Recipiente: Garrafa</h2>
+                    <h2>Medida: 300ml</h2>
+                </div>
+            </div>
+            <div class="item center" style="margin-top: 1em; margin-bottom: -1.5em;">
+                <div class="left">
+                    <img class="radius" id="drinkImage" src="https://borabeber-production-serverlessdeploymentbucket-1r44sesmo61it.s3.amazonaws.com/borabeber_imgbeers/heineken-garrafa-330ml.png">
+                </div>
+                <div class="center">
+                    <h2 class="text-strong text-black">Cerveja Heineken</h2>
+                </div>        
+                <div class="row" id="drinkReqValue">
+                    <div class="col-10">
+                        <p id="drinkSifra">R$</p>
+                    </div>
+                    <div class="col-10">
+                        <p id="drinkValInt">181</p>
+                    </div>
+                    <div class="col-10">
+                        <p id="drinkValFloat">,90</p>
+                    </div>
+                </div>
+                <div id="qtdItemList">
+                    <p>Quantidades:</p>
+                    <p>2 Caixas e 2 Unidades</p>
+                    <p>26 Unidades</p>
+                </div>
+                <div class="bottom" id="drinkReqOptions">
+                    <h2>Recipiente: Garrafa</h2>
+                    <h2>Medida: 300ml</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer has-content no-padding grey-700">
+        <button class="grey-700 full" style="max-height: 3em;">
+            <div class="row">
+                <div class="col right">
+                    <div class="row">
+                        <div class="col">
+                            <p style="font-size: 20px; margin-left: -20%;">Total: R$</p>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <p style="margin-left: -20%; font-size: 35px;">181,</p>
+                                </div>
+                                <div class="col">
+                                    <p style="margin-left: -115%; font-size: 25px;">90</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col padding orange-300 radius" style="margin-top: 0.5em; margin-bottom: -0.5em;" onclick="showConfirm()">
+                    <p>Entregador</p>
+                    <!-- <i class="icon ion-location text-green float-bottom-right" style="margin-right: -9%; margin-bottom: 11%;"></i> -->
+                </div>
+            </div>
+        </button>
+    </div>
+</div>

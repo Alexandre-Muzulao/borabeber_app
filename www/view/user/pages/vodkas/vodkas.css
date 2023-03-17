@@ -1,0 +1,12 @@
+#rowVodkasList {
+    height: 14em;
+}
+
+#vodkaImparValidBind [valid-bind=''] {
+    visibility: hidden;
+    background-size: 13vh;
+}
+
+#vodkaPrice {
+    margin-left: 3em;
+}

@@ -1,0 +1,88 @@
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu('admMenu')"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Configuração de Entrega</h1>
+    </div>
+    <div class="content has-header grey-900">
+        <div class="list no-border">
+            <div class="item">
+                <div class="buttons-group full small">
+                    <button class="grey-800 border-grey radius-left" onclick="distanceConfig()">Distância (KM)</button>
+                    <button class="grey-800 border-grey" onclick="distanceTimeConfig()">Tempo em Min.</button>
+                    <button class="grey-800 border-grey radius-right" onclick="distanceValueConfig()">Valor (R$)</button>
+                </div>
+                <div class="space"></div>
+                <!-- <button class="radius shadow full grey-800 text-center" onclick="addDistance()">
+                    <p><i class="text-strong white icon ion-plus-circled text-big"></i>Adicionar Distância</p>
+                </button> -->
+            </div>
+            <div class="item">
+                <div class="item label-float border-grey border-bottom">
+                    <label class="icon ion-cash">Valor Minimo para Entrega</label>
+                    <label style="margin-right: -65px; margin-top: 2px;">R$</label>
+                    <input class="text-white" type="number" id="valorMinimoDistance" style="margin-left: 2em; margin-top: 0.8em;">
+                </div>
+            </div>
+            <div class="item">
+                <div class="row">
+                    <div class="col-75 padding">
+                        <div class="item label-float border-grey border-bottom">
+                            <label class="icon ion-cash" style="font-size: 14px;">Entrega Gratis</label>
+                            <label style="margin-right: -65px; margin-top: 2px;">R$</label>
+                            <input class="text-white" type="number" id="valorFreeDistance" style="margin-left: 2em; margin-top: 0.8em;">
+                        </div>
+                    </div>
+                    <div class="col padding">
+                        <div class="item label-float border-grey border-bottom">
+                            <label class="icon ion-map" style="font-size: 14px;">Até Km's</label>
+                            <label style="margin-left: 6em; margin-top: 2px;">Km's</label>
+                            <input class="text-white" type="number" id="kmFreeDistance" style="margin-top: 0.8em;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <button class="radius shadow full grey-800 text-center" onclick="addDistance()">
+                    <p><i class="text-strong white icon ion-plus-circled text-big"></i>Adicionar Distância</p>
+                </button>
+            </div>
+            <div class="item">
+                <div class="row">
+                    <div class="col padding">
+                        <div class="item label-float border-grey border-bottom">
+                            <label class="icon ion-map"></label>
+                            <label style="margin-left: 2em;">Km's</label>
+                            <input class="text-white" type="number" id="kmDistance" style="margin-top: 0.8em;">
+                        </div>
+                    </div>
+                    <div class="col padding">
+                        <div class="item label-float border-grey border-bottom">
+                            <label class="icon ion-clock"></label>
+                            <label style="margin-left: 2em;">Min.</label>
+                            <input class="text-white" type="number" id="tempoDistance" style="margin-top: 0.8em;">
+                        </div>
+                    </div>
+                    <div class="col padding">
+                        <div class="item label-float border-grey border-bottom">
+                            <label class="icon ion-cash"></label>
+                            <label style="margin-top: 2px;">R$</label>
+                            <input class="text-white" type="number" id="valorDistance" style="margin-left: 2em; margin-top: 0.8em;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="distanceSetting"></div>
+            <div class="space-big"></div>
+        </div>
+    </div>
+    <div class="footer padding">
+        <button class="radius shadow full grey-800 text-center" onclick="saveRequestConfig()">
+            <p>Salvar<i class="text-strong green icon ion-checkmark-round icon-right text-big"></i></p>
+        </button>
+    </div>
+</div>

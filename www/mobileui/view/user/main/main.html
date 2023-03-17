@@ -1,0 +1,45 @@
+<div class="page" data="PAGENAME">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu('userMenu')"></button>
+        </div>
+        <h1 class="text-white text-strong">Império Beer</h1>
+    </div>
+    <div id="includeUserMenu"></div>
+    <div class="header grey-900 sub shadow tab">
+        <div id="alertBeer"></div>
+        <!-- <button class="text-white active text-small" onclick="openTabs('tabPromos')" style="font-size: 9px!important;">Promos</button> -->
+        <button class="text-white active" onclick="openTabs('tabCervejas')" style="font-size: 9px!important;">Cervejas</button>
+        <button class="text-white" onclick="openTabs('tabVodkas')" style="font-size: 9px!important;">Vodkas</button>
+        <button class="text-white" onclick="openTabs('tabWhiskys')" style="font-size: 9px!important;">whiskys</button>
+        <button class="text-white" onclick="openTabs('tabChurrasco')" style="font-size: 9px!important;">churrasco</button>
+    </div>
+    <div class="content has-header has-sub-header grey-900 padding">
+        <div class="swiper-container swipper-main">
+            <div class="swiper-wrapper">
+                <!-- <div class="tab-content swiper-slide active" id="tabPromos">
+                    <div id="includePromos"></div>
+                </div> -->
+                <div class="tab-content swiper-slide active" id="tabCervejas">
+                    <div id="includeCervejas"></div>
+                </div>
+                <div class="tab-content swiper-slide" id="tabVodkas">
+                    <div id="includeVodkas"></div>
+                </div>
+                <div class="tab-content swiper-slide" id="tabWhiskys">
+                    <div id="includeWhiskys"></div>
+                </div>
+                <div class="tab-content swiper-slide" id="tabChurrasco">
+                    <div id="includeChurrasco"></div>
+                </div> 
+            </div>
+            <div class="swiper-pagination swiper-pagination-white"></div>
+        </div>
+    </div>
+    <div class="footer" style="bottom: 3em;">
+        <div class="right">
+            <span class="icon-badge red radius padding right">0</span>
+            <button class="icon green circle ion-ios-cart strong huge" onclick="openPage('./view/user/cart/cart.html')"></button>
+        </div>
+    </div>
+</div>

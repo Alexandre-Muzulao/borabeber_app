@@ -1,0 +1,41 @@
+<div class="page">
+    <div class="header black" data="PAGENAME">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openAdmMenu('admMenu')"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Meus Produtos</h1>
+    </div>
+    <div class="header grey-900 sub shadow tab">
+        <!-- <button class="text-white active text-small" onclick="openAdmTabs('tabPromos')" style="font-size: 9px!important;">Promos</button> -->
+        <button class="text-white active" onclick="openAdmTabs('tabAdmCervejas')" style="font-size: 9px!important;">Cervejas</button>
+        <button class="text-white" onclick="openAdmTabs('tabAdmVodkas')" style="font-size: 9px!important;">Vodkas</button>
+        <button class="text-white" onclick="openAdmTabs('tabAdmWhiskys')" style="font-size: 9px!important;">Whiskys</button>
+        <!-- <button class="text-white" onclick="openAdmTabs('tabAdmConveniencia')" style="font-size: 9px!important;">Conveiência</button> -->
+    </div>
+    <div class="content has-header has-sub-header grey-900 padding">
+        <!-- <div class="tab-content swiper-slide active" id="tabPromos">
+            <div id="includePromos"></div>
+        </div> -->
+        <div class="tab-content swiper-slide active" id="tabAdmCervejas">
+            <div id="includeAdmCervejas"></div>
+        </div>
+        <div class="tab-content swiper-slide" id="tabAdmVodkas">
+            <div id="includeAdmVodkas"></div>
+        </div>
+        <div class="tab-content swiper-slide" id="tabAdmWhiskys">
+            <div id="includeAdmWhiskys"></div>
+        </div>
+        <!-- <div class="tab-content swiper-slide" id="tabAdmConveniencia">
+            <div id="includeAdmConveniencia"></div>
+        </div> -->
+    </div>
+    <!-- <div class="footer" style="bottom: 3em;">
+        <div class="right" data="CART">
+            <span class="icon-badge red radius padding right">${qtd}</span>
+            <button class="icon green circle ion-ios-cart strong huge" onclick="openCart('${qtd}')"></button>
+        </div>
+    </div> -->
+</div>

@@ -1,0 +1,44 @@
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openAdmMenu('admMenu')"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-android-refresh" onclick="forceGetRequests()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Pedidos</h1>
+    </div>
+    <!-- <div id="mainAdmMenu"></div> -->
+    <div class="header sub grey-900 align-center" data="QTDPEDIDOS">
+        <div class="title">
+            ${qtd}
+        </div>
+    </div>
+    <div class="content has-header has-sub-header grey-900 padding">
+        <div class="list white radius">
+            <div class="item" onclick="openDetailRequest('${_id}')" data="PEDIDOS">
+                <div class="left">
+                    <img class="avatar circle" src="${user.imgUser}">
+                </div>
+                <h2 class="strong">${user.name}</h2>
+                <div class="space"></div>
+                <!-- <p class="text-grey">(44) 9 9745 17 35</p> -->
+                <small class="text-grey">
+                    <i class="icon ion-clock text-green"></i>
+                    ${pedido.createdAt}
+                </small>
+                <div class="right column">
+                    <div class="col" style="margin-bottom: -0.5em;">
+                        Nº ${pedido.nro}
+                    </div>
+                    <div class="col">
+                        <span class="text-small ${pedido.color} radius padding">${pedido.status}</span>
+                    </div>
+                    <div class="col">
+                        R$ ${pagamento.payValueTot}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

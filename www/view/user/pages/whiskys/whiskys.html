@@ -1,0 +1,41 @@
+<div class="space"></div>
+<div class="list no-border">
+    <div class="item" data="WHISKY">
+        <div class="row" id="rowWhiskyList">
+            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgPar}'); background-size: 7em;"
+            onclick="addItemCart('whisky', '${tituloPar}', '${recipientePar}', '${medidaPar}','${imgPar}', '${precoWhiskyPar}', '${precoWhiskyCentPar}', '${idWhiskyPar}')" id="${idWhiskyPar}">
+                <div class="right" style="display: none;" id="cartButtom${idWhiskyPar}">
+                    <small class="text-grey" style="margin-bottom: 13.7em;">
+                        <i class="icon ion-ios-cart text-green huge" style="font-size: 2.5em;"></i>
+                    </small>
+                </div>
+                <div class="right">
+                    <small class="text-grey" style="margin-bottom: 7em;">
+                        <i class="icon ion-plus-circled text-green" style="font-size: 2em;"></i>
+                    </small>
+                </div>
+                <div class="bottom gradient padding radius">
+                    <p class="text-white">${tituloPar} ${recipientePar} ${medidaPar}</p>
+                    <p id="whiskyPrice">R$ ${precoWhiskyPar}</p>
+                </div>
+            </div>
+            <div class="col-55 cover radius margin no-padding" id="whiskyImparValidBind" style="background-image:url('${imgImpar}'); background-size: 7em;" valid-bind="${tituloImpar}"
+            onclick="addItemCart('whisky', '${tituloImpar}', '${recipienteImpar}', '${medidaImpar}','${imgImpar}', '${precoWhiskyIntImpar}', '${precoWhiskyCentImpar}', '${idWhiskyImpar}')" id="${idWhiskyImpar}">
+                <div class="right" style="display: none;" id="cartButtom${idWhiskyImpar}">
+                    <small class="text-grey" style="margin-bottom: 13.7em;">
+                        <i class="icon ion-ios-cart text-green huge" style="font-size: 2.5em;"></i>
+                    </small>
+                </div>
+                <div class="right">
+                    <small class="text-grey" style="margin-bottom: 7em;">
+                        <i class="icon ion-plus-circled text-green" style="font-size: 2em;"></i>
+                    </small>
+                </div>
+                <div class="bottom gradient padding radius">
+                    <p class="text-white">${tituloImpar} ${recipienteImpar} ${medidaImpar}</p>
+                    <p id="whiskyPrice">R$ ${precoWhiskyPar}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

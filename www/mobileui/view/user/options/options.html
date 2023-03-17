@@ -1,0 +1,44 @@
+<div class="menu white" id="userMenu">
+    <div class="list no-border">
+        <div class="item black align-center">
+            <div class="arrowReturn right" style="margin-top: -17%" onclick="closeMenu('userMenu')">
+                <i class="icon ion-ios-arrow-thin-left text-white text-strong"></i>
+            </div>
+            <div class="left" style="margin-right: 3px;">
+                <img class="avatar radius" style="width: 30vw; height: 18vh;" src="https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?resize=256%2C256&quality=100&ssl=1">
+            </div>
+            <h1 style="margin-top: 5vh;">Nome</h1>
+        </div>
+        <a onclick="openPage('./view/user/cart/cart')" class="item">
+            <div class="left">
+                <i class="icon ion-android-person grey-500"></i>
+            </div>
+            <h1>Perfil</h1>
+        </a>
+        <a onclick="getDadosUser('${nomeUser}', 'update')" class="item">
+            <div class="left">
+                <i class="icon ion-ios-list-outline"></i>
+            </div>
+            <h1>Histórico</h1>
+        </a>
+        <a href="https://api.whatsapp.com/send?text=Já conhece o app PKL - Perereka Lanches Delivery?"
+            class="item">
+            <div class="left">
+                <i class="icon ion-person-add grey-500"></i>
+            </div>
+            <h1>Convidar amigos para o App</h1>
+        </a>
+        <a onclick="openFeedBackPage('user')" class="item">
+            <div class="left">
+                <i class="icon ion-compose grey-500"></i>
+            </div>
+            <h1>Fale Conosco - Feedback</h1>
+        </a>
+        <a onclick="exitApp()" class="item">
+            <div class="left">
+                <i class="icon ion-ios-close-outline"></i>
+            </div>
+            <h1>Sair do App</h1>
+        </a>
+    </div>
+</div>

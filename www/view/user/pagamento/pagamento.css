@@ -1,0 +1,67 @@
+#payedCard {
+    background-image: url('./icons/credit-card.png');
+    background-size: 15vh;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#payedCash {
+    background-image: url('./icons/money.png');
+    background-size: 13.5vh;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1.5);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#payedCardFlag {
+    visibility: hidden;
+    display: none;
+}
+
+#payedCardMaster {
+    background-image: url('./icons/mastercard.png');
+    background-size: 10.5vh;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 3em;
+}
+
+#payedCardVisa {
+    background-image: url('./icons/visa.png');
+    background-size: 10.5vh;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 3em;
+}
+
+#payedCardElo {
+    background-image: url('./icons/elo.png');
+    background-size: 10.5vh;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 3em;
+}
+
+#payedCardCooper {
+    background-image: url('./icons/cooper.png');
+    background-size: 10.5vh;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 3em;
+}
+
+#payPeopleDivision {
+    display: none;
+    margin-bottom: -1.5em;
+}
+
+#payedCashChange {
+    visibility: hidden;
+    display: none;
+    margin-bottom: -0.5em;
+}

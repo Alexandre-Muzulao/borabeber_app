@@ -1,0 +1,134 @@
+#contentLoginList {
+    margin-top: 25em;
+}
+
+.logoBoraBeber {
+    max-width: 45%;
+}
+
+.loginIconBebidas1 {
+    max-width: 35%;
+    opacity: 0.5;
+    transform: rotate(-25deg);
+    
+    position: relative;
+    animation-name: bebidas1;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+}
+
+@keyframes bebidas1 {
+    0%   {top:650px;}
+    25%  {top:0px;}
+    50%  {top:0px;}
+    75%  {top:0px;}
+    100% {top:0px;}
+}
+
+.loginIconPizza {
+    max-width: 35%;
+    margin-left: 20%;
+    opacity: 0.5;
+    transform: rotate(25deg);
+
+    position: relative;
+    animation-name: pizza;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+}
+
+@keyframes pizza {
+    0%   {top:650px;}
+    25%  {top:0px;}
+    50%  {top:0px;}
+    75%  {top:0px;}
+    100% {top:0px;}
+}
+
+.loginIconOriental {
+    max-width: 35%;
+    opacity: 0.5;
+    transform: rotate(5deg);
+
+    position: relative;
+    animation-name: oriental;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+}
+
+@keyframes oriental {
+    0%   {top:650px;}
+    25%  {top:0px;}
+    50%  {top:0px;}
+    75%  {top:0px;}
+    100% {top:0px;}
+}
+
+.loginIconBebidas {
+    max-width: 35%;
+    opacity: 0.5;
+    margin-left: 25%;
+    transform: rotate(5deg);
+
+    position: relative;
+    animation-name: bebidas;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+}
+
+@keyframes bebidas {
+    0%   {top:650px;}
+    25%  {top:0px;}
+    50%  {top:0px;}
+    75%  {top:0px;}
+    100% {top:0px;}
+}
+
+.loginIconLanches {
+    max-width: 35%;
+    opacity: 0.5;
+    transform: rotate(25deg);
+    margin-left: 50%;
+
+    position: relative;
+    animation-name: lanches;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+}
+
+@keyframes lanches {
+    0%   {top:650px;}
+    25%  {top:0px;}
+    50%  {top:0px;}
+    75%  {top:0px;}
+    100% {top:0px;}
+}
+
+.page {
+    /* background: rgb(255,255,255); */
+    background-image: url("./img/backgrounds/capa.gif");
+    background: linear-gradient(0deg, rgba(170, 113, 0, 0) 30%, rgba(252,199,92,1) 67%);
+}
+
+.footer {
+    margin-bottom: 13em;
+}
+
+.titleHeader span {
+    font-family: Moon Dance;
+    font-size:30px;
+    font-weight:300;
+    display:block;
+    letter-spacing:0;
+}
+
+
+#logoLogin {
+    width: 100%;
+    max-width: 190px;
+    height: auto;
+}
+
+#btnEntrar {
+    margin-bottom: 2em;
+}

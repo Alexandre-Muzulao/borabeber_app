@@ -1,0 +1,135 @@
+<div class="page">
+    <div class="header grey-900">
+        <div class="left">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Valide seu plano e confirme</h1>
+    </div>
+    <div class="content has-header grey-900" id="companyCheckContent">
+        <div class="align-center">
+            <img src="./img/icons/borabeber_branco_3.png" style="max-width: 80%;">
+        </div>
+        <div class="align-center padding">
+            <p class="text-white"><strong>Valide seus dados e Confirme</strong></p>
+        </div>
+        <div class="list no-border align-left padding">
+            <div class="item label-float radius grey-200">
+                <h1 class="right text-red strong" style="font-size: 1em; z-index:7; margin-right: 3%; padding-bottom: 7%;">*</h1>
+                <label>CNPJ ou CPF</label>
+                <input class="placeholder-black text-black" type="tel" id="docCompanyCheck">
+            </div>
+        </div>
+        <div class="list no-border align-left padding">
+            <div class="item label-float radius grey-200">
+                <h1 class="right text-red strong" style="font-size: 1em; z-index:7; margin-right: 3%; padding-bottom: 7%;">*</h1>
+                <label>Nome do Estabelecimento</label>
+                <input class="placeholder-black text-black" type="text" id="nomeCompanyCheck">
+            </div>
+        </div>
+        <div class="align-center padding">
+            <p class="text-white"><strong>Módulos que você escolheu</strong></p>
+        </div>
+        <div class="list no-border">
+            <div class="list no-border padding radius" data="COMPANYCACH.tpProds">
+                <div class="item grey-100 small-space align-center text-with radius">
+                    <div class="small-space grey-100 align-center text-with">
+                        <p><strong>${subscription}</strong></p>
+                    <div class="right">
+                        <i class="icon ion-trash-a text-red text-big" onclick="popModuleOfPlan('${subscription}')"></i>
+                    </div>
+                    </div>
+                    <div class="grey-100 text-white align-center radius">
+                        <div class="row">
+                            <div class="col text-black">
+                                <p>Plano: ${module} <i class="icon ${icon} text-black"></i></p>
+                            </div>
+                            <div class="col text-black">
+                                <p>R$ ${value}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="align-center padding">
+            <p class="text-white"><strong>Escolha o Formato da Assinatura</strong></p>
+        </div>
+        <div class="list no-border">
+            <div class="list no-border padding" data="COMPANYCACH.billings">
+                <div class="item radius grey-900">
+                    <div class="item grey-100 text-black radius">
+                        <div class="row">
+                            <div class="col">
+                                <p>Cobrança recorrente</p>
+                            </div>
+                            <div class="col">
+                                <p>R$ ${recorrente}</p>
+                            </div>
+                        </div>
+                        <p>* Cobrança mensal sem fidelidade</p>
+                        <div class="right">
+                            <input type="radio" name="plano" id="planomensal" class="teal">
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                    <div class="item grey-100 text-black radius">
+                        <div class="row">
+                            <div class="col">
+                                <p>Assinatura Semestral</p>
+                            </div>
+                            <div class="col">
+                                <p>R$ ${semestral}</p>
+                            </div>
+                        </div>
+                        <p>Assine 6 meses com 15% off -R$ ${descSemestral}</p>
+                        <div class="right">
+                            <input type="radio" name="plano" id="planosemestral" class="teal">
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                    <div class="item grey-100 text-black radius">
+                        <div class="row">
+                            <div class="col">
+                                <p>Assinatura Anual</p>
+                            </div>
+                            <div class="col">
+                                <p>R$ ${anual}</p>
+                            </div>
+                        </div>
+                        <p>Assine 12 meses com 25% off -R$ ${descAnual}</p>
+                        <div class="right">
+                            <input type="radio" name="plano" id="planoanual" class="teal" checked>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="align-center padding">
+            <p class="text-white"><strong>Dados de Pagamento</strong></p>
+        </div>
+        <div class="list no-border">
+            <div class="item full">
+                <input type="checkbox" id="switch2" /> 
+                <label class="flip-container2" for="switch2" >
+                  <div class="flipper2">
+                    <div class="front2">
+                      <img src="./img/credtcardfrontmodel.png">
+                      <p id="companyImgCardNumberCheck">**** **** **** ****</p>
+                      <p id="companyImgCardNameCheck"></p>
+                      <p id="companyImgCardValidCheck">MM/AA</p>
+                    </div>
+                    <div class="back2">
+                      <img src="./img/credtcardbackmodel.png">
+                      <p id="companyImgCardCVCCheck" class="text-black">***</p>
+                    </div>
+                  </div>
+                </label>
+              </div>
+        </div>
+        <div class="space-big"></div>
+        <div class="list no-border align-left padding">
+            <button class="text-grey-900 white-opacity-90 text-small shadow radius full" onclick="cadCompany()"> <strong>Confirmar e Bora Vender!</strong></button>
+        </div>
+    </div>
+</div>

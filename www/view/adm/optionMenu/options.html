@@ -1,0 +1,63 @@
+<div class="menu white" id="admMenu">
+    <div class="list no-border">
+        <div class="item black align-center">
+            <div class="arrowReturn right" style="margin-top: -17%" onclick="closeMenu('admMenu')">
+                <i class="icon ion-ios-arrow-thin-left text-white text-strong"></i>
+            </div>
+            <div class="left" style="margin-right: 3px;">
+                <img class="avatar radius" style="width: 30vw; height: 18vh;" src="${imgCompany}" data="COMPANY">
+            </div>
+            <div data="COMPANY">
+                <h1 style="margin-top: 5vh;">${nomeCompany}</h1>
+            </div>
+        </div>
+        <a onclick="productsOpenPage()" class="item">
+            <div class="left">
+                <i class="icon ion-clipboard"></i>
+            </div>
+            <h1>Meus Produtos</h1>
+        </a>
+        <a onclick="openAdmHistoryRequests()" class="item">
+            <div class="left">
+                <i class="icon ion-ios-list-outline"></i>
+            </div>
+            <h1>Histórico de Pedidos</h1>
+        </a>
+        <a onclick="getConfig('')" class="item">
+            <div class="left">
+                <i class="icon ion-gear-b"></i>
+            </div>
+            <h1>Perfil Empresa</h1>
+        </a>
+        <a onclick="" class="item">
+            <div class="left">
+                <i class="icon ion-cash"></i>
+            </div>
+            <h1>Financeiro</h1>
+        </a>
+        <a onclick="getRequesConfig('')" class="item">
+            <div class="left">
+                <i class="icon ion-map"></i>
+            </div>
+            <h1>Configurar Entrega</h1>
+        </a>
+        <a onclick="getPrintConfig('')" class="item">
+            <div class="left">
+                <i class="icon ion-printer"></i>
+            </div>
+            <h1>Configurar Impressora</h1>
+        </a>
+        <a onclick="openFeedBackPage('user')" class="item">
+            <div class="left">
+                <i class="icon ion-compose grey-500"></i>
+            </div>
+            <h1>Fale Conosco - Feedback</h1>
+        </a>
+        <a onclick="exitApp()" class="item">
+            <div class="left">
+                <i class="icon ion-ios-close-outline"></i>
+            </div>
+            <h1>Sair do App</h1>
+        </a>
+    </div>
+</div>

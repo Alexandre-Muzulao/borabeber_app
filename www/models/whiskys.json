@@ -1,0 +1,122 @@
+{    
+    "gtinean" : "5010106110249",
+    "titulo" : "Ballantine's",
+    "fabricante" : "Pernod Ricard",
+    "paisOrigem" : "Escócia",
+    "cidadeOrigen" : "Dumbarton",
+    "recipiente" : "Garrafa",
+    "medida" : "1000 ml",
+    "alcool" : "40",
+    "anos" : "12",
+    "cor" : "",
+    "classe" : "",
+    "tipo" : "",
+    "img" : "Ballantines-12-anos-1000ml.png"
+},
+{    
+    "gtinean" : "",
+    "titulo" : "Bastille 1789",
+    "fabricante" : "",
+    "paisOrigem" : "França",
+    "cidadeOrigen" : "",
+    "recipiente" : "Garrafa",
+    "medida" : "700 ml",
+    "alcool" : "40",
+    "anos" : "",
+    "cor" : "",
+    "classe" : "",
+    "tipo" : "",
+    "img" : "Bastille 1789-anos-700ml.png"
+}
+{    
+    "gtinean" : "",
+    "titulo" : "Jack Daniels Fire",
+    "fabricante" : "Jack Daniels",
+    "paisOrigem" : "EUA",
+    "cidadeOrigen" : "Lynchburg (Tennessee)",
+    "recipiente" : "Garrafa",
+    "medida" : "1000 ml",
+    "alcool" : "35",
+    "anos" : "",
+    "cor" : "",
+    "classe" : "",
+    "tipo" : "",
+    "img" : "Jack-Daniels-Fire-Anos-1000ml.png"
+}
+
+
+{    
+    "gtinean" : "",
+    "titulo" : "Jack Daniels Hanney",
+    "fabricante" : "Jack Daniels",
+    "paisOrigem" : "EUA",
+    "cidadeOrigen" : "Lynchburg (Tennessee)",
+    "recipiente" : "Garrafa",
+    "medida" : "1000ml",
+    "alcool" : "35",
+    "anos" : "",
+    "cor" : "",
+    "classe" : "",
+    "tipo" : "",
+    "img" : "Jack-Daniels-Hanney-Anos-1000ml.webp"
+}
+{    
+    "gtinean" : "",
+    "titulo" : "Jack Daniels Sinatra",
+    "fabricante" : "Jack Daniels",
+    "paisOrigem" : "EUA",
+    "cidadeOrigen" : "Lynchburg (Tennessee)",
+    "recipiente" : "Garrafa",
+    "medida" : "1000",
+    "alcool" : "45",
+    "anos" : "",
+    "cor" : "",
+    "classe" : "",
+    "tipo" : "",
+    "img" : "Jack-Daniels-Sinatra-Anos-1000ml.png"
+}
+{    
+    "gtinean" : "",
+    "titulo" : "",
+    "fabricante" : "Jack Daniels",
+    "paisOrigem" : "EUA",
+    "cidadeOrigen" : "Lynchburg (Tennessee)",
+    "recipiente" : "Garrafa",
+    "medida" : "",
+    "alcool" : "",
+    "anos" : "",
+    "cor" : "",
+    "classe" : "",
+    "tipo" : "",
+    "img" : "Jack-Daniels-Single-Barrel-Anos-750ml.png"
+}
+{    
+    "gtinean" : "",
+    "titulo" : "",
+    "fabricante" : "",
+    "paisOrigem" : "",
+    "cidadeOrigen" : "",
+    "recipiente" : "",
+    "medida" : "",
+    "alcool" : "",
+    "anos" : "",
+    "cor" : "",
+    "classe" : "",
+    "tipo" : "",
+    "img" : ""
+}
+{    
+    "gtinean" : "",
+    "titulo" : "",
+    "fabricante" : "",
+    "paisOrigem" : "",
+    "cidadeOrigen" : "",
+    "recipiente" : "",
+    "medida" : "",
+    "alcool" : "",
+    "anos" : "",
+    "cor" : "",
+    "classe" : "",
+    "tipo" : "",
+    "img" : ""
+}

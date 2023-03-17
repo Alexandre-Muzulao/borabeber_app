@@ -1,0 +1,101 @@
+<div class="page">
+    <div class="header black" data="PAGENAME">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu()"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Resumo do Pedido</h1>
+    </div>
+    <div id="mainUserMenu"></div>
+    <div class="content has-header grey-900">
+        <h1 class="text-white text-strong grey-800 align-center padding">Itens</h1>
+        <div class="list no-border radius" data="ITENSCART">
+            <div class="item border-bottom">
+                <div class="left">
+                  <img class="avatar radius" src="${imagem}">
+                </div>
+                <h2>${titulo} ${medida}</h2>
+                <div style="margin-left: 13em;">
+                    <p>${qtd} Unidades</p>
+                    <p>R$ ${precoInt},${precoCent}</p>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-white text-strong grey-800 align-center padding">Pagamento</h1>
+        <div class="list no-border radius" data="PAGAMENTO">
+            <div class="item border-bottom">
+                <div class="row">
+                    <div class="col">
+                        <div class="column align-left">
+                            <div class="col">
+                                <p>SubTotal</p>
+                                <p>Entrega</p>
+                                <p>${payResumTitle}</p>
+                                <p class="text-strong" style="font-size: 21px;">Total</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="column align-right">
+                            <div class="col">
+                                <p>R$ ${payValueSubTot}</p>
+                                <p>R$ ${payDeliveryTaxi}</p>
+                                <p>${payResumValue}</p>
+                                <p class="text-strong" style="font-size: 21px;">R$ ${payValueTot}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-white text-strong grey-800 align-center padding">Endereço de Entrega</h1>
+        <div class="list no-border radius" data="ENTREGA">
+            <div class="item" style="margin-bottom: 3em;">
+                <p class="text-center">${logradouro} nº ${nro}</p>
+                <p class="text-center">Bairro: ${bairro} - CEP ${cep}</p>
+                <p class="text-center">Complemento: ${complemento}</p>
+                <p class="text-center">Cidade: ${cidade} - ${estado}</p>
+                <p class="text-center">Ponto de referência: ${referencia}</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer has-content" data="CART" style="margin-bottom: 1em;">
+        <div class="list no-border" style="margin-top: -0.5em;">
+            <div class="item">
+                <button class="grey-700 radius right" onclick="openNewCadUser()" id="btnConfirm">
+                    <div class="row">
+                        <div class="col">
+                            <!-- <div class="row">
+                                <div class="col">
+                                    <p style="font-size: 20px; margin-left: -20%;">Total: R$</p>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">        
+                                            <p style="margin-left: -20%; font-size: 35px;">${vTotalInt},</p>
+                                        </div>
+                                        <div class="col">
+                                            <p style="margin-left: -93%; font-size: 25px;">${vTotalCent}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <p>Confirmar</p>
+                                </div>
+                                <div class="col">
+                                    <i class="icon ion-checkmark-round text-green text-big" style="margin-top: -0.5em;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

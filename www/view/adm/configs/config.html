@@ -1,0 +1,187 @@
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="align-center">Alterar dados do Estabelecimento</h1>
+    </div>
+    <div class="content has-header grey-900">
+        
+        <div class="btnAddCompanyImg">
+            <button class="text-huge icon ion-plus-circled text-grey-300" onclick="openPopover('imgOptions')"></button>
+        </div>
+        <div class="swiper-container swipper-gallery grey-800">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide text-white align-center cover black-opacity-20 blend-soft-light" 
+                    onclick="dellSwiperImg('${imgOrder}', '${base64Photo}')"
+                    style="background-image:url('${base64Photo}')" data="IMGCAPAS"></div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-white"></div>
+        </div>
+        <div class="popover" id="imgOptions">
+            <div class="row">
+                <div class="col">
+                    <button class="icon ion-camera" onclick="addImgTypes('cam','1024','890','swipper')"></button>
+                </div>
+                <div class="col">
+                    <button class="icon ion-images" onclick="addImgTypes('alb','1024','890','swipper')"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="list no-border padding">
+                    <form id="formDadosBar">
+                        <div class="item label-float radius grey-200">
+                            <label>Qual o Nome do seu estabelecimento ?</label>
+                            <input type="text" id="nomeNewCompany" class="text-black strong">
+                        </div>
+                        <div class="space"></div>
+                        <div class="item label-float radius grey-200">
+                            <label>Qual a Razão Social do seu estabelecimento ?</label>
+                            <input type="text" id="xNomeNewCompany" class="text-black strong">
+                        </div>
+                        <div class="space"></div>
+                        <div class="item label-float radius grey-200">
+                            <label>Qual o CNPJ do seu estabelecimento ?</label>
+                            <input type="tel" id="cnpjNewCompany" class="text-black strong">
+                        </div>
+                        <div class="space"></div>
+                        <div class="item label-float radius grey-200">
+                            <label>Qual o Email para seu estabelecimento ?</label>
+                            <input type="email" id="emailNewCompany" class="text-black strong">
+                        </div>
+                        <div class="space"></div>
+                        <div class="item radius grey-200">
+                            <button type=button class="radius grey-200 full ion-ios-location"
+                                onclick="obter(true)">Preencher Endereço com a localização</button>
+                        </div>
+                        <div class="space"></div>
+                        <div class="row" id="dadosEndCadBarUpdate">
+                            <div class="col-90" style="margin-right: 5px">
+                                <div class="item label-float radius grey-200">
+                                    <label id="labelEnderecoCadBar">Endereço ?</label>
+                                    <input type="text" id="enderecoCadBar" class="text-black strong">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="item label-float radius grey-200">
+                                    <label id="labelNumeroCadBar">Número:</label>
+                                    <input type="number" id="numeroCadBar" class="text-black strong">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                        <div class="item label-float radius border-bottom grey-200">
+                            <label id="labelBairroCadBar">Qual o Bairro do estabelecimento ?</label>
+                            <input type="text" id="bairroCadBar" class="text-black strong" class="text-black strong">
+                        </div>
+                        <div class="space"></div>
+                        <div class="item label-float radius border-bottom grey-200">
+                            <label>Qual Telefone do estabelecimento ?</label>
+                            <input type="text" id="tellNewCompany" class="text-black strong">
+                        </div>
+                        <div class="space"></div>
+                        <div class="item label-float radius grey-200">
+                            <p class="text-small">Selecione os dias que o estabelecimento abre.</p>
+                            <div class="row text-center">
+                                <div class="col-40">
+                                    <p class="text-center text-strong">Dia da
+                                        <br> semana</p>
+                                    <div class="item" onclick="weekCollor('Sunday')">
+                                        <p id="weekDaySundayDadosBar" class="grey-200">Domingo</p>
+                                    </div>
+                                    <div class="item" onclick="weekCollor('Monday')">
+                                        <p id="weekDayMondayDadosBar" class="grey-200">Segunda</p>
+                                    </div>
+                                    <div class="item" onclick="weekCollor('Tuesday')">
+                                        <p id="weekDayTuesdayDadosBar" class="grey-200">Terça</p>
+                                    </div>
+                                    <div class="item" onclick="weekCollor('Wednesday')">
+                                        <p id="weekDayWednesdayDadosBar" class="grey-200">Quarta</p>
+                                    </div>
+                                    <div class="item" onclick="weekCollor('Thursday')">
+                                        <p id="weekDayThursdayDadosBar" class="grey-200">Quinta</p>
+                                    </div>
+                                    <div class="item" onclick="weekCollor('Friday')">
+                                        <p id="weekDayFridayDadosBar" class="grey-200">Sexta</p>
+                                    </div>
+                                    <div class="item" onclick="weekCollor('Saturday')">
+                                        <p id="weekDaySaturdayDadosBar" class="grey-200">Sábado</p>
+                                    </div>
+                                </div>
+                                <div class="col-30">
+                                    <p class="text-strong">Horário de Abertura</p>
+                                    <div class="item" onclick="weekDayTime('Sunday','Open')">
+                                        <p id="weekDaySundayOpenDadosBar"></p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Monday','Open')">
+                                        <p id="weekDayMondayOpenDadosBar"></p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Tuesday','Open')">
+                                        <p id="weekDayTuesdayOpenDadosBar"></p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Wednesday','Open')">
+                                        <p id="weekDayWednesdayOpenDadosBar"></p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Thursday','Open')">
+                                        <p id="weekDayThursdayOpenDadosBar"></p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Friday','Open')">
+                                        <p id="weekDayFridayOpenDadosBar"></p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Saturday','Open')">
+                                        <p id="weekDaySaturdayOpenDadosBar"></p>
+                                    </div>
+                                </div>
+                                <div class="col-30">
+                                    <p class="text-strong">Horário de Fechamento</p>
+                                    <div class="item" onclick="weekDayTime('Sunday','Close')">
+                                        <p id="weekDaySundayCloseDadosBar"> </p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Monday','Close')">
+                                        <p id="weekDayMondayCloseDadosBar"> </p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Tuesday','Close')">
+                                        <p id="weekDayTuesdayCloseDadosBar"> </p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Wednesday','Close')">
+                                        <p id="weekDayWednesdayCloseDadosBar"> </p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Thursday','Close')">
+                                        <p id="weekDayThursdayCloseDadosBar"> </p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Friday','Close')">
+                                        <p id="weekDayFridayCloseDadosBar"> </p>
+                                    </div>
+                                    <div class="item" onclick="weekDayTime('Saturday','Close')">
+                                        <p id="weekDaySaturdayCloseDadosBar"> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                        <div class="item label-float radius border-bottom grey-200">
+                            <label>Usuário para Acesso</label>
+                            <input type="text" id="userCompany" class="text-black strong">
+                        </div>
+                        <div class="space"></div>
+                        <div class="item label-float radius border-bottom grey-200">
+                            <label>Senha atual</label>
+                            <input type="password" id="passwordOldCompany" class="text-black strong">
+                        </div>
+                        <div class="space"></div>
+                        <div class="item label-float radius border-bottom grey-200">
+                            <label>Nova senha</label>
+                            <input type="password" id="passwordNewCompany" class="text-black strong">
+                        </div>
+                    </form>
+                    <div class="item">
+                        <button class="full radius shadow green" onclick="updateDadosBar()">Salvar dados</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

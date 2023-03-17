@@ -1,0 +1,42 @@
+<div id="myFrame"></div>
+<div class="space"></div>
+<div class="list no-border">
+    <div class="item" data="BEERS">
+        <div class="row" id="rowCervejasList">
+            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerPar}'), url('./img/icons/beer_loading.gif'); background-size: 5em, 8em;" 
+                onclick="addItemCart('beer', '${tituloBeerPar}', '${recipientePar}', '${medidaPar}','${imgBeerPar}', '${precoBeerIntPar}', '${precoBeerCentPar}', '${idBeerPar}')" id="${idBeerPar}">
+                <div class="right">
+                    <small class="text-grey" style="margin-bottom: 7em;">
+                        <i class="icon ion-plus-circled text-green" style="font-size: 2em;"></i>
+                    </small>
+                </div>
+                <div class="right" style="display: none;" id="cartButtom${idBeerPar}">
+                    <small class="text-grey" >
+                        <i class="icon ion-ios-cart text-green huge" style="font-size: 2.5em;"></i>
+                    </small>
+                </div>
+                <div class="bottom gradient padding radius">
+                    <p class="text-white">${tituloBeerPar} ${recipientePar} ${medidaPar}</p>
+                    <p id="cervejaPrice">R$ ${precoBeerPar}</p>
+                </div>
+            </div>
+            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerImpar}'), url('./img/icons/beer_loading.gif'); background-size: 5em, 8em;" valid-bind="${tituloBeerImpar}"
+                onclick="addItemCart('beer', '${tituloBeerImpar}', '${recipienteImpar}', '${medidaImpar}','${imgBeerImpar}', '${precoBeerIntImpar}', '${precoBeerCentImpar}', '${idBeerImpar}')" id="${idBeerImpar}">
+                <div class="right" style="display: none;" id="cartButtom${idBeerImpar}">
+                    <small class="text-grey">
+                        <i class="icon ion-ios-cart text-green huge" style="font-size: 2.5em;"></i>
+                    </small>
+                </div>
+                <div class="right">
+                    <small class="text-grey" style="margin-bottom: 7em;">
+                        <i class="icon ion-plus-circled text-green" style="font-size: 2em;"></i>
+                    </small>
+                </div>
+                <div class="bottom gradient padding radius">
+                    <p class="text-white">${tituloBeerImpar} ${recipienteImpar} ${medidaImpar}</p>
+                    <p id="cervejaPrice">R$ ${precoBeerImpar}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

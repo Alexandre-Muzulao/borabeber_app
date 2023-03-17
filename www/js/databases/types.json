@@ -1,0 +1,244 @@
+{
+    "types": [
+        {
+            "type" : "Artesanal",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "89.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "69.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "49.90"
+            }
+        },
+        {
+            "type" : "Cervejas",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "89.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "69.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "49.90"
+            }
+        },
+        {
+            "type" : "Carnes",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "89.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "69.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "49.90"
+            }
+        },
+        {
+            "type" : "Whiskys",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "79.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "49.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "29.90"
+            }
+        },
+        {
+            "type" : "Vodkas",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "79.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "49.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "29.90"
+            }
+        },
+        {
+            "type" : "Vinhos",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "79.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "49.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "29.90"
+            }
+        },
+        {
+            "type" : "Essencias",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "69.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "59.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "39.90"
+            }
+        },
+        {
+            "type" : "Narguilé",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "69.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "59.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "39.90"
+            }
+        },
+        {
+            "type" : "Chopp",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "59.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "49.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "29.90"
+            }
+        },
+        {
+            "type" : "Drinks",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "59.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "49.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "29.90"
+            }
+        },
+        {
+            "type" : "Combos",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "59.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "49.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "29.90"
+            }
+        },
+        {
+            "type" : "Porções",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "59.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "49.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "29.90"
+            }
+        },
+        {
+            "type" : "Espetos",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "39.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "29.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "19.90"
+            }
+        },
+        {
+            "type" : "Hamburguêrs",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "59.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "49.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "29.90"
+            }
+        },
+        {
+            "type" : "Combustível",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "59.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "49.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "29.90"
+            }
+        },
+        {
+            "type" : "Sem Alcool",
+            "subscription0" : {
+                "name" : "Delivery",
+                "price" : "39.90"
+            },            
+            "subscription1" : {
+                "name" : "Explorer",
+                "price" : "29.90"
+            },
+            "subscription2" : {
+                "name" : "Menu",
+                "price" : "19.90"
+            }
+        }
+    ]
+}

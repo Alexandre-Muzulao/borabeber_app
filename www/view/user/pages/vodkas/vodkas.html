@@ -1,0 +1,41 @@
+<div class="space"></div>
+<div class="list no-border">
+    <div class="item" data="VODKA">
+        <div class="row" id="rowVodkasList">
+            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgVodkaPar}'), url('./img/icons/garrafa_loader.gif'); background-size: 14em, 10vh;"
+                onclick="addItemCart('vodka', '${tituloPar}', '${recipientePar}', '${medidaPar}','${imgVodkaPar}', '${precoVodkaIntPar}', '${precoVodkaCentPar}', '${idVodkaPar}')" id="${idVodkaPar}">
+                <div class="right" style="display: none;" id="cartButtom${idVodkaPar}">
+                    <small class="text-grey" style="margin-bottom: 13.7em;">
+                        <i class="icon ion-ios-cart text-green huge" style="font-size: 2.5em;"></i>
+                    </small>
+                </div>
+                <div class="right">
+                    <small class="text-grey" style="margin-bottom: 7em;">
+                        <i class="icon ion-plus-circled text-green" style="font-size: 2em;"></i>
+                    </small>
+                </div>
+                <div class="bottom gradient padding radius">
+                    <p class="text-white">${tituloPar} ${recipientePar} ${medidaPar}</p>
+                    <p id="vodkaPrice">R$ ${precoVodkaPar}</p>
+                </div>
+            </div>
+            <div class="col-55 cover radius margin no-padding" id="vodkaImparValidBind" style="background-image:url('${imgVodkaImpar}'), url('./img/icons/garrafa_loader.gif'); background-size: 14em, 10vh;" valid-bind="${tituloImpar}"
+                onclick="addItemCart('vodka', '${tituloImpar}', '${recipienteImpar}', '${medidaImpar}','${imgVodkaImpar}', '${precoVodkaIntImpar}', '${precoVodkaCentImpar}', '${idVodkaImpar}')" id="${idVodkaImpar}">
+                <div class="right" style="display: none;" id="cartButtom${idVodkaImpar}">
+                    <small class="text-grey" style="margin-bottom: 13.7em;">
+                        <i class="icon ion-ios-cart text-green huge" style="font-size: 2.5em;"></i>
+                    </small>
+                </div>
+                <div class="right">
+                    <small class="text-grey" style="margin-bottom: 7em;">
+                        <i class="icon ion-plus-circled text-green" style="font-size: 2em;"></i>
+                    </small>
+                </div>
+                <div class="bottom gradient padding radius">
+                    <p class="text-white">${tituloImpar} ${recipienteImpar} ${medidaImpar}</p>
+                    <p id="vodkaPrice">R$ ${precoVodkaImpar}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

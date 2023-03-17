@@ -1,0 +1,47 @@
+#rowLeft {
+    margin-right: 0.5em;
+}
+
+#rowLeftCity {
+    margin-right: 0.5em;
+}
+
+#Cep {
+    margin-top: 0.5em;
+}
+
+#Nro {
+    margin-top: 0.5em;
+}
+
+#Logradouro {
+    margin-top: 0.5em;
+    visibility: hidden;
+}
+
+#Bairro {
+    margin-top: 0.5em;
+    visibility: hidden;
+}
+
+#Cidade {
+    margin-top: 0.5em;
+    margin-right: 10em;
+    visibility: hidden;
+}
+
+#Estado {
+    margin-top: 0.5em;
+    visibility: hidden;
+}
+
+#Complemento {
+    margin-top: 0.5em;
+    visibility: hidden;
+}
+
+#Referencia {
+    margin-top: 0.5em;
+    margin-bottom: 4em;
+    visibility: hidden;
+}

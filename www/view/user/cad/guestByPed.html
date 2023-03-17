@@ -1,0 +1,58 @@
+<div class="page">
+    <div class="header black" data="PAGENAME">
+        <h1 class="text-white text-strong align-center">Vamos Beber !!!</h1>
+        <!-- <div class="left">
+            <button class="icon ion-person-add"></button>
+        </div> -->
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        
+    </div>
+    <div id="mainUserMenu"></div>
+    <div class="content has-header grey-900" id="formCreateUser">
+        <div class="popover" id="imgUserOptions">
+            <div class="row">
+                <div class="col">
+                    <button class="icon ion-camera" onclick="addImgTypes('cam','980','1024','user')"></button>
+                </div>
+                <div class="col">
+                    <button class="icon ion-images" onclick="addImgTypes('alb','980','1024','user')"></button>
+                </div>
+            </div>
+        </div>
+        <div class="align-center">
+            <img src="./img/icons/drunk.png" id="imgUser" style="width: 45%; height: 14em; margin-top: 5px;" class="radius">
+            <div class="padding">
+                <h1 class="text-big">Atenção !!!</h1>
+                <p>Caso a página de acompanhamento deste pedido seja fechada, você precisará Logar no App para verificar atualização do Seu Pedido!!</p>
+            </div>
+            <!-- <button class="icon ion-plus-circled text-green text-big" id="btnAddImgUser" onclick="openPopover('imgUserOptions')"></button> -->
+        </div>
+        <div class="list no-border padding">
+            <div class="item label-float radius grey-200">
+                <label>Por qual nome você gosta de ser chamado(a) ?</label>
+                <input type="text" id="nomeGuest">
+            </div>
+            <div class="space"></div>
+            <div class="item label-float radius grey-200">
+                <label>Por gentileza qual seu WhatsApp com DDD ?</label>
+                <input type="tel" id="cellGuest">
+            </div>
+            <div class="space"></div>
+            <div class="item label-float radius grey-200" id="psswdGuest">
+                <label>Digite uma senha para seu login.</label>
+                <input type="password" id="passwordGuest">
+            </div>
+            <div class="space"></div>
+            <div class="item label-float radius grey-200" id="psswdGuestConfirm">
+                <label>Confirme a senha para seu login.</label>
+                <input type="password" id="passwordConfirmGuest">
+            </div>
+            <div class="space"></div>
+            <div class="item" id="btnSendPedGuest">
+                <button class="full radius shadow green" onclick="confirmSendPedido()">Concluir Pedido</button>
+            </div>
+        </div>
+    </div>
+</div>

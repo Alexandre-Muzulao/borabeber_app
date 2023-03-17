@@ -1,0 +1,11 @@
+#checkLoader {
+    z-index: 999; 
+    position: absolute;
+    margin: 12em 4em 0em 3em;
+}
+
+#imgCheckLoader {
+    max-width: none;
+    width: 38em;
+    margin: 0em -9em -0em -9em;
+}

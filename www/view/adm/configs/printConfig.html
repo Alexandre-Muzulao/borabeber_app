@@ -1,0 +1,64 @@
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="align-center">Configurações de Impressão</h1>
+    </div>
+    <div class="content has-header grey-900">
+        <div class="row">
+            <div class="col">
+                <div class="list no-border padding">
+                    <form id="formDadosBar">
+                        <div class="item radius grey-300 text-grey-700">
+                            <p>
+                              Qual tipo de impressora a ser usada ?
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="item">
+                                    <p>Local</p>
+                                    <div class="right">
+                                      <input type="radio" name="user" class="teal">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="item" onclick="getDevices('')">
+                                    <p>Bluetooth</p>
+                                    <div class="right">
+                                      <input type="radio" name="user" class="teal">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+
+                        </div>
+                        <div class="item radius grey-200 padding" id="devicesList">
+                            <select>
+                              <option>Selecione o Dispositivo</option>
+                              <option data="DEVICES">${name}</option>
+                              <!-- <option data="DEVICES" onclick="conectDevice('${address}, ${name}')">${name}</option> -->
+                            </select>
+                        </div>
+                        <div class="space"></div>
+                        <div class="item label-float radius grey-200" id="localPrintName">
+                            <label>Qual o Nome da Impressora a ser usada ?</label>
+                            <input type="text" id="nomeNewCompany" class="text-black strong">
+                        </div>
+                        <!-- <div class="space"></div>
+                        <div class="item label-float radius grey-200">
+                            <label>Qual a Razão Social do seu estabelecimento ?</label>
+                            <input type="text" id="xNomeNewCompany" class="text-black strong">
+                        </div> -->
+                    </form>
+                    <div class="item">
+                        <button class="full radius shadow green" onclick="updatePrintSettings()">Atualizar Dados de Impressão</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

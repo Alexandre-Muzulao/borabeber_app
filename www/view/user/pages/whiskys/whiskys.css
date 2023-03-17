@@ -1,0 +1,12 @@
+#rowWhiskyList {
+    height: 14em;
+}
+
+#whiskyImparValidBind [valid-bind=''] {
+    visibility: hidden;
+    background-size: 13vh;
+}
+
+#whiskyPrice {
+    margin-left: 3em;
+}

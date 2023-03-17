@@ -1,0 +1,103 @@
+<div class="page">
+    <div class="header black">
+        <div class="left">
+            <button class="icon ion-navicon" onclick="openMyMenu()"></button>
+        </div>
+        <div class="right">
+            <button class="icon ion-chevron-left" onclick="backPage()"></button>
+        </div>
+        <h1 class="text-white text-strong align-center">Local de Entrega</h1>
+    </div>
+    <div id="mainUserMenu"></div>
+    <div class="content has-header grey-900 padding">
+        <div class="list no-border">
+            <!-- <div class="item">
+                <button class="full radius grey-700" onclick="openPagamentoRetirada()">Retirar no Disk !</button>
+            </div> -->
+            <div class="row">
+                <div class="col" id="rowLeft">
+                    <div class="item label-float grey-200 radius text-center" id="Cep">
+                        <label id="lbCEP" class="text-red">CEP para entrega ?</label>
+                        <input type="tel" id="cepEntregar" maxlength="8">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="item label-float grey-200 radius text-center" id="Nro">
+                        <label id="lbNro" class="text-red">Número </label>
+                        <input type="number" id="nroEntrega">
+                    </div>
+                </div>
+            </div>
+            <div class="item label-float grey-200 radius text-center" id="Logradouro">
+                <label id="lbLogr">Logradouro para entrega ?</label>
+                <input type="text" id="deliveryLogr">
+            </div>
+            <div class="item label-float grey-200 radius text-center" id="Bairro">
+                <label id="lbBairro">Bairro onde quer que entregue ?</label>
+                <input type="text" id="deliveryBairro">
+            </div>
+            <div class="item label-float grey-200 radius text-center" id="Complemento">
+                <label id="lbComplemento">Complemento ?</label>
+                <input type="text" id="deliveryComplemento">
+            </div>
+            <div class="row">
+                <div class="col" id="rowLeftCity">
+                    <div class="item label-float grey-200 radius text-center" id="Cidade">
+                        <label id="lbCidade">Cidade</label>
+                        <input type="text" id="deliveryCidade">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="item label-float grey-200 radius text-center" id="Estado">
+                        <label id="lbEstado">UF</label>
+                        <input type="text" id="deliveryEstado">
+                    </div>
+                </div>
+            </div>
+            <div class="item label-float grey-200 radius text-center" id="Referencia">
+                <label id="lbReferencia">Descreva um ponto de referência de onde será feita a entrega!</label>
+                <input type="text-area" id="deliveryReferencia">
+            </div>
+        </div>
+    </div>
+    <div class="footer has-content sub-content sub has-header has-sub-header" data="CART">
+        <div class="list no-border" style="margin-top: -0.5em;">
+            <div class="item">
+                <button class="grey-700 radius full" onclick="openPagamentoDelivery()">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <p style="font-size: 20px; margin-left: -20%;">Total: R$</p>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">        
+                                            <p style="margin-left: -20%; font-size: 35px;">${vTotalInt},</p>
+                                        </div>
+                                        <div class="col">
+                                            <p style="margin-left: -93%; font-size: 25px;">${vTotalCent}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <i class="icon ion-cash text-green text-big" style="margin-top: -0.5em; margin-left: -0.8em;"></i>
+                                </div>
+                                <div class="col">
+                                    <p style="margin-right: -1em;">Pagamento</p>
+                                </div>
+                                <div class="col">
+                                    <i class="icon ion-chevron-right text-green text-big" style="margin-top: -0.5em; margin-left: -0.2em;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

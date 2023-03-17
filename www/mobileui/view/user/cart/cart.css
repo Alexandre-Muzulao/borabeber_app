@@ -1,0 +1,39 @@
+#drinkImage {
+    max-width: 3em;
+}
+
+#drinkValue {
+    margin-top: 1em;
+}
+
+#drinkSifra {
+    font-size: 2em;
+}
+
+#drinkValInt {
+    font-size: 4em;
+}
+
+#drinkValFloat  {
+    font-size: 2em;
+}
+
+#drinkOptions {
+    margin-left: 4em;
+}
+
+#cartTrashButton {
+    margin-top: 4em;
+}
+
+#qtdItemList {
+    margin-top: 2.5em;
+}
+
+#qtdCaixas {
+    margin-top: -2em;
+}
+
+#divUnidade {
+    margin-top: 1.5em;
+}

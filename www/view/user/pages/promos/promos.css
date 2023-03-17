@@ -1,0 +1,24 @@
+#drinkImage {
+    max-width: 6em;
+}
+
+/* #drinkValue {
+    margin-top: 3em;
+    margin-left: -2em;
+} */
+
+#drinkSifra {
+    font-size: 2em;
+}
+
+#drinkValInt {
+    font-size: 4em;
+}
+
+#drinkValFloat  {
+    font-size: 2em;
+}
+
+#drinkOptions {
+    margin-left: 7em;
+}
