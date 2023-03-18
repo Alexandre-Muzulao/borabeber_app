@@ -2,9 +2,36 @@
     visibility: hidden;
 }
 
-.btnAddBeerBar {
-    position: fixed;
-    bottom: 22px;
-    right: 0px;
-    margin-right: 15px;
-  }
+#btnAddImgCervejaria {
+  float: right;
+  position: absolute;
+  z-index: 7;
+  margin-top: -2em;
+  margin-left: -1em; 
+}
+
+#btnAddImgTap {
+  float: right;
+  position: absolute;
+  z-index: 7;
+  margin-top: 3em;
+  margin-left: -4em; 
+}
+
+#btnAddTap {
+  float: right;
+  position: absolute;
+  z-index: 7;
+  margin-top: -2em;
+  margin-left: 6em;
+}
+
+/* .popover {
+  top: 5em;
+  right: 2.5em;
+  transform-origin: right top 0px;
+  transform: scale(1);
+  height: 42px;
+  width: 95px;
+  transition: all 200ms ease 0s;
+} */

@@ -4,7 +4,6 @@ stModule11, stModule12, stModule13, stModule14, stModule15, stModule16, stModule
 var moduleOld = '';
 
 function setViewtpProds(module){
-    console.log('Modeule: ', module)
     switch (module) {
         case "TAP Cervejas Artesanais":
             if(!stModule1){
@@ -116,7 +115,7 @@ function setViewtpProds(module){
             }
         break;
     }
-    console.log(module, moduleOld)
+    
     // document.getElementById(`btntab${moduleOld}`).className = 
     // document.getElementById(`btntab${moduleOld}`).className.replace(`/(?:^|/s) btntab${moduleOld}(?!/S)/g`, '' )
     // document.getElementById(`tab${moduleOld}`).className = 
