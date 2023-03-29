@@ -14,7 +14,7 @@
           <div class="list no-border">
               <div class="row">
                   <div class="col-70">
-                      <div class="space"></div>
+                    <h2>Tap #01</h2>
                       <div class="item border-grey-800 border-bottom" style="height: 40px;">
                           <input type="text" class="text-white placeholder-white" placeholder="Cervejaria" id="tapCervejariaName">
                       </div>
@@ -35,7 +35,7 @@
                   <div class="col align-center">
                       <label class="text-small">Cervejaria</label>
                       <img src="img/semImg.jpg" style="width: 100px; height: 100px;" id="cervejariaImg">
-                      <button class="icon ion-plus-circled text-green text-big" id="btnAddImgCervejaria" onclick="openPopover('imgOptionsItensArtesanal')"></button>
+                      <button class="icon ion-plus-circled text-green text-big" id="btnAddImgCervejaria" onclick="openPopover(`imgOptionsItensArtesanal`)"></button>
                       <label class="text-small">Cerveja</label>
                       <img src="img/semImg.jpg" style="width: 100px; height: 100px;" id="cervejaImg">
                       <button class="icon ion-plus-circled text-green text-big" id="btnAddImgTap" onclick="openPopover('imgOptionsItensArtesanal')"></button>
@@ -94,8 +94,10 @@
             </div>
           </div>
       </div>
-      <div class="align-center" id="btnAddItemArtesanal">
-          <button class="radius shadow grey-800 icon ion-plus-circled" onclick="openAddItem('Artesanal')">Adicionar Tap</button>
-      </div>
+      <div id="newTap"></div>
+      
+      <div class="list no-border align-left padding" id="btnAddItemArtesanal">
+        <button class="text-grey-900 white-opacity-90 text-small shadow radius full" onclick="addNewTap()"> <strong>Adicionar Tap</strong></button>
+    </div>
   </div> 
 </div>
