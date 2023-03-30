@@ -1,50 +1,52 @@
-let qtdTap = 0
+let qtdTap, qtdTapSize = 0
 var sizePreces, sizePrecesCache = []
-var htmlTapSize, tapNum = ''
-var tapNum = ""
 
 function addSizeTap (tapNum) {
-  
-  tapNum = tapNum-1
 
-  console.log(tapNum)
-
-  var qtdTapSize = tap[tapNum].tamanhos
-
-  sizePrecesCache.push({
-    "size" : document.getElementById('tapTamanho' + qtdTapSize).value,
-    "price" : document.getElementById('tapPreco' + qtdTapSize).value
-  })
+  var size = document.getElementById(`tap${tapNum}Tamanho0`).value
+  var price = document.getElementById(`tap${tapNum}Preco0`).value
   
-  qtdTapSize++
+  if (size != "" || price != ""){  
+    var htmlTapSize = ''
+    tapNum = tapNum-1  
 
-  htmlTapSize += '<div class="row" id="tapSize' + qtdTapSize + '">'
-  htmlTapSize += '    <div class="col">'
-  htmlTapSize += '        <div class="row">'
-  htmlTapSize += '            <div class="col" style="margin-right: 5%; width: 84%">'
-  htmlTapSize += '                <div class="item label-fixed border-grey-800 border-bottom" style="height: 50px;">'
-  htmlTapSize += '                    <input type="number" class="text-white placeholder-white" placeholder="Tamanho" id="tapTamanho' + qtdTapSize + '">'
-  htmlTapSize += '                    <label style="margin-right: -65px;">mL</label>'
-  htmlTapSize += '                </div>'
-  htmlTapSize += '            </div>'
-  htmlTapSize += '            <div class="col">'
-  htmlTapSize += '                <div class="item label-fixed border-grey-800 border-bottom" style="height: 50px;">'
-  htmlTapSize += '                    <label style="margin-right: -65px; margin-top: 2px;">R$</label>'
-  htmlTapSize += '                    <input type="number" step="0,00" class="text-white placeholder-white" placeholder="Preço" id="tapPreco' + qtdTapSize + '">'
-  htmlTapSize += '                </div>'
-  htmlTapSize += '            </div>'
-  htmlTapSize += '        </div>'
-  htmlTapSize += '    </div>'
-  htmlTapSize += '    <div class="col" style="margin-top: 3%;">'
-  htmlTapSize += '        <button class="icon ion-minus-circled text-red" id="btnAddRemTap" onclick="excludeSizeTap(' + qtdTapSize + ')"></button>'
-  htmlTapSize += '    </div>'
-  htmlTapSize += '</div>'
-  
-  document.getElementById(`tapSize${tapNum}`).innerHTML = htmlTapSize
-  
-  for (var i = 0; i <= qtdTapSize-1; i++){
-    document.getElementById('tapTamanho' + (i).toString()).value = sizePrecesCache[i].size
-    document.getElementById('tapPreco' + (i).toString()).value = sizePrecesCache[i].price
+    tap[tapNum].sizes.push({
+      "size" : document.getElementById(`tap${tapNum + 1}Tamanho${tap[tapNum].sizes.length}`).value,
+      "price" : document.getElementById(`tap${tapNum + 1}Preco${tap[tapNum].sizes.length}`).value
+    })
+    console.log('Depois do Push', tap[tapNum].sizes.length)
+
+    htmlTapSize += `<div class="row" id="tap${tapNum + 1}Size${tap[tapNum].sizes.length}'">`
+    htmlTapSize += '    <div class="col">'
+    htmlTapSize += '        <div class="row">'
+    htmlTapSize += '            <div class="col" style="margin-right: 5%; width: 84%">'
+    htmlTapSize += '                <div class="item label-fixed border-grey-800 border-bottom" style="height: 50px;">'
+    htmlTapSize += `                    <input type="number" class="text-white placeholder-white" placeholder="Tamanho" id="tap${tapNum + 1}Tamanho${tap[tapNum].sizes.length}">`
+    htmlTapSize += '                    <label style="margin-right: -65px;">mL</label>'
+    htmlTapSize += '                </div>'
+    htmlTapSize += '            </div>'
+    htmlTapSize += '            <div class="col">'
+    htmlTapSize += '                <div class="item label-fixed border-grey-800 border-bottom" style="height: 50px;">'
+    htmlTapSize += '                    <label style="margin-right: -65px; margin-top: 2px;">R$</label>'
+    htmlTapSize += `                    <input type="number" step="0,00" class="text-white placeholder-white" placeholder="Preço" id="tap${tapNum + 1}Preco${tap[tapNum].sizes.length}">`
+    htmlTapSize += '                </div>'
+    htmlTapSize += '            </div>'
+    htmlTapSize += '        </div>'
+    htmlTapSize += '    </div>'
+    htmlTapSize += '    <div class="col" style="margin-top: 3%;">'
+    htmlTapSize += `        <button class="icon ion-minus-circled text-red" id="btnAddRemTap" onclick="excludeTapSize(${tap[tapNum].sizes.length})"></button>`
+    htmlTapSize += '    </div>'
+    htmlTapSize += '</div>'
+    htmlTapSize += `<div id="tap${tapNum + 1}Size${tap[tapNum].sizes.length + 1}"></div>`
+    
+    document.getElementById(`tap${tapNum + 1}Size${tap[tapNum].sizes.length}`).innerHTML = htmlTapSize
+    
+    // for (var i = 0; i <= qtdTapSize-1; i++){
+    //   document.getElementById('tapTamanho' + (i).toString()).value = sizePrecesCache[i].size
+    //   document.getElementById('tapPreco' + (i).toString()).value = sizePrecesCache[i].price
+    // }
+  } else {
+    toastCender('Inclua 1 medida e um valor!')
   }
 }
 
@@ -63,11 +65,11 @@ function checkTaps (){
   console.log(sizePreces)
 }
 
-function excludeSizeTap (tapN) {
+function excludeTapSize (tapN, sizeN) {
   qtdTapSize--
-  var element = document.getElementById(`tapSize${tapN}`)
+  var element = document.getElementById(`tap${tapN}Size${sizeN}`)
   element.parentNode.removeChild(element)
-  htmlTapSize = document.getElementById('tapSize').innerHTML
+  htmlTapSize = document.getElementById('`tap${tapN}Size${sizeN}`').innerHTML
   sizePreces.splice(tapN, 1)
 }
 
