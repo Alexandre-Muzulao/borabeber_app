@@ -1,7 +1,30 @@
 let htmlNewTap = ''
-let qtdTap = 1
+let tap = []
 
 function addNewTap(){
+
+  tap.push({
+    "cervejaria" : "",
+    "imgcervejaria" : "",
+    "cerveja" : "",
+    "imgcerveja" : "",
+    "Estilo" : "",
+    "Origem" : "",
+    "Historia" : "",
+    "abv" : "",
+    "ibu" : "",
+    "tamanhos" : 
+    [
+      {"1" : 1.00},
+      {"1" : 1.00},
+      {"1" : 1.00},
+      {"1" : 1.00},
+      {"1" : 1.00}
+    
+    ]
+  })
+
+  console.log(tap.tamanhos)
 
   qtdTap++
 
@@ -9,7 +32,7 @@ function addNewTap(){
   htmlNewTap += '          <div class="list no-border">'
   htmlNewTap += '              <div class="row">'
   htmlNewTap += '                  <div class="col-70">'
-  htmlNewTap += `                    <h2>Tap #0${qtdTap}</h2>`
+  htmlNewTap += `                    <h2>Tap #${qtdTap}</h2>`
   htmlNewTap += '                      <div class="item border-grey-800 border-bottom" style="height: 40px;">'
   htmlNewTap += `                          <input type="text" class="text-white placeholder-white" placeholder="Cervejaria" id='tapCervejariaName${qtdTap}''>`
   htmlNewTap += '                      </div>'
@@ -56,7 +79,7 @@ function addNewTap(){
   htmlNewTap += '                        <div class="col" style="margin-right: 5%; width: 84%">'
   htmlNewTap += '                            <div class="item label-fixed border-grey-800 border-bottom"'
   htmlNewTap += '                                style="height: 50px;">'
-  htmlNewTap += `                                <input type="number" class="text-white placeholder-white" placeholder="Tamanho" id='tapTamanho0${qtdTap}'>`
+  htmlNewTap += `                                <input type="number" class="text-white placeholder-white" placeholder="Tamanho" id='tapTamanho${qtdTap}'>`
   htmlNewTap += '                                <label style="margin-right: -4em;">mL</label>'
   htmlNewTap += '                            </div>'
   htmlNewTap += '                        </div>'
@@ -64,16 +87,18 @@ function addNewTap(){
   htmlNewTap += '                            <div class="item label-fixed border-grey-800 border-bottom"'
   htmlNewTap += '                                style="height: 50px;">'
   htmlNewTap += '                                <label style="margin-right: -4em; margin-top: 2px;">R$</label>'
-  htmlNewTap += `                                <input type="number" step="0,00" class="text-white placeholder-white" placeholder="Preço" id='tapPreco0${qtdTap}'>`
+  htmlNewTap += `                                <input type="number" step="0,00" class="text-white placeholder-white" placeholder="Preço" id='tapPreco${qtdTap}'>`
   htmlNewTap += '                            </div>'
   htmlNewTap += '                        </div>'
   htmlNewTap += '                    </div>'
   htmlNewTap += '                </div>'
   htmlNewTap += '                <div class="col" style="margin-top: 14%;">'
-  htmlNewTap += '                    <button class="icon ion-plus-circled text-green" id=`btnAddRemTap${qtdTap}` onclick="addSizeTap()"></button>'
+  htmlNewTap += `                    <button class="icon ion-plus-circled text-green" id='btnAddRemTap${qtdTap}' onclick='addSizeTap(${qtdTap})'></button>`
   htmlNewTap += '                </div>'
   htmlNewTap += '            </div>'
-  htmlNewTap += '            <div id="tapSize"></div>'
+
+  htmlNewTap += `            <div id="tapSize${qtdTap}"></div>`
+
   htmlNewTap += '            <div class="space"></div>'
   htmlNewTap += '            <div class="row padding">'
   htmlNewTap += '                <div class="col">'

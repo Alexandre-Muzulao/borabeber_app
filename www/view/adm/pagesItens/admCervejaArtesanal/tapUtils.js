@@ -1,10 +1,15 @@
-var qtdTapSize = 0
-var sizePrecesCache = []
-var sizePreces = []
-var htmlTapSize = ''
-var tap = []
+let qtdTap = 0
+var sizePreces, sizePrecesCache = []
+var htmlTapSize, tapNum = ''
+var tapNum = ""
 
-function addSizeTap () {
+function addSizeTap (tapNum) {
+  
+  tapNum = tapNum-1
+
+  console.log(tapNum)
+
+  var qtdTapSize = tap[tapNum].tamanhos
 
   sizePrecesCache.push({
     "size" : document.getElementById('tapTamanho' + qtdTapSize).value,
@@ -34,8 +39,8 @@ function addSizeTap () {
   htmlTapSize += '        <button class="icon ion-minus-circled text-red" id="btnAddRemTap" onclick="excludeSizeTap(' + qtdTapSize + ')"></button>'
   htmlTapSize += '    </div>'
   htmlTapSize += '</div>'
-
-  document.getElementById('tapSize').innerHTML = htmlTapSize
+  
+  document.getElementById(`tapSize${tapNum}`).innerHTML = htmlTapSize
   
   for (var i = 0; i <= qtdTapSize-1; i++){
     document.getElementById('tapTamanho' + (i).toString()).value = sizePrecesCache[i].size
