@@ -18,6 +18,14 @@ function toastCender(msg){
     })
 }
 
+function toastBottom(msg){
+    openToast({
+        message: msg,
+        position: 'bottom',
+        class: 'full text-big text-strong black-opacity-70 text-white radius',
+    })
+}
+
 text_truncate = function(str, length, ending) {
     if (length == null) {
       length = 100;

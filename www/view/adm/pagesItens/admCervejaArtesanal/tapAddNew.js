@@ -1,28 +1,29 @@
-let htmlNewTap = ''
 let tap = []
 
 function addNewTap(){
+  
+  let htmlNewTap = ''
 
   tap.push({
-    "cervejaria" : "",
-    "imgcervejaria" : "",
-    "cerveja" : "",
-    "imgcerveja" : "",
-    "Estilo" : "",
-    "Origem" : "",
-    "Historia" : "",
-    "abv" : "",
-    "ibu" : "",
+    "cervejariaImg" : "",
+    "cervejaImg" : "",
+    "tapCervejariaName" : "",
+    "tapTitle" : "",
+    "tapStyle" : "",
+    "tapOrigin" : "",
+    "tapHistory" : "",
+    "tapABV" : "",
+    "tapIBU" : "",
     sizes : []
   })
 
-  htmlNewTap += '<div class="row">'
+  htmlNewTap += `<div class="row" id="tap${tap.length}">`
   htmlNewTap += '          <div class="list no-border">'
   htmlNewTap += '              <div class="row">'
   htmlNewTap += '                  <div class="col-70">'
   htmlNewTap += `                    <h2>Tap #${tap.length}</h2>`
   htmlNewTap += '                      <div class="item border-grey-800 border-bottom" style="height: 40px;">'
-  htmlNewTap += `                          <input type="text" class="text-white placeholder-white" placeholder="Cervejaria" id='tapCervejariaName${tap.length}''>`
+  htmlNewTap += `                          <input type="text" class="text-white placeholder-white" placeholder="Cervejaria" id='tapCervejariaName${tap.length}'>`
   htmlNewTap += '                      </div>'
   htmlNewTap += '                      <div class="item border-grey-800 border-bottom" style="height: 40px;">'
   htmlNewTap += `                          <input type="text" class="text-white placeholder-white" placeholder="Nome da Cerveja" id='tapTitle${tap.length}'>`
@@ -90,18 +91,21 @@ function addNewTap(){
   htmlNewTap += '            <div class="space"></div>'
   htmlNewTap += '            <div class="row padding">'
   htmlNewTap += '                <div class="col">'
-  htmlNewTap += '                    <button class="radius shadow icon full ion-plus-circled text-green grey-800" onclick="saveTap(`tap`)">Salvar</button>'
+  htmlNewTap += `                    <button class="radius shadow icon full ion-plus-circled text-green grey-800" onclick='saveTap(${tap.length})'>Salvar</button>`
   htmlNewTap += '                </div>'
   htmlNewTap += '                <div class="col"></div>'
   htmlNewTap += '                <div class="col">'
-  htmlNewTap += '                    <button class="radius shadow icon full ion-trash-a text-red grey-800" onclick="cancelAddItem(``)">Deletar</button>'
+  htmlNewTap += `                    <button class="radius shadow icon full ion-trash-a text-red grey-800" onclick='cancelAddItem(${tap.length})'>Deletar</button>`
   htmlNewTap += '                </div>'
   htmlNewTap += '            </div>'
   htmlNewTap += '          </div>'
   htmlNewTap += '      </div>'
+  htmlNewTap += `      <div id="tapNum${tap.length + 1}"></div>`
 
-  document.getElementById('newTap').innerHTML = htmlNewTap
+  if (tap.length >= 2){    
+    setIdVisible('saveAllTaps')
+  }
 
-  console.log('tap: ', tap)
+  document.getElementById(`tapNum${tap.length}`).innerHTML = htmlNewTap
 
 }

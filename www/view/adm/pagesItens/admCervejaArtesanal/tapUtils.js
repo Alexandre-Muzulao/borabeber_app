@@ -1,20 +1,15 @@
-let qtdTap, qtdTapSize = 0
-var sizePreces, sizePrecesCache = []
-
 function addSizeTap (tapNum) {
 
-  var size = document.getElementById(`tap${tapNum}Tamanho0`).value
-  var price = document.getElementById(`tap${tapNum}Preco0`).value
+  var checkresult = checkSizePriceComplete(tapNum)
+  var htmlTapSize = ''  
   
-  if (size != "" || price != ""){  
-    var htmlTapSize = ''
+  if (checkresult.status == true){
     tapNum = tapNum-1  
 
     tap[tapNum].sizes.push({
       "size" : document.getElementById(`tap${tapNum + 1}Tamanho${tap[tapNum].sizes.length}`).value,
       "price" : document.getElementById(`tap${tapNum + 1}Preco${tap[tapNum].sizes.length}`).value
     })
-    console.log('Depois do Push', tap[tapNum].sizes.length)
 
     htmlTapSize += `<div class="row" id="tap${tapNum + 1}Size${tap[tapNum].sizes.length}'">`
     htmlTapSize += '    <div class="col">'
@@ -41,69 +36,115 @@ function addSizeTap (tapNum) {
     
     document.getElementById(`tap${tapNum + 1}Size${tap[tapNum].sizes.length}`).innerHTML = htmlTapSize
     
-    // for (var i = 0; i <= qtdTapSize-1; i++){
-    //   document.getElementById('tapTamanho' + (i).toString()).value = sizePrecesCache[i].size
-    //   document.getElementById('tapPreco' + (i).toString()).value = sizePrecesCache[i].price
-    // }
   } else {
-    toastCender('Inclua 1 medida e um valor!')
+    toastCender(checkresult.msg)
   }
 }
 
+function checkSizePriceComplete(tapNum){
 
-function checkTaps (){
-  if (sizePreces.length == qtdTapSize+1){
-    // Procurar o que está diferente e modificar no array
+  var size = document.getElementById(`tap${tapNum}Tamanho${tap[tapNum-1].sizes.length}`).value
+  var price = document.getElementById(`tap${tapNum}Preco${tap[tapNum-1].sizes.length}`).value  
+
+  if (size == ""){
+    return {status: false, msg: "Informe o Tamanho(mL) antes de incluir a próxioma."}
+  } else if (price == ""){
+    return {status: false, msg: "Informe o Preço(R$) antes de incluir a próxioma."}
   } else {
-    for (var i = 0; i <= qtdTapSize; i++){
-      sizePreces.push({
-        "size" : document.getElementById('tapTamanho' + i).value,
-        "price" : document.getElementById('tapPreco' + i).value
-      })
-    }
+    return {status: true}
   }
-  console.log(sizePreces)
 }
 
-function excludeTapSize (tapN, sizeN) {
+function setLastSizeTap(tapNum){  
+  var size = document.getElementById(`tap${tapNum}Tamanho${tap[tapNum-1].sizes.length}`).value
+  var price = document.getElementById(`tap${tapNum}Preco${tap[tapNum-1].sizes.length}`).value
+
+  if (size == ""){
+    toastCender(`Informe o Tamanho(mL) da Tap ${tapNum}`)
+  } else if (price == ""){
+    toastCender(`Informe o Valor(R$) da Tap ${tapNum}`)
+  } else {
+    tap[tapNum-1].sizes.push({
+      "size" : size,
+      "price" : price
+    })
+  }
+}
+
+function saveTap(tapNum){
+
+  console.log(COMPANY._id)
+
+  tap[tapNum-1].cervejariaImg = ''
+  tap[tapNum-1].cervejaImg = ''
+  tap[tapNum-1].tapCervejariaName = document.getElementById(`tapCervejariaName${tapNum}`).value
+  tap[tapNum-1].tapTitle = document.getElementById(`tapTitle${tapNum}`).value
+  tap[tapNum-1].tapStyle = document.getElementById(`tapStyle${tapNum}`).value
+  tap[tapNum-1].tapOrigin = document.getElementById(`tapOrigin${tapNum}`).value
+  tap[tapNum-1].tapHistory = document.getElementById(`tapHistory${tapNum}`).value
+  tap[tapNum-1].tapABV = document.getElementById(`tapABV${tapNum}`).value
+  tap[tapNum-1].tapIBU = document.getElementById(`tapIBU${tapNum}`).value
+  setLastSizeTap(tapNum)
+
+  showLoader("alertBoraBeberLoader", 'Salvando Cerveja Artesanal')
+
+  MobileUI.ajax.post(url + '/posttap')
+    .set({_id : COMPANY._id})
+    .send(tap)
+    .then(function (res){
+      console.log(res)
+      setIdHidden('customImgAlert')
+  }).catch(function (err){
+    console.log(err)
+    setIdHidden('customImgAlert')
+    alert('Ops, tive um probleminha para salvar seu item! Tente novamente por gentileza.')
+  })
+}
+
+function saveAllTaps(){
+
+  tap.map(function(tap, i){
+    tap.cervejariaImg = document.getElementById(`cervejariaImg${i+1}`).src
+    tap.cervejaImg = document.getElementById(`cervejaImg${i+1}`).src
+    tap.tapCervejariaName = document.getElementById(`tapCervejariaName${i+1}`).value
+    tap.tapTitle = document.getElementById(`tapTitle${i+1}`).value
+    tap.tapStyle = document.getElementById(`tapStyle${i+1}`).value
+    tap.tapOrigin = document.getElementById(`tapOrigin${i+1}`).value
+    tap.tapHistory = document.getElementById(`tapHistory${i+1}`).value
+    tap.tapABV = document.getElementById(`tapABV${i+1}`).value
+    tap.tapIBU = document.getElementById(`tapIBU${i+1}`).value
+
+    setLastSizeTap(i+1)
+  })
+
+  showLoader("alertBoraBeberLoader", 'Salvando Cervejas Artesanais')
+
+  MobileUI.ajax.post(url + '/posttap')
+    .set({_id : COMPANY._id})
+    .send(tap)
+    .then(function (res){
+      console.log(res)
+      setIdHidden('customImgAlert')
+  }).catch(function (err){
+    console.log(err)
+    setIdHidden('customImgAlert')
+    alert('Ops, tive um probleminha para salvar seu item! Tente novamente por gentileza.')
+  })
+  
+}
+
+function delAllTaps(){
+  
+}
+
+
+
+function dellizeTap (tapN, sizeN) {
   qtdTapSize--
   var element = document.getElementById(`tap${tapN}Size${sizeN}`)
   element.parentNode.removeChild(element)
   htmlTapSize = document.getElementById('`tap${tapN}Size${sizeN}`').innerHTML
   sizePreces.splice(tapN, 1)
-}
-
-
-function saveTap(){
-  checkTaps()
-  tap.nomeCervejaria = document.getElementById('tapCervejariaName').value
-  tap.imgCervejaria = ''
-  tap.imgCervejaria = ''
-  tap.nome = document.getElementById('tapTitle').value
-  tap.history = document.getElementById('tapHistory').value
-  tap.abv = document.getElementById('tapABV').value
-  tap.ibu = document.getElementById('tapIBU').value
-  tap.sizePreces = sizePreces
-  console.log(tap)
-}
-
-function removeTap(){
-
-}
-
-function openAddItem(tpItem){
-    switch (tpItem) {
-        case 'beer':
-            MobileUI.show('addItemBoxBeer')
-            MobileUI.hide('btnAddItemBeer')    
-        break;
-        case 'tap':
-            MobileUI.show('addItemTap')
-            // MobileUI.hide('btnAddItemPorcao')
-        break;    
-        default:
-            break;
-    }
 }
 
 function cancelAddItem(tpItem){
