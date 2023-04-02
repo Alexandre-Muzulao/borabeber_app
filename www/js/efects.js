@@ -10,7 +10,7 @@ function setIdHidden(id){
     element.display = 'none'
 }
 
-function toastCender(msg){
+function toastCenter(msg){
     openToast({
         message: msg,
         position: 'center',

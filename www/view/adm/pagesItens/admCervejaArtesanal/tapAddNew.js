@@ -108,4 +108,8 @@ function addNewTap(){
 
   document.getElementById(`tapNum${tap.length}`).innerHTML = htmlNewTap
 
+  tap[0].sizes.push({
+    "size" : '',
+    "price" : ''
+  })
 }
