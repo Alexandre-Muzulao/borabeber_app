@@ -46,6 +46,9 @@ function getUserCompany(loginData){
                     case 'user':
                         
                     break
+                    case 'deliverymen':
+                        
+                    break
                 }
             }
         })

@@ -32,7 +32,7 @@ function addNewTap(){
   htmlNewTap += `                          <input type="text" class="text-white placeholder-white" placeholder="Estilo" id='tapStyle${tap.length}'>`
   htmlNewTap += '                      </div>'
   htmlNewTap += '                      <div class="item border-grey-800 border-bottom" style="height: 40px;">'
-  htmlNewTap += `                          <input type="text" class="text-white placeholder-white" placeholder="Origem" id='tapOrigin${tap.length}'>`
+  htmlNewTap += `                          <input type="text" class="text-white placeholder-white" placeholder="Cidade - UF" id='tapOrigin${tap.length}'>`
   htmlNewTap += '                      </div>'
   htmlNewTap += '                      <div class="item border-grey-800 border-bottom" style="height: 40px;">'
   htmlNewTap += `                          <input type="text" class="text-white placeholder-white" placeholder="Historia da Cerveja" id='tapHistory${tap.length}'>`
@@ -108,7 +108,7 @@ function addNewTap(){
 
   document.getElementById(`tapNum${tap.length}`).innerHTML = htmlNewTap
 
-  tap[0].sizes.push({
+  tap[tap.length-1].sizes.push({
     "size" : '',
     "price" : ''
   })

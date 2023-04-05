@@ -9,9 +9,11 @@ function getCompanyData(){
         ADMBEERS = res.body.data.dadosBeer
         VODKA = res.body.data.vodkas
         WHISKY = res.body.data.whiskys
+        ARTESANAIS = res.body.data.tap
         parseAdmBeer(ADMBEERS)
         parseAdmVodka(VODKA)
         parseAdmWhisky(WHISKY)
+        loadTaps(ARTESANAIS)
         openPage('./view/adm/main/main', function(){
             setTimeout(function(){
                 setViewtpProds(res.body.data.tpProds[0].subscription)
@@ -26,11 +28,4 @@ function getCompanyData(){
 function productsOpenPage(){
     showLoader("alertBoraBeberLoader", 'Aguarde por gentileza, <br> trazendo os dados da sua empresa!')
     getCompanyData()
-    // openPage('./view/adm/main/main', function(){
-            
-    //     setTimeout(function(){
-    //         openAdmTabs('tabAdmCervejas')
-    //     },300)
-    // })
-    // setIdHidden('customImgAlert')
 }

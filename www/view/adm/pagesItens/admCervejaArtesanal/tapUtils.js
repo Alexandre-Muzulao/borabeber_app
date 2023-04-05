@@ -25,6 +25,9 @@ function addSizeTap (tapNum) {
 
   htmlTapSize += `<div id="tap${tapNum}Size${tap[tapNum-1].sizes.length + 1}"></div>`
 
+  console.log(`tap${tapNum}Size${tap[tapNum-1].sizes.length}`) //tap2Size0
+  console.log(tap[tapNum-1].sizes) //tap2Size0
+
   document.getElementById(`tap${tapNum}Size${tap[tapNum-1].sizes.length}`).innerHTML = htmlTapSize
 
   tap[tapNum-1].sizes.push({
@@ -101,9 +104,10 @@ function dellSizeTap (tapNum, sizeNum) {
   tap[tapNum-1].sizes.splice(sizeNum, 1)
 }
   
-function updateAllSizeTap(tapNum){
+function updateAllSizeTap(tapNum){  
   let auth = {'auth': true, msg: `Todos os itens estão corretos`}
   tap[tapNum-1].sizes.map(function(sizes, i){
+    //Precisa tratar quando o usuário excluir uma tap.
     sizes.size = document.getElementById(`tap${tapNum}Tamanho${i}`).value
     if (sizes.size == ''){
       auth = {'auth': false, msg: `O ${i+1}º Tamanho mL está vazio.`}
