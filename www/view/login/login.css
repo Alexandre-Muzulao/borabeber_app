@@ -27,7 +27,7 @@
 
 .loginIconPizza {
     max-width: 35%;
-    margin-left: 20%;
+    margin-left: 16%;
     opacity: 0.5;
     transform: rotate(25deg);
 
@@ -67,7 +67,7 @@
 .loginIconBebidas {
     max-width: 35%;
     opacity: 0.5;
-    margin-left: 25%;
+    margin-left: 20%;
     transform: rotate(5deg);
 
     position: relative;

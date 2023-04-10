@@ -9,11 +9,10 @@ function getCompanyData(){
         ADMBEERS = res.body.data.dadosBeer
         VODKA = res.body.data.vodkas
         WHISKY = res.body.data.whiskys
-        ARTESANAIS = res.body.data.tap
+        TAP = res.body.data.tap
         parseAdmBeer(ADMBEERS)
         parseAdmVodka(VODKA)
         parseAdmWhisky(WHISKY)
-        loadTaps(ARTESANAIS)
         openPage('./view/adm/main/main', function(){
             setTimeout(function(){
                 setViewtpProds(res.body.data.tpProds[0].subscription)
