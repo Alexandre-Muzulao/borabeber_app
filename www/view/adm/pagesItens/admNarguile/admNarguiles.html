@@ -1,6 +1,6 @@
 <div class="list no-border">
     <div class="item">
-        <button class="radius shadow full grey-800 text-center" onclick="getAllBeers()">
+        <button class="radius shadow full grey-800 text-center" onclick="getAllNarguiles()">
             <p><i class="text-strong white icon ion-plus-circled text-big"></i>Adicionar Narguiles</p>
         </button>
     </div>
@@ -8,39 +8,39 @@
         <input type="text" class="text-white placeholder-white" placeholder="Buscar Rótulo, Recipiente ou Tamanho">
     </div>
     <div id="mainAdmMenu"></div>
-    <div class="item" data="ADMBEERS">
+    <div class="item" data="ADMNarguileS">
         <div class="row" style="height: 270px;">
-            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerPar}'); background-size: 12vh;" valid-bind="${precoBeerPar}">
+            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgNarguilePar}'); background-size: 12vh;" valid-bind="${precoNarguilePar}">
                 <div class="bottom gradient padding radius">
-                    <p class="text-white">${tituloBeerPar} ${recipientePar} ${medidaPar}</p>
-                    <h1 class="text-white" onclick="updateQtdItemBeer('${idBeerPar}')" id="h1QtdBeer${idBeerPar}">Qtd.: ${qtdBeerPar}</h1>
-                    <div id="input${idBeerPar}" class="row" style="margin-top: 5px;"></div>
-                    <h1 class="text-white" onclick="updateValueItemBeer('${idBeerPar}')" id="h1PriceBeer${idBeerPar}">R$ ${precoBeerPar}</h1>
-                    <div id="input${idBeerPar}" class="row" style="margin-top: 5px;"></div>
+                    <p class="text-white">${tituloNarguilePar} ${recipientePar} ${medidaPar}</p>
+                    <h1 class="text-white" onclick="updateQtdItemNarguile('${idNarguilePar}')" id="h1QtdNarguile${idNarguilePar}">Qtd.: ${qtdNarguilePar}</h1>
+                    <div id="input${idNarguilePar}" class="row" style="margin-top: 5px;"></div>
+                    <h1 class="text-white" onclick="updateValueItemNarguile('${idNarguilePar}')" id="h1PriceNarguile${idNarguilePar}">R$ ${precoNarguilePar}</h1>
+                    <div id="input${idNarguilePar}" class="row" style="margin-top: 5px;"></div>
                 </div>
-                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteBeer{idBeerPar}">
-                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idBeerPar}" onclick="dellItemBeer('${idBeerPar}', '${tituloBeerPar} de ${recipientePar} ${medidaPar}', '${precoBeerPar}')"></button>
+                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteNarguile{idNarguilePar}">
+                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idNarguilePar}" onclick="dellItemNarguile('${idNarguilePar}', '${tituloNarguilePar} de ${recipientePar} ${medidaPar}', '${precoNarguilePar}')"></button>
                     <div style="margin-top: 7%;">
-                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idBeerPar}" onclick="saveUpdate('${idBeerPar}')" style="display: none;"></button>
-                        <button class="ion-close-round text-big text-red strong" id="btnCancel${idBeerPar}" onclick="cancellUpdate('${idBeerPar}')" style="display: none;"></button>
+                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idNarguilePar}" onclick="saveUpdate('${idNarguilePar}')" style="display: none;"></button>
+                        <button class="ion-close-round text-big text-red strong" id="btnCancel${idNarguilePar}" onclick="cancellUpdate('${idNarguilePar}')" style="display: none;"></button>
                     </div>
                 </div>
             </div>
             <div class="col-55 cover radius margin no-padding"
-                style="background-image:url('${imgBeerImpar}'); background-size: 12vh;"
-                valid-bind="${precoBeerImpar}">
+                style="background-image:url('${imgNarguileImpar}'); background-size: 12vh;"
+                valid-bind="${precoNarguileImpar}">
                 <div class="bottom gradient padding radius">
-                    <p class="text-white">${tituloBeerImpar} ${recipienteImpar} ${medidaImpar}</p>
-                    <h1 class="text-white" onclick="updateQtdItemBeer('${idBeerImpar}')" id="h1QtdBeer${idBeerImpar}">Qtd.: ${qtdBeerImpar}</h1>
-                    <div id="input${idBeerImpar}" class="row" style="margin-top: 5px;"></div>
-                    <h1 class="text-white" onclick="updateValueItemBeer('${idBeerImpar}')" id="h1PriceBeer${idBeerImpar}">R$ ${precoBeerImpar}</h1>
-                    <div id="input${idBeerImpar}" class="row" style="margin-top: 5px;"></div>
+                    <p class="text-white">${tituloNarguileImpar} ${recipienteImpar} ${medidaImpar}</p>
+                    <h1 class="text-white" onclick="updateQtdItemNarguile('${idNarguileImpar}')" id="h1QtdNarguile${idNarguileImpar}">Qtd.: ${qtdNarguileImpar}</h1>
+                    <div id="input${idNarguileImpar}" class="row" style="margin-top: 5px;"></div>
+                    <h1 class="text-white" onclick="updateValueItemNarguile('${idNarguileImpar}')" id="h1PriceNarguile${idNarguileImpar}">R$ ${precoNarguileImpar}</h1>
+                    <div id="input${idNarguileImpar}" class="row" style="margin-top: 5px;"></div>
                 </div>
-                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteBeer{idBeerImpar}">
-                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idBeerImpar}" onclick="dellItemBeer('${idBeerImpar}', '${tituloBeerImpar} de ${recipienteImpar} ${medidaImpar}', '${precoBeerImpar}')"></button>
+                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteNarguile{idNarguileImpar}">
+                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idNarguileImpar}" onclick="dellItemNarguile('${idNarguileImpar}', '${tituloNarguileImpar} de ${recipienteImpar} ${medidaImpar}', '${precoNarguileImpar}')"></button>
                     <div style="margin-top: 7%;">
-                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idBeerImpar}" onclick="saveUpdate('${idBeerImpar}')" style="display: none;"></button>
-                        <button class="ion-close-round text-big text-red strong" id="btnCancel${idBeerImpar}" onclick="cancellUpdate('${idBeerImpar}')" style="display: none;"></button>
+                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idNarguileImpar}" onclick="saveUpdate('${idNarguileImpar}')" style="display: none;"></button>
+                        <button class="ion-close-round text-big text-red strong" id="btnCancel${idNarguileImpar}" onclick="cancellUpdate('${idNarguileImpar}')" style="display: none;"></button>
                     </div>
                 </div>
             </div>

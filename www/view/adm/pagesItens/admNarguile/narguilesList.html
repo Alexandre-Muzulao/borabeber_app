@@ -1,7 +1,7 @@
 <div class="page">
     <div class="header grey-900" data="USER">
         <div class="left">
-            <button class="icon ion-navicon" onclick="openMenu('menuBeers')"></button>
+            <button class="icon ion-navicon" onclick="openMenu('menuNarguiles')"></button>
         </div>
         <div class="right">
             <button class="icon ion-chevron-left" onclick="backPage()"></button>
@@ -9,45 +9,45 @@
         <h1 id="nameCompany">${nomeCompany}</h1>
     </div>
     <div class="header sub grey-800">
-        <!-- <input class="text-white placeholder-white" type="text" id="marcaBeer" placeholder="Buscar Rótulo, Recipiente ou Tamanho">
-        <button class="small radius grey-200 radius right margin" onclick="getBeers()" id="btnBuscarRotulo">Buscar</button> -->
+        <!-- <input class="text-white placeholder-white" type="text" id="marcaNarguile" placeholder="Buscar Rótulo, Recipiente ou Tamanho">
+        <button class="small radius grey-200 radius right margin" onclick="getNarguiles()" id="btnBuscarRotulo">Buscar</button> -->
         <div class="list no-border">
             <div class="item icon ion-search icon-left text-big">
-                <input class="text-white placeholder-white" type="text" id="marcaBeer" placeholder="Buscar Rótulo, Recipiente ou Tamanho" 
+                <input class="text-white placeholder-white" type="text" id="marcaNarguile" placeholder="Buscar Rótulo, Recipiente ou Tamanho" 
                 style="max-width: 90%; margin-top: -1em;">
             </div>
         </div>
     </div>
     <div id="mainAdmMenu"></div>
     <div class="content has-header has-sub-header list-add-bebidas-bar">
-        <div class="item" data="ALLBEER" style="height: 300px;">
+        <div class="item" data="ALLNarguile" style="height: 300px;">
             <div class="row" style="height: 270px;">
-                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerPar}'); background-size: 10vh;" onclick="addBeerBar('${idBeerPar}', '${tituloBeerPar}', '${recipientePar}', '${medidaPar}')">
-                    <div class="left" onclick="addBeerBar('${idBeerPar}', '${tituloBeerPar}', '${recipientePar}', '${medidaPar}')">
-                        <input type="checkbox" class="green text-huge" id="${idBeerPar}item">
+                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgNarguilePar}'); background-size: 10vh;" onclick="addNarguileBar('${idNarguilePar}', '${tituloNarguilePar}', '${recipientePar}', '${medidaPar}')">
+                    <div class="left" onclick="addNarguileBar('${idNarguilePar}', '${tituloNarguilePar}', '${recipientePar}', '${medidaPar}')">
+                        <input type="checkbox" class="green text-huge" id="${idNarguilePar}item">
                     </div>
                     <div class="space-huge"></div>
                     <div class="space-big"></div>
                     <div class="space-big"></div>
                     <div class="bottom gradient padding radius">
-                        <h1 class="text-white">${tituloBeerPar} ${recipientePar} ${medidaPar} ${descricaoBeerPar}</h1>
+                        <h1 class="text-white">${tituloNarguilePar} ${recipientePar} ${medidaPar} ${descricaoNarguilePar}</h1>
                     </div>
                 </div>
-                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerImpar}'); background-size: 10vh;" valid-bind="${tituloBeerImpar}"  onclick="addBeerBar('${idBeerImpar}', '${tituloBeerImpar}', '${recipienteImpar}', '${medidaImpar}')">
-                    <div class="left" onclick="addBeerBar('${idBeerImpar}', '${tituloBeerImpar}', '${recipienteImpar}', '${medidaImpar}')">
-                        <input type="checkbox" class="green text-huge" id="${idBeerImpar}item">
+                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgNarguileImpar}'); background-size: 10vh;" valid-bind="${tituloNarguileImpar}"  onclick="addNarguileBar('${idNarguileImpar}', '${tituloNarguileImpar}', '${recipienteImpar}', '${medidaImpar}')">
+                    <div class="left" onclick="addNarguileBar('${idNarguileImpar}', '${tituloNarguileImpar}', '${recipienteImpar}', '${medidaImpar}')">
+                        <input type="checkbox" class="green text-huge" id="${idNarguileImpar}item">
                     </div>
                     <div class="space-huge"></div>
                     <div class="space-big"></div>
                     <div class="space-big"></div>
                     <div class="bottom gradient padding radius">
-                        <h1 class="text-white">${tituloBeerImpar} ${recipienteImpar} ${medidaImpar} ${descricaoBeerImpar}</h1>
+                        <h1 class="text-white">${tituloNarguileImpar} ${recipienteImpar} ${medidaImpar} ${descricaoNarguileImpar}</h1>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="btnAddBeerBar">
-            <button class="icon ion-checkmark-circled strong text-green text-huge" style="font-size: 64px!important;" onclick="saveBeerBar()"></button>
+        <div class="btnAddNarguileBar">
+            <button class="icon ion-checkmark-circled strong text-green text-huge" style="font-size: 64px!important;" onclick="saveNarguileBar()"></button>
         </div>
     </div>
 </div>

@@ -1,17 +1,17 @@
-function getAllBeers(){
+function getAllARTESANAISs(){
     loading('Buscando os cervejas no deposito ...')
-    if (ALLBEER.length == 0){
-        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+    if (ALLARTESANAIS.length == 0){
+        MobileUI.ajax.get(url + '/getARTESANAISs').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
         if(res.body.errorMessage) {
             closeLoading()
             alert(res.body.errorMessage)
         } else {
             closeLoading()
             openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-                beers = []
-                ALLBEER = res.body.data
-                searchBeer(ALLBEER)
-                parseAdmBeer(ALLBEER)
+                ARTESANAISs = []
+                ALLARTESANAIS = res.body.data
+                searchARTESANAIS(ALLARTESANAIS)
+                parseAdmARTESANAIS(ALLARTESANAIS)
             })
         }
         }).catch(function(err) {
@@ -22,59 +22,59 @@ function getAllBeers(){
     } else {
         closeLoading()
         openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-            searchBeer(ALLBEER)
-            // parseAdmBeer(ALLBEER)
+            searchARTESANAIS(ALLARTESANAIS)
+            // parseAdmARTESANAIS(ALLARTESANAIS)
         })
     }
 }
 
-function searchBeer(beers){
-    ALLBEER_OLD = beers
+function searchARTESANAIS(ARTESANAISs){
+    ALLARTESANAIS_OLD = ARTESANAISs
     
     $(document).ready(function(){
-        $("#marcaBeer").keyup(function(){
-            var searchVal = $("#marcaBeer").val()
+        $("#marcaARTESANAIS").keyup(function(){
+            var searchVal = $("#marcaARTESANAIS").val()
             if (searchVal.length > 0){
-                ALLBEER = []
-                for (var i=0 ; i < ALLBEER_OLD.length ; i++)
+                ALLARTESANAIS = []
+                for (var i=0 ; i < ALLARTESANAIS_OLD.length ; i++)
                 {
-                    if (validUndefined(ALLBEER_OLD[i])){
-                        ifBeerExists(ALLBEER_OLD[i], searchVal, i)
-                        // beerPushIfNotExist(ifBeerExists(ALLBEER_OLD[i], searchVal))
+                    if (validUndefined(ALLARTESANAIS_OLD[i])){
+                        ifARTESANAISExists(ALLARTESANAIS_OLD[i], searchVal, i)
+                        // ARTESANAISPushIfNotExist(ifARTESANAISExists(ALLARTESANAIS_OLD[i], searchVal))
                     }
                 }
             } else {
-                ALLBEER = ALLBEER_OLD
+                ALLARTESANAIS = ALLARTESANAIS_OLD
             }
 
         })
     })
 }
 
-function beerPushIfNotExist(beer){
-    for (var i=0; i < ALLBEER; i++){
-        if(beer.tituloBeerPar !== ALLBEER[i].tituloBeerPar){
-            ALLBEER.push(beer)
+function ARTESANAISPushIfNotExist(ARTESANAIS){
+    for (var i=0; i < ALLARTESANAIS; i++){
+        if(ARTESANAIS.tituloARTESANAISPar !== ALLARTESANAIS[i].tituloARTESANAISPar){
+            ALLARTESANAIS.push(ARTESANAIS)
         }
-        if(beer.tituloBeerImpar !== ALLBEER[i].tituloBeerImpar){
-            ALLBEER.push(beer)
+        if(ARTESANAIS.tituloARTESANAISImpar !== ALLARTESANAIS[i].tituloARTESANAISImpar){
+            ALLARTESANAIS.push(ARTESANAIS)
         }
     }
 }
 
-function validUndefined(beer){
-    if (beer !== undefined){
+function validUndefined(ARTESANAIS){
+    if (ARTESANAIS !== undefined){
         return true
     }
 }
 
-function ifBeerExists(item, search, index){
+function ifARTESANAISExists(item, search, index){
     if (isPar(index) == 'par'){
-        if (item.tituloBeerPar.toLowerCase().includes(search.toLowerCase())){
-            ALLBEER.push(item)
+        if (item.tituloARTESANAISPar.toLowerCase().includes(search.toLowerCase())){
+            ALLARTESANAIS.push(item)
         }
-        // if (item.tituloBeerImpar.toLowerCase().includes(search.toLowerCase())){
-        //     ALLBEER.push(item)
+        // if (item.tituloARTESANAISImpar.toLowerCase().includes(search.toLowerCase())){
+        //     ALLARTESANAIS.push(item)
         // }
     }   
 }

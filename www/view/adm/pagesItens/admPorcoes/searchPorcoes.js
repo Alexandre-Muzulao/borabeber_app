@@ -1,17 +1,17 @@
-function getAllBeers(){
+function getAllPORCAOs(){
     loading('Buscando os cervejas no deposito ...')
-    if (ALLBEER.length == 0){
-        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+    if (ALLPORCAO.length == 0){
+        MobileUI.ajax.get(url + '/getPORCAOs').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
         if(res.body.errorMessage) {
             closeLoading()
             alert(res.body.errorMessage)
         } else {
             closeLoading()
             openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-                beers = []
-                ALLBEER = res.body.data
-                searchBeer(ALLBEER)
-                parseAdmBeer(ALLBEER)
+                PORCAOs = []
+                ALLPORCAO = res.body.data
+                searchPORCAO(ALLPORCAO)
+                parseAdmPORCAO(ALLPORCAO)
             })
         }
         }).catch(function(err) {
@@ -22,59 +22,59 @@ function getAllBeers(){
     } else {
         closeLoading()
         openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-            searchBeer(ALLBEER)
-            // parseAdmBeer(ALLBEER)
+            searchPORCAO(ALLPORCAO)
+            // parseAdmPORCAO(ALLPORCAO)
         })
     }
 }
 
-function searchBeer(beers){
-    ALLBEER_OLD = beers
+function searchPORCAO(PORCAOs){
+    ALLPORCAO_OLD = PORCAOs
     
     $(document).ready(function(){
-        $("#marcaBeer").keyup(function(){
-            var searchVal = $("#marcaBeer").val()
+        $("#marcaPORCAO").keyup(function(){
+            var searchVal = $("#marcaPORCAO").val()
             if (searchVal.length > 0){
-                ALLBEER = []
-                for (var i=0 ; i < ALLBEER_OLD.length ; i++)
+                ALLPORCAO = []
+                for (var i=0 ; i < ALLPORCAO_OLD.length ; i++)
                 {
-                    if (validUndefined(ALLBEER_OLD[i])){
-                        ifBeerExists(ALLBEER_OLD[i], searchVal, i)
-                        // beerPushIfNotExist(ifBeerExists(ALLBEER_OLD[i], searchVal))
+                    if (validUndefined(ALLPORCAO_OLD[i])){
+                        ifPORCAOExists(ALLPORCAO_OLD[i], searchVal, i)
+                        // PORCAOPushIfNotExist(ifPORCAOExists(ALLPORCAO_OLD[i], searchVal))
                     }
                 }
             } else {
-                ALLBEER = ALLBEER_OLD
+                ALLPORCAO = ALLPORCAO_OLD
             }
 
         })
     })
 }
 
-function beerPushIfNotExist(beer){
-    for (var i=0; i < ALLBEER; i++){
-        if(beer.tituloBeerPar !== ALLBEER[i].tituloBeerPar){
-            ALLBEER.push(beer)
+function PORCAOPushIfNotExist(PORCAO){
+    for (var i=0; i < ALLPORCAO; i++){
+        if(PORCAO.tituloPORCAOPar !== ALLPORCAO[i].tituloPORCAOPar){
+            ALLPORCAO.push(PORCAO)
         }
-        if(beer.tituloBeerImpar !== ALLBEER[i].tituloBeerImpar){
-            ALLBEER.push(beer)
+        if(PORCAO.tituloPORCAOImpar !== ALLPORCAO[i].tituloPORCAOImpar){
+            ALLPORCAO.push(PORCAO)
         }
     }
 }
 
-function validUndefined(beer){
-    if (beer !== undefined){
+function validUndefined(PORCAO){
+    if (PORCAO !== undefined){
         return true
     }
 }
 
-function ifBeerExists(item, search, index){
+function ifPORCAOExists(item, search, index){
     if (isPar(index) == 'par'){
-        if (item.tituloBeerPar.toLowerCase().includes(search.toLowerCase())){
-            ALLBEER.push(item)
+        if (item.tituloPORCAOPar.toLowerCase().includes(search.toLowerCase())){
+            ALLPORCAO.push(item)
         }
-        // if (item.tituloBeerImpar.toLowerCase().includes(search.toLowerCase())){
-        //     ALLBEER.push(item)
+        // if (item.tituloPORCAOImpar.toLowerCase().includes(search.toLowerCase())){
+        //     ALLPORCAO.push(item)
         // }
     }   
 }

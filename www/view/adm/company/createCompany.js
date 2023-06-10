@@ -41,37 +41,37 @@ function cadCompany(){
 function setCompanyCach(){
     var ts = new Date()
     var nameCompanyElement = document.getElementById('nomeCompany').value
-    var dadosBar = {}
-    dadosBar.typeAccount = 'company'
-    dadosBar.cnpjCompany = document.getElementById('docCompany').value
-    dadosBar.nomeCompany = nameCompanyElement
-    dadosBar.emailCompany = document.getElementById('emailCompany').value
-    // dadosBar.enderecoCompany = document.getElementById('enderecoCompany').value
-    // dadosBar.nroCompany = document.getElementById('nroCompany').value
-    // dadosBar.bairroCompany = document.getElementById('bairroCompany').value
-    dadosBar.enderecoCompany = 'Avenida Carneiro Leão'
-    dadosBar.nroCompany = '523'
-    dadosBar.bairroCompany = 'Zona 01'
-    dadosBar.tellCompany = document.getElementById('tellCompany').value
-    dadosBar.tpEstabelecimento = document.getElementById('tpEstabelecimento').value
-    dadosBar.latLongCompany = {
+    var company = {}
+    company.typeAccount = 'company'
+    company.cnpjCompany = document.getElementById('docCompany').value
+    company.nomeCompany = nameCompanyElement
+    company.emailCompany = document.getElementById('emailCompany').value
+    // company.enderecoCompany = document.getElementById('enderecoCompany').value
+    // company.nroCompany = document.getElementById('nroCompany').value
+    // company.bairroCompany = document.getElementById('bairroCompany').value
+    company.enderecoCompany = 'Avenida Carneiro Leão'
+    company.nroCompany = '523'
+    company.bairroCompany = 'Zona 01'
+    company.tellCompany = document.getElementById('tellCompany').value
+    company.tpEstabelecimento = document.getElementById('tpEstabelecimento').value
+    company.latLongCompany = {
         "lat" : -23.419834,
         "lng" : -51.949011
     }
-    dadosBar.cepCompany = "87014-010"
-    dadosBar.cidadeCompany = "Maringá"
-    dadosBar.estadoCompany = "Paraná"
-    dadosBar.paisCompany = "Brasil"
-    // dadosBar.latLongCompany = BARLOCATION.barLatLong
-    // dadosBar.cepCompany = BARLOCATION.barCEP
-    // dadosBar.cidadeCompany = BARLOCATION.barCidade
-    // dadosBar.estadoCompany = BARLOCATION.barEstado
-    // dadosBar.paisCompany = BARLOCATION.barPais
-    dadosBar.dateCadCompany = moment(ts).format()
-    dadosBar.xNomeCompany = ""    
-    dadosBar.capacityCompany = document.getElementById('capacityCompany').value
+    company.cepCompany = "87014-010"
+    company.cidadeCompany = "Maringá"
+    company.estadoCompany = "Paraná"
+    company.paisCompany = "Brasil"
+    // company.latLongCompany = BARLOCATION.barLatLong
+    // company.cepCompany = BARLOCATION.barCEP
+    // company.cidadeCompany = BARLOCATION.barCidade
+    // company.estadoCompany = BARLOCATION.barEstado
+    // company.paisCompany = BARLOCATION.barPais
+    company.dateCadCompany = moment(ts).format()
+    company.xNomeCompany = ""    
+    company.capacityCompany = document.getElementById('capacityCompany').value
     
-    dadosBar.callendar = {
+    company.callendar = {
         "weekDays": [
             {
                 "day": "Sunday",
@@ -111,40 +111,42 @@ function setCompanyCach(){
         ]
     }
 
-    dadosBar.option = true
-    dadosBar.capaImgName = nameCompanyElement + '/capa/' + nameCompanyElement + '_capa'
-    dadosBar.imgCompany = document.getElementById('imgBar').getAttribute('src')
-    dadosBar.isConected = true
-    dadosBar.capacityCompany = document.getElementById('capacityCompany').value
-    dadosBar.aceptReservCompany = document.getElementById('aceptReservCompany').checked
+    company.option = true
+    company.capaImgName = nameCompanyElement + '/capa/' + nameCompanyElement + '_capa'
+    company.imgCompany = document.getElementById('imgBar').getAttribute('src')
+    company.isConected = true
+    company.capacityCompany = document.getElementById('capacityCompany').value
+    company.aceptReservCompany = document.getElementById('aceptReservCompany').checked
 
-    dadosBar.tpProds = companyModules
+    company.tpProds = companyModules
 
-    dadosBar.billings = {
+    company.billings = {
         "recorrente" : 0.00,
         "semestral" : 0.00,
         "descSemestral" : 0.00,
         "anual" : 0.00,
         "descAnual" : 0.00
     }
+
+    company.deliverySettings = {}
     
-    dadosBar.userNameCompany = document.getElementById('userNameCompany').value
-    dadosBar.passwordCompany = document.getElementById('passwordCompany').value
-    dadosBar.passwordConfirmCompany = document.getElementById('passwordConfirmCompany').value
-    // if(dadosBar.latLongCompany == undefined){
+    company.userNameCompany = document.getElementById('userNameCompany').value
+    company.passwordCompany = document.getElementById('passwordCompany').value
+    company.passwordConfirmCompany = document.getElementById('passwordConfirmCompany').value
+    // if(company.latLongCompany == undefined){
     //     alert('É obrigatório completar o endereço com a Geolocalização. Verifique.', 'Ops...')
     // } else {
     var values = []
-    values.push(dadosBar.nomeCompany, dadosBar.typeAccount, true, dadosBar.passwordCompany)
+    values.push(company.nomeCompany, company.typeAccount, true, company.passwordCompany)
     
-    dadosBar.dataCards = {
+    company.dataCards = {
         "cardNumber" : "",
         "cardName" : "",
         "cardExpired" : "",
         "cardCVC" : ""
     }
 
-    COMPANYCACH = dadosBar
+    COMPANYCACH = company
 
 }
 

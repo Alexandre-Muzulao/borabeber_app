@@ -1,17 +1,17 @@
-function getAllBeers(){
+function getAllCHOPPSs(){
     loading('Buscando os cervejas no deposito ...')
-    if (ALLBEER.length == 0){
-        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+    if (ALLCHOPPS.length == 0){
+        MobileUI.ajax.get(url + '/getCHOPPSs').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
         if(res.body.errorMessage) {
             closeLoading()
             alert(res.body.errorMessage)
         } else {
             closeLoading()
             openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-                beers = []
-                ALLBEER = res.body.data
-                searchBeer(ALLBEER)
-                parseAdmBeer(ALLBEER)
+                CHOPPSs = []
+                ALLCHOPPS = res.body.data
+                searchCHOPPS(ALLCHOPPS)
+                parseAdmCHOPPS(ALLCHOPPS)
             })
         }
         }).catch(function(err) {
@@ -22,59 +22,59 @@ function getAllBeers(){
     } else {
         closeLoading()
         openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-            searchBeer(ALLBEER)
-            // parseAdmBeer(ALLBEER)
+            searchCHOPPS(ALLCHOPPS)
+            // parseAdmCHOPPS(ALLCHOPPS)
         })
     }
 }
 
-function searchBeer(beers){
-    ALLBEER_OLD = beers
+function searchCHOPPS(CHOPPSs){
+    ALLCHOPPS_OLD = CHOPPSs
     
     $(document).ready(function(){
-        $("#marcaBeer").keyup(function(){
-            var searchVal = $("#marcaBeer").val()
+        $("#marcaCHOPPS").keyup(function(){
+            var searchVal = $("#marcaCHOPPS").val()
             if (searchVal.length > 0){
-                ALLBEER = []
-                for (var i=0 ; i < ALLBEER_OLD.length ; i++)
+                ALLCHOPPS = []
+                for (var i=0 ; i < ALLCHOPPS_OLD.length ; i++)
                 {
-                    if (validUndefined(ALLBEER_OLD[i])){
-                        ifBeerExists(ALLBEER_OLD[i], searchVal, i)
-                        // beerPushIfNotExist(ifBeerExists(ALLBEER_OLD[i], searchVal))
+                    if (validUndefined(ALLCHOPPS_OLD[i])){
+                        ifCHOPPSExists(ALLCHOPPS_OLD[i], searchVal, i)
+                        // CHOPPSPushIfNotExist(ifCHOPPSExists(ALLCHOPPS_OLD[i], searchVal))
                     }
                 }
             } else {
-                ALLBEER = ALLBEER_OLD
+                ALLCHOPPS = ALLCHOPPS_OLD
             }
 
         })
     })
 }
 
-function beerPushIfNotExist(beer){
-    for (var i=0; i < ALLBEER; i++){
-        if(beer.tituloBeerPar !== ALLBEER[i].tituloBeerPar){
-            ALLBEER.push(beer)
+function CHOPPSPushIfNotExist(CHOPPS){
+    for (var i=0; i < ALLCHOPPS; i++){
+        if(CHOPPS.tituloCHOPPSPar !== ALLCHOPPS[i].tituloCHOPPSPar){
+            ALLCHOPPS.push(CHOPPS)
         }
-        if(beer.tituloBeerImpar !== ALLBEER[i].tituloBeerImpar){
-            ALLBEER.push(beer)
+        if(CHOPPS.tituloCHOPPSImpar !== ALLCHOPPS[i].tituloCHOPPSImpar){
+            ALLCHOPPS.push(CHOPPS)
         }
     }
 }
 
-function validUndefined(beer){
-    if (beer !== undefined){
+function validUndefined(CHOPPS){
+    if (CHOPPS !== undefined){
         return true
     }
 }
 
-function ifBeerExists(item, search, index){
+function ifCHOPPSExists(item, search, index){
     if (isPar(index) == 'par'){
-        if (item.tituloBeerPar.toLowerCase().includes(search.toLowerCase())){
-            ALLBEER.push(item)
+        if (item.tituloCHOPPSPar.toLowerCase().includes(search.toLowerCase())){
+            ALLCHOPPS.push(item)
         }
-        // if (item.tituloBeerImpar.toLowerCase().includes(search.toLowerCase())){
-        //     ALLBEER.push(item)
+        // if (item.tituloCHOPPSImpar.toLowerCase().includes(search.toLowerCase())){
+        //     ALLCHOPPS.push(item)
         // }
     }   
 }

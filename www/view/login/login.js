@@ -19,7 +19,7 @@ function openPageTest(){
 function logar(){
 
     var loginData = {
-        email: 'Bar do MuzuMuzu 599',
+        email: 'Bar do MuzuMuzu 5472',
         senha: '1234',
         tpLogin: 'manual',
         idFacebook: ''
@@ -28,30 +28,31 @@ function logar(){
 }
 
 function getUserCompany(loginData){
-    loadingElement('btnLogin', 'Efetuando Login, aguarde!')
-    MobileUI.ajax.post(url + '/login')
-        .send(loginData)
-        .then(function(res){
-            // Tratar erros com códigos
-            if(res.body.message == "Os dados do login não conferem, verifique e tente novamente." 
-            || res.body.message == 'Usuário não cadastrado'){
-                resetLoginData()
-                alert(res.body.message)
-            } else {
-                switch (res.body.data.typeAccount){
-                    case 'company':
-                        IDCOMPANY = res.body.data._id
-                        loginCompany(loginData)
-                    break
-                    case 'user':
-                        
-                    break
-                    case 'deliverymen':
-                        
-                    break
-                }
-            }
-        })
+  loadingElement('btnLogin', 'Efetuando Login, aguarde!')    
+  MobileUI.ajax.post(url + '/login')
+  .send(loginData)
+  .then(function(res){
+      // Tratar erros com códigos
+      console.log(res.body)
+      if(res.body.message == "Os dados do login não conferem, verifique e tente novamente." 
+      || res.body.message == 'Usuário não cadastrado'){
+          resetLoginData()
+          alert(res.body.message)
+      } else {
+          switch (res.body.data.typeAccount){
+              case 'company':
+                  IDCOMPANY = res.body.data._id
+                  loginCompany(loginData)
+              break
+              case 'user':
+                  
+              break
+              case 'deliverymen':
+                  
+              break
+          }
+      }
+  })
 }
 
 function loginCompany(company){

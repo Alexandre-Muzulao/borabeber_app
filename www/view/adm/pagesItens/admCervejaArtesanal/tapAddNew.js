@@ -1,19 +1,34 @@
 function addNewTap(){
   
   let htmlNewTap = ''
+  if (TAP == undefined){
+    TAP = [{
+      "cervejariaImg" : "",
+      "cervejaImg" : "",
+      "tapCervejariaName" : "",
+      "tapTitle" : "",
+      "tapStyle" : "",
+      "tapOrigin" : "",
+      "tapHistory" : "",
+      "tapABV" : "",
+      "tapIBU" : "",
+      sizes : []  
+    }]
+  } else {
+    TAP.push({
+      "cervejariaImg" : "",
+      "cervejaImg" : "",
+      "tapCervejariaName" : "",
+      "tapTitle" : "",
+      "tapStyle" : "",
+      "tapOrigin" : "",
+      "tapHistory" : "",
+      "tapABV" : "",
+      "tapIBU" : "",
+      sizes : []
+    })
+  }
 
-  TAP.push({
-    "cervejariaImg" : "",
-    "cervejaImg" : "",
-    "tapCervejariaName" : "",
-    "tapTitle" : "",
-    "tapStyle" : "",
-    "tapOrigin" : "",
-    "tapHistory" : "",
-    "tapABV" : "",
-    "tapIBU" : "",
-    sizes : []
-  })
 
   htmlNewTap += `<div class="row" id="tap${TAP.length}">`
   htmlNewTap += '          <div class="list no-border">'

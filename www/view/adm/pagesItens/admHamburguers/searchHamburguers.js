@@ -1,17 +1,17 @@
-function getAllBeers(){
+function getAllHAMBURGUERs(){
     loading('Buscando os cervejas no deposito ...')
-    if (ALLBEER.length == 0){
-        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+    if (ALLHAMBURGUER.length == 0){
+        MobileUI.ajax.get(url + '/getHAMBURGUERs').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
         if(res.body.errorMessage) {
             closeLoading()
             alert(res.body.errorMessage)
         } else {
             closeLoading()
             openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-                beers = []
-                ALLBEER = res.body.data
-                searchBeer(ALLBEER)
-                parseAdmBeer(ALLBEER)
+                HAMBURGUERs = []
+                ALLHAMBURGUER = res.body.data
+                searchHAMBURGUER(ALLHAMBURGUER)
+                parseAdmHAMBURGUER(ALLHAMBURGUER)
             })
         }
         }).catch(function(err) {
@@ -22,59 +22,59 @@ function getAllBeers(){
     } else {
         closeLoading()
         openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-            searchBeer(ALLBEER)
-            // parseAdmBeer(ALLBEER)
+            searchHAMBURGUER(ALLHAMBURGUER)
+            // parseAdmHAMBURGUER(ALLHAMBURGUER)
         })
     }
 }
 
-function searchBeer(beers){
-    ALLBEER_OLD = beers
+function searchHAMBURGUER(HAMBURGUERs){
+    ALLHAMBURGUER_OLD = HAMBURGUERs
     
     $(document).ready(function(){
-        $("#marcaBeer").keyup(function(){
-            var searchVal = $("#marcaBeer").val()
+        $("#marcaHAMBURGUER").keyup(function(){
+            var searchVal = $("#marcaHAMBURGUER").val()
             if (searchVal.length > 0){
-                ALLBEER = []
-                for (var i=0 ; i < ALLBEER_OLD.length ; i++)
+                ALLHAMBURGUER = []
+                for (var i=0 ; i < ALLHAMBURGUER_OLD.length ; i++)
                 {
-                    if (validUndefined(ALLBEER_OLD[i])){
-                        ifBeerExists(ALLBEER_OLD[i], searchVal, i)
-                        // beerPushIfNotExist(ifBeerExists(ALLBEER_OLD[i], searchVal))
+                    if (validUndefined(ALLHAMBURGUER_OLD[i])){
+                        ifHAMBURGUERExists(ALLHAMBURGUER_OLD[i], searchVal, i)
+                        // HAMBURGUERPushIfNotExist(ifHAMBURGUERExists(ALLHAMBURGUER_OLD[i], searchVal))
                     }
                 }
             } else {
-                ALLBEER = ALLBEER_OLD
+                ALLHAMBURGUER = ALLHAMBURGUER_OLD
             }
 
         })
     })
 }
 
-function beerPushIfNotExist(beer){
-    for (var i=0; i < ALLBEER; i++){
-        if(beer.tituloBeerPar !== ALLBEER[i].tituloBeerPar){
-            ALLBEER.push(beer)
+function HAMBURGUERPushIfNotExist(HAMBURGUER){
+    for (var i=0; i < ALLHAMBURGUER; i++){
+        if(HAMBURGUER.tituloHAMBURGUERPar !== ALLHAMBURGUER[i].tituloHAMBURGUERPar){
+            ALLHAMBURGUER.push(HAMBURGUER)
         }
-        if(beer.tituloBeerImpar !== ALLBEER[i].tituloBeerImpar){
-            ALLBEER.push(beer)
+        if(HAMBURGUER.tituloHAMBURGUERImpar !== ALLHAMBURGUER[i].tituloHAMBURGUERImpar){
+            ALLHAMBURGUER.push(HAMBURGUER)
         }
     }
 }
 
-function validUndefined(beer){
-    if (beer !== undefined){
+function validUndefined(HAMBURGUER){
+    if (HAMBURGUER !== undefined){
         return true
     }
 }
 
-function ifBeerExists(item, search, index){
+function ifHAMBURGUERExists(item, search, index){
     if (isPar(index) == 'par'){
-        if (item.tituloBeerPar.toLowerCase().includes(search.toLowerCase())){
-            ALLBEER.push(item)
+        if (item.tituloHAMBURGUERPar.toLowerCase().includes(search.toLowerCase())){
+            ALLHAMBURGUER.push(item)
         }
-        // if (item.tituloBeerImpar.toLowerCase().includes(search.toLowerCase())){
-        //     ALLBEER.push(item)
+        // if (item.tituloHAMBURGUERImpar.toLowerCase().includes(search.toLowerCase())){
+        //     ALLHAMBURGUER.push(item)
         // }
     }   
 }

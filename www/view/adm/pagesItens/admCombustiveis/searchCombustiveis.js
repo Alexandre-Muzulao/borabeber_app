@@ -1,17 +1,17 @@
-function getAllBeers(){
+function getAllCOMBUSTIVELs(){
     loading('Buscando os cervejas no deposito ...')
-    if (ALLBEER.length == 0){
-        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+    if (ALLCOMBUSTIVEL.length == 0){
+        MobileUI.ajax.get(url + '/getCOMBUSTIVELs').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
         if(res.body.errorMessage) {
             closeLoading()
             alert(res.body.errorMessage)
         } else {
             closeLoading()
             openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-                beers = []
-                ALLBEER = res.body.data
-                searchBeer(ALLBEER)
-                parseAdmBeer(ALLBEER)
+                COMBUSTIVELs = []
+                ALLCOMBUSTIVEL = res.body.data
+                searchCOMBUSTIVEL(ALLCOMBUSTIVEL)
+                parseAdmCOMBUSTIVEL(ALLCOMBUSTIVEL)
             })
         }
         }).catch(function(err) {
@@ -22,59 +22,59 @@ function getAllBeers(){
     } else {
         closeLoading()
         openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-            searchBeer(ALLBEER)
-            // parseAdmBeer(ALLBEER)
+            searchCOMBUSTIVEL(ALLCOMBUSTIVEL)
+            // parseAdmCOMBUSTIVEL(ALLCOMBUSTIVEL)
         })
     }
 }
 
-function searchBeer(beers){
-    ALLBEER_OLD = beers
+function searchCOMBUSTIVEL(COMBUSTIVELs){
+    ALLCOMBUSTIVEL_OLD = COMBUSTIVELs
     
     $(document).ready(function(){
-        $("#marcaBeer").keyup(function(){
-            var searchVal = $("#marcaBeer").val()
+        $("#marcaCOMBUSTIVEL").keyup(function(){
+            var searchVal = $("#marcaCOMBUSTIVEL").val()
             if (searchVal.length > 0){
-                ALLBEER = []
-                for (var i=0 ; i < ALLBEER_OLD.length ; i++)
+                ALLCOMBUSTIVEL = []
+                for (var i=0 ; i < ALLCOMBUSTIVEL_OLD.length ; i++)
                 {
-                    if (validUndefined(ALLBEER_OLD[i])){
-                        ifBeerExists(ALLBEER_OLD[i], searchVal, i)
-                        // beerPushIfNotExist(ifBeerExists(ALLBEER_OLD[i], searchVal))
+                    if (validUndefined(ALLCOMBUSTIVEL_OLD[i])){
+                        ifCOMBUSTIVELExists(ALLCOMBUSTIVEL_OLD[i], searchVal, i)
+                        // COMBUSTIVELPushIfNotExist(ifCOMBUSTIVELExists(ALLCOMBUSTIVEL_OLD[i], searchVal))
                     }
                 }
             } else {
-                ALLBEER = ALLBEER_OLD
+                ALLCOMBUSTIVEL = ALLCOMBUSTIVEL_OLD
             }
 
         })
     })
 }
 
-function beerPushIfNotExist(beer){
-    for (var i=0; i < ALLBEER; i++){
-        if(beer.tituloBeerPar !== ALLBEER[i].tituloBeerPar){
-            ALLBEER.push(beer)
+function COMBUSTIVELPushIfNotExist(COMBUSTIVEL){
+    for (var i=0; i < ALLCOMBUSTIVEL; i++){
+        if(COMBUSTIVEL.tituloCOMBUSTIVELPar !== ALLCOMBUSTIVEL[i].tituloCOMBUSTIVELPar){
+            ALLCOMBUSTIVEL.push(COMBUSTIVEL)
         }
-        if(beer.tituloBeerImpar !== ALLBEER[i].tituloBeerImpar){
-            ALLBEER.push(beer)
+        if(COMBUSTIVEL.tituloCOMBUSTIVELImpar !== ALLCOMBUSTIVEL[i].tituloCOMBUSTIVELImpar){
+            ALLCOMBUSTIVEL.push(COMBUSTIVEL)
         }
     }
 }
 
-function validUndefined(beer){
-    if (beer !== undefined){
+function validUndefined(COMBUSTIVEL){
+    if (COMBUSTIVEL !== undefined){
         return true
     }
 }
 
-function ifBeerExists(item, search, index){
+function ifCOMBUSTIVELExists(item, search, index){
     if (isPar(index) == 'par'){
-        if (item.tituloBeerPar.toLowerCase().includes(search.toLowerCase())){
-            ALLBEER.push(item)
+        if (item.tituloCOMBUSTIVELPar.toLowerCase().includes(search.toLowerCase())){
+            ALLCOMBUSTIVEL.push(item)
         }
-        // if (item.tituloBeerImpar.toLowerCase().includes(search.toLowerCase())){
-        //     ALLBEER.push(item)
+        // if (item.tituloCOMBUSTIVELImpar.toLowerCase().includes(search.toLowerCase())){
+        //     ALLCOMBUSTIVEL.push(item)
         // }
     }   
 }

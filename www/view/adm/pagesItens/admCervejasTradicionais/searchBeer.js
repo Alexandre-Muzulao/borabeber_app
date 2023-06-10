@@ -1,7 +1,10 @@
 function getAllBeers(){
-    loading('Buscando os cervejas no deposito ...')
+    showLoader("alertBoraBeberLoader", 'Buscando os cervejas no deposito!')
     if (ALLBEER.length == 0){
-        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY)
+        .send()
+        .then(function (res){
+          console.log(res.body.data)
         if(res.body.errorMessage) {
             closeLoading()
             alert(res.body.errorMessage)

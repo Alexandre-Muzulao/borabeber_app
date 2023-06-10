@@ -10,6 +10,7 @@ function setViewtpProds(module){
                 stModule1 = true
                 include('incTAP Cervejas Artesanais', './view/adm/pagesItens/admCervejaArtesanal/admCervejasArtesanais.html')
                 showLoader("alertBoraBeberLoader", 'Carregando TAPS, aguarde por gentileza!')
+                
                 setTimeout(function(){
                   loadTaps(TAP)
                 }, 300)
