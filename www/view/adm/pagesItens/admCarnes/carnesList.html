@@ -22,8 +22,8 @@
     <div class="content has-header has-sub-header list-add-bebidas-bar">
         <div class="item" data="ALLBEER" style="height: 300px;">
             <div class="row" style="height: 270px;">
-                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerPar}'); background-size: 10vh;" onclick="addBeerBar('${idBeerPar}', '${tituloBeerPar}', '${recipientePar}', '${medidaPar}')">
-                    <div class="left" onclick="addBeerBar('${idBeerPar}', '${tituloBeerPar}', '${recipientePar}', '${medidaPar}')">
+                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerPar}'); background-size: 10vh;" onclick="addCarnes('${idBeerPar}', '${tituloBeerPar}', '${recipientePar}', '${medidaPar}')">
+                    <div class="left" onclick="addCarnes('${idBeerPar}', '${tituloBeerPar}', '${recipientePar}', '${medidaPar}')">
                         <input type="checkbox" class="green text-huge" id="${idBeerPar}item">
                     </div>
                     <div class="space-huge"></div>
@@ -33,8 +33,8 @@
                         <h1 class="text-white">${tituloBeerPar} ${recipientePar} ${medidaPar} ${descricaoBeerPar}</h1>
                     </div>
                 </div>
-                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerImpar}'); background-size: 10vh;" valid-bind="${tituloBeerImpar}"  onclick="addBeerBar('${idBeerImpar}', '${tituloBeerImpar}', '${recipienteImpar}', '${medidaImpar}')">
-                    <div class="left" onclick="addBeerBar('${idBeerImpar}', '${tituloBeerImpar}', '${recipienteImpar}', '${medidaImpar}')">
+                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerImpar}'); background-size: 10vh;" valid-bind="${tituloBeerImpar}"  onclick="addCarnes('${idBeerImpar}', '${tituloBeerImpar}', '${recipienteImpar}', '${medidaImpar}')">
+                    <div class="left" onclick="addCarnes('${idBeerImpar}', '${tituloBeerImpar}', '${recipienteImpar}', '${medidaImpar}')">
                         <input type="checkbox" class="green text-huge" id="${idBeerImpar}item">
                     </div>
                     <div class="space-huge"></div>
@@ -46,8 +46,8 @@
                 </div>
             </div>
         </div>
-        <div class="btnAddBeerBar">
-            <button class="icon ion-checkmark-circled strong text-green text-huge" style="font-size: 64px!important;" onclick="saveBeerBar()"></button>
+        <div class="btnAddCarnes">
+            <button class="icon ion-checkmark-circled strong text-green text-huge" style="font-size: 64px!important;" onclick="saveCarnes()"></button>
         </div>
     </div>
 </div>
