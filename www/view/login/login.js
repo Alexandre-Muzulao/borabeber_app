@@ -29,9 +29,11 @@ function logar(){
 
 function getUserCompany(loginData){
     loadingElement('btnLogin', 'Efetuando Login, aguarde!')
-    MobileUI.ajax.post(url + '/login')
+    try {
+        MobileUI.ajax.post(url + '/login')
         .send(loginData)
         .then(function(res){
+            console.log(res.body)
             // Tratar erros com códigos
             if(res.body.message == "Os dados do login não conferem, verifique e tente novamente." 
             || res.body.message == 'Usuário não cadastrado'){
@@ -52,6 +54,9 @@ function getUserCompany(loginData){
                 }
             }
         })
+    } catch (error) {
+        alert(errore)
+    }
 }
 
 function loginCompany(company){
