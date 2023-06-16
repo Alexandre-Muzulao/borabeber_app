@@ -22,7 +22,7 @@ function saveBeerBar(){
     box += '    <p>Após o valor da cerveja ser informada esta será publicada para ser vista.</p>'
     box += '</div>'
     alert({
-        title: 'Colocar a cerveja no Freezer ?',
+        title: 'Colocar as cervejas no Freezer?',
         message: box,
         class: 'grey-800 radius',
         buttons:[
@@ -31,7 +31,7 @@ function saveBeerBar(){
                 class: 'text-green ion-checkmark-round',
                 onclick: function(){
                     closeAlert()
-                    addItem('beer')
+                    addCerveja('beer')
                 }
             },
             {
@@ -45,7 +45,8 @@ function saveBeerBar(){
     })
 }
 
-function addItem(tpItem){
+function addCerveja(tpItem){
+  console.log(beers)
     var item = {}
     NOVABEER = []
     switch (tpItem){
@@ -59,8 +60,8 @@ function addItem(tpItem){
         break
     }
     var erro = ''
-    loading('Colocando as cervejas no seu freezer!')    
-    MobileUI.ajax.post(url + '/cadbaritem')
+    loading('Colocando as cervejas no seu freezer!')
+    MobileUI.ajax.post(url + '/postbeer')
         // .set({"token" : ''})
         .send(item)
         .then(function (res){

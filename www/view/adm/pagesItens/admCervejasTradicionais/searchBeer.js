@@ -1,27 +1,31 @@
 function getAllBeers(){
-    loading('Buscando os cervejas no deposito ...')
+    showLoader("alertBoraBeberLoader", 'Buscando os cervejas no deposito!')
     if (ALLBEER.length == 0){
-        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY)
+        .send()
+        .then(function (res){
         if(res.body.errorMessage) {
-            closeLoading()
+            setIdHidden('customImgAlert')
             alert(res.body.errorMessage)
         } else {
-            closeLoading()
-            openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
+          console.log(res.body.data)
+            setIdHidden('customImgAlert')
+            openPage('./view/adm/pagesItens/admCervejasTradicionais/cervejasList', function(){              
                 beers = []
                 ALLBEER = res.body.data
                 searchBeer(ALLBEER)
                 parseAdmBeer(ALLBEER)
             })
+
         }
         }).catch(function(err) {
-            closeLoading()
+            setIdHidden('customImgAlert')
             alert('Ops! Tive um problema para encontrar a cerveja no Freezer! Vamos tentar novamente daqui a pouco.')
             console.log(err)
         })
     } else {
-        closeLoading()
-        openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
+        setIdHidden('customImgAlert')
+        openPage('./view/adm/pagesItens/admCervejasTradicionais/cervejasList', function(){
             searchBeer(ALLBEER)
             // parseAdmBeer(ALLBEER)
         })

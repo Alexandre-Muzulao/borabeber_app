@@ -1,17 +1,17 @@
-function getAllBeers(){
+function getAllESSENCIASs(){
     loading('Buscando os cervejas no deposito ...')
-    if (ALLBEER.length == 0){
-        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+    if (ALLESSENCIAS.length == 0){
+        MobileUI.ajax.get(url + '/getESSENCIASs').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
         if(res.body.errorMessage) {
             closeLoading()
             alert(res.body.errorMessage)
         } else {
             closeLoading()
             openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-                beers = []
-                ALLBEER = res.body.data
-                searchBeer(ALLBEER)
-                parseAdmBeer(ALLBEER)
+                ESSENCIASs = []
+                ALLESSENCIAS = res.body.data
+                searchESSENCIAS(ALLESSENCIAS)
+                parseAdmESSENCIAS(ALLESSENCIAS)
             })
         }
         }).catch(function(err) {
@@ -22,59 +22,59 @@ function getAllBeers(){
     } else {
         closeLoading()
         openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-            searchBeer(ALLBEER)
-            // parseAdmBeer(ALLBEER)
+            searchESSENCIAS(ALLESSENCIAS)
+            // parseAdmESSENCIAS(ALLESSENCIAS)
         })
     }
 }
 
-function searchBeer(beers){
-    ALLBEER_OLD = beers
+function searchESSENCIAS(ESSENCIASs){
+    ALLESSENCIAS_OLD = ESSENCIASs
     
     $(document).ready(function(){
-        $("#marcaBeer").keyup(function(){
-            var searchVal = $("#marcaBeer").val()
+        $("#marcaESSENCIAS").keyup(function(){
+            var searchVal = $("#marcaESSENCIAS").val()
             if (searchVal.length > 0){
-                ALLBEER = []
-                for (var i=0 ; i < ALLBEER_OLD.length ; i++)
+                ALLESSENCIAS = []
+                for (var i=0 ; i < ALLESSENCIAS_OLD.length ; i++)
                 {
-                    if (validUndefined(ALLBEER_OLD[i])){
-                        ifBeerExists(ALLBEER_OLD[i], searchVal, i)
-                        // beerPushIfNotExist(ifBeerExists(ALLBEER_OLD[i], searchVal))
+                    if (validUndefined(ALLESSENCIAS_OLD[i])){
+                        ifESSENCIASExists(ALLESSENCIAS_OLD[i], searchVal, i)
+                        // ESSENCIASPushIfNotExist(ifESSENCIASExists(ALLESSENCIAS_OLD[i], searchVal))
                     }
                 }
             } else {
-                ALLBEER = ALLBEER_OLD
+                ALLESSENCIAS = ALLESSENCIAS_OLD
             }
 
         })
     })
 }
 
-function beerPushIfNotExist(beer){
-    for (var i=0; i < ALLBEER; i++){
-        if(beer.tituloBeerPar !== ALLBEER[i].tituloBeerPar){
-            ALLBEER.push(beer)
+function ESSENCIASPushIfNotExist(ESSENCIAS){
+    for (var i=0; i < ALLESSENCIAS; i++){
+        if(ESSENCIAS.tituloESSENCIASPar !== ALLESSENCIAS[i].tituloESSENCIASPar){
+            ALLESSENCIAS.push(ESSENCIAS)
         }
-        if(beer.tituloBeerImpar !== ALLBEER[i].tituloBeerImpar){
-            ALLBEER.push(beer)
+        if(ESSENCIAS.tituloESSENCIASImpar !== ALLESSENCIAS[i].tituloESSENCIASImpar){
+            ALLESSENCIAS.push(ESSENCIAS)
         }
     }
 }
 
-function validUndefined(beer){
-    if (beer !== undefined){
+function validUndefined(ESSENCIAS){
+    if (ESSENCIAS !== undefined){
         return true
     }
 }
 
-function ifBeerExists(item, search, index){
+function ifESSENCIASExists(item, search, index){
     if (isPar(index) == 'par'){
-        if (item.tituloBeerPar.toLowerCase().includes(search.toLowerCase())){
-            ALLBEER.push(item)
+        if (item.tituloESSENCIASPar.toLowerCase().includes(search.toLowerCase())){
+            ALLESSENCIAS.push(item)
         }
-        // if (item.tituloBeerImpar.toLowerCase().includes(search.toLowerCase())){
-        //     ALLBEER.push(item)
+        // if (item.tituloESSENCIASImpar.toLowerCase().includes(search.toLowerCase())){
+        //     ALLESSENCIAS.push(item)
         // }
     }   
 }

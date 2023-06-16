@@ -1,9 +1,8 @@
-function loadTaps(taps){    
-
-  if (taps !== ""){
+function loadTaps(taps){
+  if (taps !== undefined){
     taps.map(function(taps, i){
      
-      let htmlNewTap = ''      
+      let htmlNewTap = ''
 
       htmlNewTap += `<div class="row" id="tap${i + 1}">`
       htmlNewTap += '          <div class="list no-border">'

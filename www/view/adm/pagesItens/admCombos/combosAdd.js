@@ -1,4 +1,4 @@
-function addBeerBar(idImgBeer, rotulo, recipiente, tamanho, img){
+function addCombos(idImgBeer, rotulo, recipiente, tamanho, img){
     var index
     if (document.getElementById(idImgBeer + 'item').checked){
         document.getElementById(idImgBeer + 'item').checked = false;
@@ -16,7 +16,7 @@ function addBeerBar(idImgBeer, rotulo, recipiente, tamanho, img){
     }
 }
 
-function saveBeerBar(){
+function saveCombos(){
     var box = '<div class="grey-800 align-center">'
     box += '    <p>As cervejas selecionadas serão disponibilizadas para que você informe o valor e alguma descrição caso queira.</p>'
     box += '    <p>Após o valor da cerveja ser informada esta será publicada para ser vista.</p>'

@@ -1,17 +1,17 @@
-function getAllBeers(){
+function getAllNARGUILEs(){
     loading('Buscando os cervejas no deposito ...')
-    if (ALLBEER.length == 0){
-        MobileUI.ajax.get(url + '/getbeers').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+    if (ALLNARGUILE.length == 0){
+        MobileUI.ajax.get(url + '/getNARGUILEs').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
         if(res.body.errorMessage) {
             closeLoading()
             alert(res.body.errorMessage)
         } else {
             closeLoading()
             openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-                beers = []
-                ALLBEER = res.body.data
-                searchBeer(ALLBEER)
-                parseAdmBeer(ALLBEER)
+                NARGUILEs = []
+                ALLNARGUILE = res.body.data
+                searchNARGUILE(ALLNARGUILE)
+                parseAdmNARGUILE(ALLNARGUILE)
             })
         }
         }).catch(function(err) {
@@ -22,59 +22,59 @@ function getAllBeers(){
     } else {
         closeLoading()
         openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-            searchBeer(ALLBEER)
-            // parseAdmBeer(ALLBEER)
+            searchNARGUILE(ALLNARGUILE)
+            // parseAdmNARGUILE(ALLNARGUILE)
         })
     }
 }
 
-function searchBeer(beers){
-    ALLBEER_OLD = beers
+function searchNARGUILE(NARGUILEs){
+    ALLNARGUILE_OLD = NARGUILEs
     
     $(document).ready(function(){
-        $("#marcaBeer").keyup(function(){
-            var searchVal = $("#marcaBeer").val()
+        $("#marcaNARGUILE").keyup(function(){
+            var searchVal = $("#marcaNARGUILE").val()
             if (searchVal.length > 0){
-                ALLBEER = []
-                for (var i=0 ; i < ALLBEER_OLD.length ; i++)
+                ALLNARGUILE = []
+                for (var i=0 ; i < ALLNARGUILE_OLD.length ; i++)
                 {
-                    if (validUndefined(ALLBEER_OLD[i])){
-                        ifBeerExists(ALLBEER_OLD[i], searchVal, i)
-                        // beerPushIfNotExist(ifBeerExists(ALLBEER_OLD[i], searchVal))
+                    if (validUndefined(ALLNARGUILE_OLD[i])){
+                        ifNARGUILEExists(ALLNARGUILE_OLD[i], searchVal, i)
+                        // NARGUILEPushIfNotExist(ifNARGUILEExists(ALLNARGUILE_OLD[i], searchVal))
                     }
                 }
             } else {
-                ALLBEER = ALLBEER_OLD
+                ALLNARGUILE = ALLNARGUILE_OLD
             }
 
         })
     })
 }
 
-function beerPushIfNotExist(beer){
-    for (var i=0; i < ALLBEER; i++){
-        if(beer.tituloBeerPar !== ALLBEER[i].tituloBeerPar){
-            ALLBEER.push(beer)
+function NARGUILEPushIfNotExist(NARGUILE){
+    for (var i=0; i < ALLNARGUILE; i++){
+        if(NARGUILE.tituloNARGUILEPar !== ALLNARGUILE[i].tituloNARGUILEPar){
+            ALLNARGUILE.push(NARGUILE)
         }
-        if(beer.tituloBeerImpar !== ALLBEER[i].tituloBeerImpar){
-            ALLBEER.push(beer)
+        if(NARGUILE.tituloNARGUILEImpar !== ALLNARGUILE[i].tituloNARGUILEImpar){
+            ALLNARGUILE.push(NARGUILE)
         }
     }
 }
 
-function validUndefined(beer){
-    if (beer !== undefined){
+function validUndefined(NARGUILE){
+    if (NARGUILE !== undefined){
         return true
     }
 }
 
-function ifBeerExists(item, search, index){
+function ifNARGUILEExists(item, search, index){
     if (isPar(index) == 'par'){
-        if (item.tituloBeerPar.toLowerCase().includes(search.toLowerCase())){
-            ALLBEER.push(item)
+        if (item.tituloNARGUILEPar.toLowerCase().includes(search.toLowerCase())){
+            ALLNARGUILE.push(item)
         }
-        // if (item.tituloBeerImpar.toLowerCase().includes(search.toLowerCase())){
-        //     ALLBEER.push(item)
+        // if (item.tituloNARGUILEImpar.toLowerCase().includes(search.toLowerCase())){
+        //     ALLNARGUILE.push(item)
         // }
     }   
 }
