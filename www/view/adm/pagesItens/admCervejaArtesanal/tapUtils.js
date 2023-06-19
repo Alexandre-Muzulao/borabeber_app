@@ -1,5 +1,15 @@
 function addSizeTap (tapNum) {
+
   var htmlTapSize = ''
+
+  // Não pode diminuir um tem que haver outra solução
+  if (tapNum == 0){
+
+  } else {
+
+  }
+  
+  console.log(tapNum, TAP[tapNum-1])
 
   htmlTapSize += `<div class="row" id="tap${tapNum}Size${TAP[tapNum-1].sizes.length}Lines">`
   htmlTapSize += '    <div class="col">'

@@ -1,6 +1,6 @@
 {
-  "name": "io.cordova.hellocordova",
-  "displayName": "HelloCordova",
+  "name": "io.cordova.appborabeber",
+  "displayName": "App Bora Beber",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
@@ -23,14 +23,39 @@
     "gulp-concat": "^2.6.0",
     "gulp-sass": "^2.2.0",
     "merge-stream": "^1.0.1",
-    "gulp-autoprefixer": "^3.1.1"
+    "gulp-autoprefixer": "^3.1.1",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-datetimepicker": "^1.1.2",
+    "cordova-plugin-camera": "^4.0.3",
+    "cordova-plugin-screen-orientation": "^3.0.1",
+    "cordova-plugin-googlemaps": "https://github.com/mapsplugin/cordova-plugin-googlemaps#multiple_maps",
+    "cordova-plugin-facebook4": "4.0.0",
+    "cordova-plugin-sqlite-2": "^1.0.5",
+    "cordova-plugin-geolocation": "^4.0.1"
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-datetimepicker": {},
+      "cordova-plugin-camera": {},
+      "cordova-plugin-screen-orientation": {},
+      "cordova-plugin-googlemaps": {
+        "API_KEY_FOR_ANDROID": "AIzaSyC9CgTpZudd-3C8QX6awjhTUah6PeyIUb4",
+        "PLAY_SERVICES_VERSION": "15.0.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-facebook4": {
+        "APP_ID": "1997109790366392",
+        "APP_NAME": "BoraBeber",
+        "FACEBOOK_ANDROID_SDK_VERSION": "4.38.1"
+      },
+      "cordova-plugin-sqlite-2": {},
+      "cordova-plugin-geolocation": {}
     },
     "platforms": [
       "android"
     ]
-  }
+  },
+  "dependencies": {}
 }

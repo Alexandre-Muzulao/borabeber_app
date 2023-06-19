@@ -1,4 +1,5 @@
 function loadTaps(taps){
+    
   if (taps !== undefined){
     taps.map(function(taps, i){
      
@@ -75,7 +76,7 @@ function loadTaps(taps){
         htmlNewTap += '    </div>'
         if (n == 0){
           htmlNewTap += '  <div class="col" style="margin-top: 3%;">'
-          htmlNewTap += `      <button class="icon ion-plus-circled text-green" id='btnAddRemTap0' onclick='addSizeTap(${i+1})'></button>`
+          htmlNewTap += `      <button class="icon ion-plus-circled text-green" id='btnAddRemTap0' onclick='addSizeTap(${i})'></button>`
           htmlNewTap += '  </div>'
         } else {
           htmlNewTap += '    <div class="col" style="margin-top: 3%;">'
@@ -100,7 +101,7 @@ function loadTaps(taps){
       htmlNewTap += '          </div>'
       htmlNewTap += '      </div>'
       htmlNewTap += `      <div id="tapNum${i + 2}"></div>`
-      
+
       document.getElementById(`tapNum${i+1}`).innerHTML = htmlNewTap
 
       // document.getElementById(`cervejariaImg${i+1}`).src = taps.cervejariaImg 

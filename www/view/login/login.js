@@ -17,7 +17,7 @@ function openPageTest(){
 }
 
 function logar(){
-
+  try {
     var loginData = {
         email: 'Bar do MuzuMuzu 5472',
         senha: '1234',
@@ -25,6 +25,9 @@ function logar(){
         idFacebook: ''
     };
     getUserCompany(loginData)
+  } catch (error) {
+    console.log('error: ', error)
+  }
 }
 
 function getUserCompany(loginData){
@@ -33,7 +36,6 @@ function getUserCompany(loginData){
   .send(loginData)
   .then(function(res){
       // Tratar erros com códigos
-      console.log(res.body)
       if(res.body.message == "Os dados do login não conferem, verifique e tente novamente." 
       || res.body.message == 'Usuário não cadastrado'){
           resetLoginData()
