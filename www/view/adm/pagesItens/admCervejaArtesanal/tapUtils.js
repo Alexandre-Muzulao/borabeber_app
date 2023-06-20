@@ -1,26 +1,25 @@
 function addSizeTap (tapNum) {
-
-  var htmlTapSize = ''
-
-  htmlTapSize += `<div class="row" id="tap${tapNum}Size${TAP[tapNum].sizes.length}Lines">`
+  console.log(tapNum)
+  var htmlTapSize = ''  
+  htmlTapSize += `<div class="row" id="tap${tapNum+1}Size${TAP[tapNum].sizes.length}Lines">`
   htmlTapSize += '    <div class="col">'
   htmlTapSize += '        <div class="row">'
   htmlTapSize += '            <div class="col" style="margin-right: 5%; width: 84%">'
   htmlTapSize += '                <div class="item label-fixed border-grey-800 border-bottom" style="height: 50px;">'
-  htmlTapSize += `                    <input type="number" class="text-white placeholder-white" placeholder="Tamanho" id="tap${tapNum}Tamanho${TAP[tapNum].sizes.length}">`
+  htmlTapSize += `                    <input type="number" class="text-white placeholder-white" placeholder="Tamanho" id="tap${tapNum+1}Tamanho${TAP[tapNum].sizes.length}">`
   htmlTapSize += '                    <label style="margin-right: -65px;">mL</label>'
   htmlTapSize += '                </div>'
   htmlTapSize += '            </div>'
   htmlTapSize += '            <div class="col">'
   htmlTapSize += '                <div class="item label-fixed border-grey-800 border-bottom" style="height: 50px;">'
   htmlTapSize += '                    <label style="margin-right: -65px; margin-top: 2px;">R$</label>'
-  htmlTapSize += `                    <input type="number" step="0,00" class="text-white placeholder-white" placeholder="Preço" id="tap${tapNum}Preco${TAP[tapNum].sizes.length}">`
+  htmlTapSize += `                    <input type="number" step="0,00" class="text-white placeholder-white" placeholder="Preço" id="tap${tapNum+1}Preco${TAP[tapNum].sizes.length}">`
   htmlTapSize += '                </div>'
   htmlTapSize += '            </div>'
   htmlTapSize += '        </div>'
   htmlTapSize += '    </div>'
   htmlTapSize += '    <div class="col" style="margin-top: 3%;">'
-  htmlTapSize += `        <button class="icon ion-minus-circled text-red" id="btnAddRemTap" onclick="dellSizeTap(${tapNum}, ${TAP[tapNum].sizes.length})"></button>`
+  htmlTapSize += `        <button class="icon ion-minus-circled text-red" id="btnAddRemTap" onclick="dellSizeTap(${tapNum+1}, ${TAP[tapNum].sizes.length})"></button>`
   htmlTapSize += '    </div>'
   htmlTapSize += '</div>'
 
@@ -104,9 +103,13 @@ function dellSizeTap (tapNum, sizeNum) {
   
 function updateAllSizeTap(tapNum){  
   let auth = {'auth': true, msg: `Todos os itens estão corretos`}
+  
   TAP[tapNum-1].sizes.map(function(sizes, i){
     //Precisa tratar quando o usuário excluir uma tap.
+    console.log(tapNum, i) //tap1Tamanho1
+
     sizes.size = document.getElementById(`tap${tapNum}Tamanho${i}`).value
+
     if (sizes.size == ''){
       auth = {'auth': false, msg: `O ${i+1}º Tamanho mL está vazio.`}
     } 
