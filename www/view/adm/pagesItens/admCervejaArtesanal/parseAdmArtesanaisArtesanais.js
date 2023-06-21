@@ -1,5 +1,4 @@
 function loadTaps(taps){
-    
   if (taps !== undefined){
     taps.map(function(taps, i){
      
@@ -95,7 +94,7 @@ function loadTaps(taps){
       htmlNewTap += '                </div>'
       htmlNewTap += '                <div class="col"></div>'
       htmlNewTap += '                <div class="col">'
-      htmlNewTap += `                    <button class="radius shadow icon full ion-trash-a text-red grey-800" onclick='cancelAddItem(${i+1})'>Deletar</button>`
+      htmlNewTap += `                    <button class="radius shadow icon full ion-trash-a text-red grey-800" onclick='delTap(${i+1})'>Deletar</button>`
       htmlNewTap += '                </div>'
       htmlNewTap += '            </div>'
       htmlNewTap += '          </div>'

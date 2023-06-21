@@ -1,10 +1,11 @@
-function dellItemBeer(idBeer, titleBeer, priceBeer){
+function delTap(tapNum){
     var item = {}
-    item.idBar = IDCOMPANY
-    item.idBeer = idBeer
+    item.idCompany = IDCOMPANY
+    item.tapNum = tapNum
+    item.titleTap = document.getElementById(`tapTitle${tapNum}`).value
     alert({
         title: 'Remover mesmo ?',
-        message: 'Deseja remover a Cerveja '+ titleBeer +' no valor R$ '+ priceBeer +' da sua lista de produtos ?',
+        message: `Deseja remover a Cerveja <strong>${item.titleTap}</strong> da sua lista de produtos ?`,
         class: 'grey-50 radius',
         buttons: [
             {
@@ -18,20 +19,24 @@ function dellItemBeer(idBeer, titleBeer, priceBeer){
                 label: 'Sim',
                 class: 'text-black',
                 onclick: function(){
-                    loading('O item será removido de seus produtos, por favor aguarde!')
-                    MobileUI.ajax.post(url + '/removebeer').send(item).then(function (res){
+                    showLoader("alertBoraBeberLoader", 'Removendo de seus produtos, por favor aguarde!')
+                    MobileUI.ajax.post(url + '/deletetap').send(item).then(function (res){
+
                         if(res.body.errorMessage) {
-                            closeLoading()
+                            setIdHidden('customImgAlert')
                             alert(res.body.errorMessage)
                         } else {
-                            closeLoading()
-                            ADMBEERS = res.body.data.dadosBeer
-                            parseAdmBeer(ADMBEERS)
-                            alert('Item removido com sucesso.')
+                          
+                          setTimeout(function(){
+                            loadTaps(res.body.data)
+                          }, 300)
+
+                          setIdHidden('customImgAlert')
+                          toastCenter(res.body.message)
                         }
                     }).catch(function (err){
                         console.log(err)
-                        closeLoading()
+                        setIdHidden('customImgAlert')
                         alert('Erro')
                     })
                     closeAlert()

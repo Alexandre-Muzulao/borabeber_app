@@ -108,7 +108,7 @@ function addNewTap(){
   htmlNewTap += '                </div>'
   htmlNewTap += '                <div class="col"></div>'
   htmlNewTap += '                <div class="col">'
-  htmlNewTap += `                    <button class="radius shadow icon full ion-trash-a text-red grey-800" onclick='cancelAddItem(${TAP.length})'>Deletar</button>`
+  htmlNewTap += `                    <button class="radius shadow icon full ion-trash-a text-red grey-800" onclick='delTap(${TAP.length})'>Deletar</button>`
   htmlNewTap += '                </div>'
   htmlNewTap += '            </div>'
   htmlNewTap += '          </div>'

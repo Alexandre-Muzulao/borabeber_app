@@ -34,15 +34,15 @@ function addSizeTap (tapNum) {
 }
 
 function saveTap(tapNum){
-  TAP[tapNum].cervejariaImg = ''
-  TAP[tapNum].cervejaImg = ''
-  TAP[tapNum].tapCervejariaName = document.getElementById(`tapCervejariaName${tapNum}`).value
-  TAP[tapNum].tapTitle = document.getElementById(`tapTitle${tapNum}`).value
-  TAP[tapNum].tapStyle = document.getElementById(`tapStyle${tapNum}`).value
-  TAP[tapNum].tapOrigin = document.getElementById(`tapOrigin${tapNum}`).value
-  TAP[tapNum].tapHistory = document.getElementById(`tapHistory${tapNum}`).value
-  TAP[tapNum].tapABV = document.getElementById(`tapABV${tapNum}`).value
-  TAP[tapNum].tapIBU = document.getElementById(`tapIBU${tapNum}`).value    
+  TAP[tapNum-1].cervejariaImg = ''
+  TAP[tapNum-1].cervejaImg = ''
+  TAP[tapNum-1].tapCervejariaName = document.getElementById(`tapCervejariaName${tapNum}`).value
+  TAP[tapNum-1].tapTitle = document.getElementById(`tapTitle${tapNum}`).value
+  TAP[tapNum-1].tapStyle = document.getElementById(`tapStyle${tapNum}`).value
+  TAP[tapNum-1].tapOrigin = document.getElementById(`tapOrigin${tapNum}`).value
+  TAP[tapNum-1].tapHistory = document.getElementById(`tapHistory${tapNum}`).value
+  TAP[tapNum-1].tapABV = document.getElementById(`tapABV${tapNum}`).value
+  TAP[tapNum-1].tapIBU = document.getElementById(`tapIBU${tapNum}`).value    
   
   if (updateAllSizeTap(tapNum).auth == true){
   showLoader("alertBoraBeberLoader", 'Salvando Cerveja Artesanal')
@@ -51,12 +51,12 @@ function saveTap(tapNum){
     .set({_id : COMPANY._id})
     .send(TAP)
     .then(function (res){
-      console.log(res)
       setIdHidden('customImgAlert')
+      toastCenter(res.body.message)
   }).catch(function (err){
     console.log(err)
     setIdHidden('customImgAlert')
-    alert('Ops, tive um probleminha para salvar seu item! Tente novamente por gentileza.')
+    alert(err)
   })
   } else {
     toastCenter(updateAllSizeTap(tapNum).msg)
@@ -75,7 +75,6 @@ function saveAllTaps(){
     TAP.tapHistory = document.getElementById(`tapHistory${i+1}`).value
     TAP.tapABV = document.getElementById(`tapABV${i+1}`).value
     TAP.tapIBU = document.getElementById(`tapIBU${i+1}`).value
-
   })
     
   showLoader("alertBoraBeberLoader", 'Salvando Cerveja Artesanal')
@@ -84,12 +83,12 @@ function saveAllTaps(){
     .set({_id : COMPANY._id})
     .send(TAP)
     .then(function (res){
-      console.log(res)
       setIdHidden('customImgAlert')
+      toastCenter(res.body.message)
   }).catch(function (err){
     console.log(err)
     setIdHidden('customImgAlert')
-    alert('Ops, tive um probleminha para salvar seu item! Tente novamente por gentileza.')
+    alert(err)
   })
 }
 
@@ -105,9 +104,6 @@ function updateAllSizeTap(tapNum){
   let auth = {'auth': true, msg: `Todos os itens estão corretos`}
   
   TAP[tapNum-1].sizes.map(function(sizes, i){
-    //Precisa tratar quando o usuário excluir uma tap.
-    console.log(tapNum, i) //tap1Tamanho1
-
     sizes.size = document.getElementById(`tap${tapNum}Tamanho${i}`).value
 
     if (sizes.size == ''){
