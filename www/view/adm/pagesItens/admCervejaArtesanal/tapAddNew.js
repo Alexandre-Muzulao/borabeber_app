@@ -1,5 +1,7 @@
 function addNewTap(){
   
+
+  console.log('Antes', TAP)
   let htmlNewTap = ''
   if (TAP == undefined){
     TAP = [{
@@ -28,6 +30,7 @@ function addNewTap(){
       sizes : []
     })
   }
+  console.log('Depois', TAP)
 
 
   htmlNewTap += `<div class="row" id="tap${TAP.length}">`

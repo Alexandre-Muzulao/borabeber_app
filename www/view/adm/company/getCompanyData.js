@@ -20,9 +20,9 @@ function getCompanyData(){
         parseAdmWhisky(WHISKY)
         openPage('./view/adm/main/main', function(){
             setTimeout(function(){
-                setViewtpProds(res.body.data.tpProds[0].subscription)
-                document.getElementById(`btntab${res.body.data.tpProds[0].subscription}`).className += " active";
-                document.getElementById(`tab${res.body.data.tpProds[0].subscription}`).className += " active";
+              setViewtpProds(res.body.data.tpProds[0].subscription)
+              document.getElementById(`btntab${res.body.data.tpProds[0].subscription}`).className += " active";
+              document.getElementById(`tab${res.body.data.tpProds[0].subscription}`).className += " active";
             },300)
         })
 
