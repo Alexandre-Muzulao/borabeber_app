@@ -1,6 +1,4 @@
 function addNewTap(){
-  
-
   console.log('Antes', TAP)
   let htmlNewTap = ''
   if (TAP == undefined){
@@ -98,11 +96,11 @@ function addNewTap(){
   htmlNewTap += '                    </div>'
   htmlNewTap += '                </div>'
   htmlNewTap += '                <div class="col" style="margin-top: 14%;">'
-  htmlNewTap += `                    <button class="icon ion-plus-circled text-green" id='btnAddRemTap0' onclick='addSizeTap(${TAP.length})'></button>`
+  htmlNewTap += `                    <button class="icon ion-plus-circled text-green" id='btnAddRemTap0' onclick='addSizeTap(${TAP.length-1})'></button>`
   htmlNewTap += '                </div>'
   htmlNewTap += '            </div>'
 
-  htmlNewTap += `            <div id="tap${TAP.length}Size1"></div>`
+  htmlNewTap += `            <div id="tap${TAP.length-1}Size1"></div>`
 
   htmlNewTap += '            <div class="space"></div>'
   htmlNewTap += '            <div class="row padding">'
