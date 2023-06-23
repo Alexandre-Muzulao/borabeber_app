@@ -1,10 +1,10 @@
-function dellItemBeer(idBeer, titleBeer, priceBeer){
+function deleteCerveja(idBeer, titleBeer, priceBeer){
     var item = {}
     item.idBar = IDCOMPANY
     item.idBeer = idBeer
     alert({
-        title: 'Remover mesmo ?',
-        message: 'Deseja remover a Cerveja '+ titleBeer +' no valor R$ '+ priceBeer +' da sua lista de produtos ?',
+        title: 'Remover do Estoque?',
+        message: 'Deseja remover a Cerveja <strong>'+ titleBeer +'</strong> no valor <strong>R$ '+ priceBeer +'</strong> da sua lista de produtos ?',
         class: 'grey-50 radius',
         buttons: [
             {

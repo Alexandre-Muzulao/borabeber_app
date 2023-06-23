@@ -1,4 +1,4 @@
-function dellItemBeer(idBeer, titleBeer, priceBeer){
+function deleteEssencias(idBeer, titleBeer, priceBeer){
     var item = {}
     item.idBar = IDCOMPANY
     item.idBeer = idBeer

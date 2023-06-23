@@ -1,7 +1,4 @@
 function addSizeTap (tapNum) {
-  console.log(tapNum)
-  // console.log(TAP[tapNum].sizes.length)
-
   var htmlTapSize = ''
   htmlTapSize += `<div class="row" id="tap${tapNum+1}Size${TAP[tapNum].sizes.length}Lines">`
   htmlTapSize += '    <div class="col">'

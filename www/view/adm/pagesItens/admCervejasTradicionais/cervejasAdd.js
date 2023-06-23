@@ -46,7 +46,6 @@ function saveBeerBar(){
 }
 
 function addCerveja(tpItem){
-  console.log(beers)
     var item = {}
     NOVABEER = []
     switch (tpItem){

@@ -1,44 +1,51 @@
 var tpUpdate = ''
-function updateValueItemBeer(idBeer){
-    var input = ''
-    input += '<div class="col-15">'
-    input += '    <label class="text-white" style="font-size: 16px;">R$ </label>'
-    input += '</div>'
-    input += '<div class="col-80">'
-    input += '    <input type="tel" class="text-white" id="newPriceBeer'+ idBeer +'" style=" margin-left: 2px; font-size: 16px;">'
-    input += '</div>'
-    document.getElementById('input' + idBeer).innerHTML = input
-    MobileUI.hide('btnDelete' + idBeer)
-    MobileUI.hide('h1PriceBeer' + idBeer)
-    document.getElementById('btnSave' + idBeer).style.marginRight ='-15%'
-    document.getElementById('btnSave' + idBeer).style.display =''
-    document.getElementById('btnCancel' + idBeer).style.display =''
-    var newPriceBeer = document.getElementById('newPriceBeer'+ idBeer)
-    newPriceBeer.classList.add('focus')
-    tpUpdate = 'price'
+function cervejaUpdateQtdItem(idBeer){
+  
+  var input = ''
+  input += '<div class="col-15">'
+  input += '    <label class="text-white" style="font-size: 16px;">Qtd.: </label>'
+  input += '</div>'
+  input += '<div class="col-80">'
+  input += '    <input type="tel" class="text-white" id="newQtdBeer'+ idBeer +'" style=" margin-left: 2px; font-size: 16px;">'
+  input += '</div>'
+
+  document.getElementById('inputQtd' + idBeer).innerHTML = input
+
+  MobileUI.hide('btnDelete' + idBeer)
+  MobileUI.hide('h1QtdBeer' + idBeer)
+  document.getElementById('btnSave' + idBeer).style.marginRight ='-15%'
+  document.getElementById('btnSave' + idBeer).style.display =''
+  document.getElementById('btnCancel' + idBeer).style.display =''
+
+  var newQtdBeer = document.getElementById('newQtdBeer'+ idBeer)
+  newQtdBeer.classList.add('focus')
+  tpUpdate = 'qtd'
 }
 
-function updateQtdItemBeer(idBeer){
+function cervejaUpdateValueItem(idBeer){
     var input = ''
-    input += '<div class="col-15">'
-    input += '    <label class="text-white" style="font-size: 16px;">Qtd.: </label>'
-    input += '</div>'
-    input += '<div class="col-80">'
-    input += '    <input type="tel" class="text-white" id="newQtdBeer'+ idBeer +'" style=" margin-left: 2px; font-size: 16px;">'
-    input += '</div>'
-    document.getElementById('input' + idBeer).innerHTML = input
-    MobileUI.hide('btnDelete' + idBeer)
-    MobileUI.hide('h1QtdBeer' + idBeer)
-    document.getElementById('btnSave' + idBeer).style.marginRight ='-15%'
-    document.getElementById('btnSave' + idBeer).style.display =''
-    document.getElementById('btnCancel' + idBeer).style.display =''
-    var newQtdBeer = document.getElementById('newQtdBeer'+ idBeer)
-    newQtdBeer.classList.add('focus')
-    tpUpdate = 'qtd'
+  input += '<div class="col-15">'
+  input += '    <label class="text-white" style="font-size: 16px;">R$ </label>'
+  input += '</div>'
+  input += '<div class="col-80">'
+  input += '    <input type="tel" class="text-white" id="newPriceBeer'+ idBeer +'" style=" margin-left: 2px; font-size: 16px;">'
+  input += '</div>'
+
+  document.getElementById('inputValue' + idBeer).innerHTML = input
+
+  MobileUI.hide('btnDelete' + idBeer)
+  MobileUI.hide('h1PriceBeer' + idBeer)
+  document.getElementById('btnSave' + idBeer).style.marginRight ='-15%'
+  document.getElementById('btnSave' + idBeer).style.display =''
+  document.getElementById('btnCancel' + idBeer).style.display =''
+
+  var newPriceBeer = document.getElementById('newPriceBeer'+ idBeer)
+  newPriceBeer.classList.add('focus')
+  tpUpdate = 'price'
 }
 
-function saveUpdate(idBeer){
-    var item = {}
+function cervejaSaveUpdate(idBeer){
+      var item = {}
     item.idBar = IDCOMPANY
     item.idBeer = idBeer
     item.tipo = 'beer'
@@ -75,11 +82,12 @@ function saveUpdate(idBeer){
 }
 
 function cancellUpdate(idBeer){
-    document.getElementById('h1PriceBeer' + idBeer).style.display =''
-    document.getElementById('h1QtdBeer' + idBeer).style.display =''
-    document.getElementById('btnDelete' + idBeer).style.display =''
-    MobileUI.hide('btnSave' + idBeer)
-    MobileUI.hide('btnCancel' + idBeer)
-    var input = ''
-    document.getElementById('input' + idBeer).innerHTML = input
+  document.getElementById('h1PriceBeer' + idBeer).style.display =''
+  document.getElementById('h1QtdBeer' + idBeer).style.display =''
+  document.getElementById('btnDelete' + idBeer).style.display =''
+  MobileUI.hide('btnSave' + idBeer)
+  MobileUI.hide('btnCancel' + idBeer)
+  var input = ''
+  document.getElementById('inputQtd' + idBeer).innerHTML = input
+  document.getElementById('inpuValue' + idBeer).innerHTML = input
 }

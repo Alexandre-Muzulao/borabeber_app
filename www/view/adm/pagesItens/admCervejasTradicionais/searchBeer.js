@@ -8,7 +8,6 @@ function getAllBeers(){
             setIdHidden('customImgAlert')
             alert(res.body.errorMessage)
         } else {
-          console.log(res.body.data)
             setIdHidden('customImgAlert')
             openPage('./view/adm/pagesItens/admCervejasTradicionais/cervejasList', function(){              
                 beers = []

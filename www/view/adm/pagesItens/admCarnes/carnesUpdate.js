@@ -37,7 +37,7 @@ function updateQtdItemBeer(idBeer){
     tpUpdate = 'qtd'
 }
 
-function saveUpdate(idBeer){
+function saveUpdateCarne(idBeer){
     var item = {}
     item.idBar = IDCOMPANY
     item.idBeer = idBeer

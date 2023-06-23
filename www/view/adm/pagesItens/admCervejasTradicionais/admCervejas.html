@@ -13,15 +13,15 @@
             <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerPar}'); background-size: 12vh;" valid-bind="${precoBeerPar}">
                 <div class="bottom gradient padding radius">
                     <p class="text-white">${tituloBeerPar} ${recipientePar} ${medidaPar}</p>
-                    <h1 class="text-white" onclick="updateQtdItemBeer('${idBeerPar}')" id="h1QtdBeer${idBeerPar}">Qtd.: ${qtdBeerPar}</h1>
-                    <div id="input${idBeerPar}" class="row" style="margin-top: 5px;"></div>
-                    <h1 class="text-white" onclick="updateValueItemBeer('${idBeerPar}')" id="h1PriceBeer${idBeerPar}">R$ ${precoBeerPar}</h1>
-                    <div id="input${idBeerPar}" class="row" style="margin-top: 5px;"></div>
+                    <h1 class="text-white" onclick="cervejaUpdateQtdItem('${idBeerPar}')" id="h1QtdBeer${idBeerPar}">Qtd.: ${qtdBeerPar}</h1>
+                    <div id="inputQtd${idBeerPar}" class="row" style="margin-top: 5px;"></div>
+                    <h1 class="text-white" onclick="cervejaUpdateValueItem('${idBeerPar}')" id="h1PriceBeer${idBeerPar}">R$ ${precoBeerPar}</h1>
+                    <div id="inputValue${idBeerPar}" class="row" style="margin-top: 5px;"></div>
                 </div>
                 <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteBeer{idBeerPar}">
-                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idBeerPar}" onclick="dellItemBeer('${idBeerPar}', '${tituloBeerPar} de ${recipientePar} ${medidaPar}', '${precoBeerPar}')"></button>
+                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idBeerPar}" onclick="deleteCerveja('${idBeerPar}', '${tituloBeerPar} de ${recipientePar} ${medidaPar}', '${precoBeerPar}')"></button>
                     <div style="margin-top: 7%;">
-                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idBeerPar}" onclick="saveUpdate('${idBeerPar}')" style="display: none;"></button>
+                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idBeerPar}" onclick="cervejaSaveUpdate('${idBeerPar}')" style="display: none;"></button>
                         <button class="ion-close-round text-big text-red strong" id="btnCancel${idBeerPar}" onclick="cancellUpdate('${idBeerPar}')" style="display: none;"></button>
                     </div>
                 </div>
@@ -31,15 +31,15 @@
                 valid-bind="${precoBeerImpar}">
                 <div class="bottom gradient padding radius">
                     <p class="text-white">${tituloBeerImpar} ${recipienteImpar} ${medidaImpar}</p>
-                    <h1 class="text-white" onclick="updateQtdItemBeer('${idBeerImpar}')" id="h1QtdBeer${idBeerImpar}">Qtd.: ${qtdBeerImpar}</h1>
-                    <div id="input${idBeerImpar}" class="row" style="margin-top: 5px;"></div>
-                    <h1 class="text-white" onclick="updateValueItemBeer('${idBeerImpar}')" id="h1PriceBeer${idBeerImpar}">R$ ${precoBeerImpar}</h1>
-                    <div id="input${idBeerImpar}" class="row" style="margin-top: 5px;"></div>
+                    <h1 class="text-white" onclick="cervejaUpdateQtdItem('${idBeerImpar}')" id="h1QtdBeer${idBeerImpar}">Qtd.: ${qtdBeerImpar}</h1>
+                    <div id="inputQtd${idBeerImpar}" class="row" style="margin-top: 5px;"></div>
+                    <h1 class="text-white" onclick="cervejaUpdateValueItem('${idBeerImpar}')" id="h1PriceBeer${idBeerImpar}">R$ ${precoBeerImpar}</h1>
+                    <div id="inputValue${idBeerImpar}" class="row" style="margin-top: 5px;"></div>
                 </div>
                 <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteBeer{idBeerImpar}">
-                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idBeerImpar}" onclick="dellItemBeer('${idBeerImpar}', '${tituloBeerImpar} de ${recipienteImpar} ${medidaImpar}', '${precoBeerImpar}')"></button>
+                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idBeerImpar}" onclick="deleteCerveja('${idBeerImpar}', '${tituloBeerImpar} de ${recipienteImpar} ${medidaImpar}', '${precoBeerImpar}')"></button>
                     <div style="margin-top: 7%;">
-                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idBeerImpar}" onclick="saveUpdate('${idBeerImpar}')" style="display: none;"></button>
+                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idBeerImpar}" onclick="cervejaSaveUpdate('${idBeerImpar}')" style="display: none;"></button>
                         <button class="ion-close-round text-big text-red strong" id="btnCancel${idBeerImpar}" onclick="cancellUpdate('${idBeerImpar}')" style="display: none;"></button>
                     </div>
                 </div>

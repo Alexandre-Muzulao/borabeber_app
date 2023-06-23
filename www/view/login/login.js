@@ -19,7 +19,7 @@ function openPageTest(){
 function logar(){
   try {
     var loginData = {
-        email: 'Bar do MuzuMuzu 5472',
+        email: 'Bar do MuzuMuzu 9994',
         senha: '1234',
         tpLogin: 'manual',
         idFacebook: ''

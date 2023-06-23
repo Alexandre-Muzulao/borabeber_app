@@ -1,4 +1,4 @@
-function dellItemBeer(idBeer, titleBeer, priceBeer){
+function deleteDrinks(idBeer, titleBeer, priceBeer){
     var item = {}
     item.idBar = IDCOMPANY
     item.idBeer = idBeer
