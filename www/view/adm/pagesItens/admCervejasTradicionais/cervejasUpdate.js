@@ -18,7 +18,7 @@ function cervejaUpdateQtdItem(idBeer){
   document.getElementById('btnCancel' + idBeer).style.display =''
 
   var newQtdBeer = document.getElementById('newQtdBeer'+ idBeer)
-  newQtdBeer.classList.add('focus')
+  newQtdBeer.classList.add('focus') 
   tpUpdate = 'qtd'
 }
 
@@ -40,24 +40,26 @@ function cervejaUpdateValueItem(idBeer){
   document.getElementById('btnCancel' + idBeer).style.display =''
 
   var newPriceBeer = document.getElementById('newPriceBeer'+ idBeer)
-  newPriceBeer.classList.add('focus')
+  newPriceBeer.classList.add('focus') 
   tpUpdate = 'price'
 }
 
 function cervejaSaveUpdate(idBeer){
-      var item = {}
+    var item = {}
     item.idBar = IDCOMPANY
     item.idBeer = idBeer
     item.tipo = 'beer'
     if (tpUpdate == 'qtd'){
-        item.qtd = parseInt(document.getElementById('newQtdBeer' + idBeer).value)
+      item.qtd = parseInt(document.getElementById('newQtdBeer' + idBeer).value)
+      item.precoBeer = document.getElementById('h1PriceBeer' + idBeer).innerHTML.replace("R$", "").replace(",", ".")
     } else {
-        item.qtd = document.getElementById('h1QtdBeer' + idBeer).innerHTML.replace("Qtd.:", "")
+      item.qtd = document.getElementById('h1QtdBeer' + idBeer).innerHTML.replace("Qtd.:", "")
     }
     if (tpUpdate == 'price'){
-        item.precoBeer = document.getElementById('newPriceBeer' + idBeer).value.replace(",", ".")
+      item.precoBeer = document.getElementById('newPriceBeer' + idBeer).value.replace(",", ".")
+      item.qtd = document.getElementById('h1QtdBeer' + idBeer).innerHTML.replace("Qtd.:", "")
     } else {
-        item.precoBeer = document.getElementById('h1PriceBeer' + idBeer).innerHTML.replace("R$", "").replace(",", ".")
+      item.precoBeer = document.getElementById('h1PriceBeer' + idBeer).innerHTML.replace("R$", "").replace(",", ".")
     }
     
     if (item.precoBeer == '' ){
