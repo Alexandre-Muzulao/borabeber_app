@@ -15,7 +15,7 @@ function getCompanyData(){
         VODKA = res.body.data.vodkas
         WHISKY = res.body.data.whiskys
         TAP = res.body.data.tap
-        parseAdmBeer(ADMBEERS)
+        parseCervejaAdm(ADMBEERS)
         parseAdmVodka(VODKA)
         parseAdmWhisky(WHISKY)
         openPage('./view/adm/main/main', function(){

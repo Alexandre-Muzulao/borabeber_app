@@ -73,7 +73,7 @@ function cervejaSaveUpdate(idBeer){
             } else {
                 ADMBEERS = res.body.data.dadosBeer
                 closeLoading()
-                parseAdmBeer(ADMBEERS)
+                parseCervejaAdm(ADMBEERS)
                 // toast('O Preço foi alterado!', 'Toop !')
             }
         }).catch(function (err){

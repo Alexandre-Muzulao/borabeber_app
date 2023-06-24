@@ -26,7 +26,7 @@ function deleteCerveja(idBeer, titleBeer, priceBeer){
                         } else {
                             closeLoading()
                             ADMBEERS = res.body.data.dadosBeer
-                            parseAdmBeer(ADMBEERS)
+                            parseCervejaAdm(ADMBEERS)
                             alert('Item removido com sucesso.')
                         }
                     }).catch(function (err){

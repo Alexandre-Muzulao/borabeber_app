@@ -76,7 +76,7 @@ function addCerveja(tpItem){
             })
             if (res.body.status){
                 ADMBEERS = res.body.data
-                parseAdmBeer(ADMBEERS)
+                parseCervejaAdm(ADMBEERS)
                 setTimeout(function(){
                     backPage()
                     ALLBEER = []
