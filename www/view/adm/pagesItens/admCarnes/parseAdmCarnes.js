@@ -6,60 +6,48 @@ function isPar(number){
     }
 }
 
-function parseAdmBeer(ADMBEERS){
-    if (ADMBEERS !== undefined){
-        for (i = 0; i < ADMBEERS.length; i++){
-            formatBeer(ADMBEERS)
-            if (isPar(i) == 'par'){
-                ADMBEERS[i].idBeerPar = ADMBEERS[i].idBeer
-                ADMBEERS[i].descricaoBeerPar = ADMBEERS[i].descricaoBeer
-                ADMBEERS[i].imgBeerPar = URLBEERS + ADMBEERS[i].imgBeer
-                ADMBEERS[i].precoBeerPar = ADMBEERS[i].precoBeerInt + ',' + ADMBEERS[i].precoBeerCent
-                ADMBEERS[i].precoBeerIntPar = ADMBEERS[i].precoBeerInt
-                ADMBEERS[i].precoBeerCentPar = ADMBEERS[i].precoBeerCent
-                ADMBEERS[i].tituloBeerPar = ADMBEERS[i].tituloBeer
-                ADMBEERS[i].medidaPar = ADMBEERS[i].medida
-                ADMBEERS[i].recipientePar = ADMBEERS[i].recipiente
-                ADMBEERS[i].qtdBeerPar = ADMBEERS[i].qtd
-                ADMBEERS[i].idBeerImpar = ""
-                ADMBEERS[i].descricaoBeerImpar = ""
-                ADMBEERS[i].imgBeerImpar = ""
-                ADMBEERS[i].precoBeerImpar = ""
-                ADMBEERS[i].tituloBeerImpar = ""
-                ADMBEERS[i].medidaImpar = ""
-                ADMBEERS[i].recipienteImpar = ""
-                delete ADMBEERS[i].idBeer
-                delete ADMBEERS[i].descricaoBeer
-                delete ADMBEERS[i].imgBeer
-                delete ADMBEERS[i].precoBeerCent
-                delete ADMBEERS[i].precoBeerInt
-                delete ADMBEERS[i].precoBeer
-                delete ADMBEERS[i].tituloBeer
-                delete ADMBEERS[i].medida
-                delete ADMBEERS[i].recipiente
-                delete ADMBEERS[i].qtd
-            } else {
-                ADMBEERS[i - 1].idBeerImpar = ADMBEERS[i].idBeer
-                ADMBEERS[i - 1].descricaoBeerImpar = ADMBEERS[i].descricaoBeer
-                ADMBEERS[i - 1].imgBeerImpar = URLBEERS + ADMBEERS[i].imgBeer
-                ADMBEERS[i - 1].precoBeerImpar = ADMBEERS[i].precoBeerInt + ',' + ADMBEERS[i].precoBeerCent
-                ADMBEERS[i - 1].precoBeerIntImpar = ADMBEERS[i].precoBeerInt
-                ADMBEERS[i - 1].precoBeerCentImpar = ADMBEERS[i].precoBeerCent
-                ADMBEERS[i - 1].tituloBeerImpar = ADMBEERS[i].tituloBeer
-                ADMBEERS[i - 1].medidaImpar = ADMBEERS[i].medida
-                ADMBEERS[i - 1].recipienteImpar = ADMBEERS[i].recipiente
-                ADMBEERS[i - 1].qtdBeerImpar = ADMBEERS[i].qtd
-                delete ADMBEERS[i].idBeer
-                delete ADMBEERS[i].medida
-                delete ADMBEERS[i].recipiente
-                delete ADMBEERS[i].descricaoBeer
-                delete ADMBEERS[i].imgBeer
-                delete ADMBEERS[i].precoBeerInt
-                delete ADMBEERS[i].precoBeerCent
-                delete ADMBEERS[i].tituloBeer
-                delete ADMBEERS[i].qtd
-                delete ADMBEERS[i]
-            }
-        }
+function parseAdmCarnes(ADMCARNES){
+  if (ADMCARNES !== undefined){
+    for (i = 0; i < ADMCARNES.length; i++){
+      if (isPar(i) == 'par'){
+        ADMCARNES[i].idCarnePar = ADMCARNES[i]._id
+        ADMCARNES[i].corteCarnePar = ADMCARNES[i].corte
+        ADMCARNES[i].imgCarnePar = URLIMAGECARNES + ADMCARNES[i].img
+        ADMCARNES[i].tipoPar = ADMCARNES[i].tipo
+        ADMCARNES[i].pecuariaPar = ADMCARNES[i].pecuaria
+        ADMCARNES[i].precoCortePar = ADMCARNES[i].precoCarneInt + ',' + ADMCARNES[i].precoCarneCent
+        ADMCARNES[i].precoCarneIntPar = ADMCARNES[i].precoCarneInt
+        ADMCARNES[i].precoCarneCentPar = ADMCARNES[i].precoCarneCent
+        ADMCARNES[i].idCarneImpar = ""
+        ADMCARNES[i].descricaoCarneImpar = ""
+        ADMCARNES[i].imgCarneImpar = ""
+        ADMCARNES[i].precoCarneImpar = ""
+        delete ADMCARNES[i]._id
+        delete ADMCARNES[i].corte
+        delete ADMCARNES[i].img
+        delete ADMCARNES[i].tipo
+        delete ADMCARNES[i].precoCortePar
+        delete ADMCARNES[i].precoCarneInt
+        delete ADMCARNES[i].precoCarne
+      } else {
+        ADMCARNES[i - 1].idCarneImpar = ADMCARNES[i]._id
+        ADMCARNES[i - 1].corteCarneImpar = ADMCARNES[i].corte
+        ADMCARNES[i - 1].imgCarneImpar = URLIMAGECARNES + ADMCARNES[i].img
+        ADMCARNES[i - 1].tipoImpar = ADMCARNES[i].tipo
+        ADMCARNES[i - 1].pecuariaImpar = ADMCARNES[i].pecuaria
+        ADMCARNES[i - 1].precoCorteImpar = ADMCARNES[i].precoCarneInt + ',' + ADMCARNES[i].precoCarneCent
+        ADMCARNES[i - 1].precoCarneIntImpar = ADMCARNES[i].precoCarneInt
+        ADMCARNES[i - 1].precoCarneCentImpar = ADMCARNES[i].precoCarneCent
+        ADMCARNES[i - 1].precoCarneImpar = ""
+        delete ADMCARNES[i]._id
+        delete ADMCARNES[i].corte
+        delete ADMCARNES[i].img
+        delete ADMCARNES[i].tipo
+        delete ADMCARNES[i].precoCortePar
+        delete ADMCARNES[i].precoCarneInt
+        delete ADMCARNES[i].precoCarne
+        delete ADMCARNES[i]
+      }
     }
+  }
 }

@@ -6,7 +6,7 @@ function isPar(number){
     }
 }
 
-function parseAdmBeer(ADMBEERS){
+function parseAdmCombo(ADMBEERS){
     if (ADMBEERS !== undefined){
         for (i = 0; i < ADMBEERS.length; i++){
             formatBeer(ADMBEERS)

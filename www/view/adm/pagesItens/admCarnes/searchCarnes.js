@@ -1,50 +1,49 @@
-function getAllCARNEs(){
-    loading('Buscando os cervejas no deposito ...')
-    if (ALLCARNE.length == 0){
-        MobileUI.ajax.get(url + '/getCARNEs').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
-        if(res.body.errorMessage) {
-            closeLoading()
+function getAllCarnes(){
+  showLoader("alertBoraBeberLoader", 'Buscando os cortes na camara fria!')
+    if (ADMCARNES.length == 0){
+        MobileUI.ajax.get(url + '/getcarnes').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+        if(res.body.errorMessage) { 
             alert(res.body.errorMessage)
-        } else {
-            closeLoading()
-            openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
+            setIdHidden('customImgAlert')
+        } else { 
+            openPage('./view/adm/pagesItens/admCarnes/carnesList', function(){
                 CARNEs = []
-                ALLCARNE = res.body.data
-                searchCARNE(ALLCARNE)
-                parseAdmCARNE(ALLCARNE)
+                ADMCARNES = res.body.data
+                searchCarne(ADMCARNES)
+                parseAdmCarnes(ADMCARNES)
+                setIdHidden('customImgAlert')
             })
         }
-        }).catch(function(err) {
-            closeLoading()
+        }).catch(function(err) { 
             alert('Ops! Tive um problema para encontrar a cerveja no Freezer! Vamos tentar novamente daqui a pouco.')
             console.log(err)
+            setIdHidden('customImgAlert')
         })
     } else {
-        closeLoading()
-        openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-            searchCARNE(ALLCARNE)
-            // parseAdmCARNE(ALLCARNE)
+      setIdHidden('customImgAlert')
+        openPage('./view/adm/pagesItens/admCarnes/carnesList', function(){
+            searchCarne(ADMCARNES) 
         })
     }
 }
 
-function searchCARNE(CARNEs){
-    ALLCARNE_OLD = CARNEs
+function searchCarne(CARNEs){
+    ADMCARNES_OLD = CARNEs
     
     $(document).ready(function(){
         $("#marcaCARNE").keyup(function(){
             var searchVal = $("#marcaCARNE").val()
             if (searchVal.length > 0){
-                ALLCARNE = []
-                for (var i=0 ; i < ALLCARNE_OLD.length ; i++)
+                ADMCARNES = []
+                for (var i=0 ; i < ADMCARNES_OLD.length ; i++)
                 {
-                    if (validUndefined(ALLCARNE_OLD[i])){
-                        ifCARNEExists(ALLCARNE_OLD[i], searchVal, i)
-                        // CARNEPushIfNotExist(ifCARNEExists(ALLCARNE_OLD[i], searchVal))
+                    if (validUndefined(ADMCARNES_OLD[i])){
+                        ifCARNEExists(ADMCARNES_OLD[i], searchVal, i)
+                        // CARNEPushIfNotExist(ifCARNEExists(ADMCARNES_OLD[i], searchVal))
                     }
                 }
             } else {
-                ALLCARNE = ALLCARNE_OLD
+                ADMCARNES = ADMCARNES_OLD
             }
 
         })
@@ -52,12 +51,12 @@ function searchCARNE(CARNEs){
 }
 
 function CARNEPushIfNotExist(CARNE){
-    for (var i=0; i < ALLCARNE; i++){
-        if(CARNE.tituloCARNEPar !== ALLCARNE[i].tituloCARNEPar){
-            ALLCARNE.push(CARNE)
+    for (var i=0; i < ADMCARNES; i++){
+        if(CARNE.tituloCARNEPar !== ADMCARNES[i].tituloCARNEPar){
+            ADMCARNES.push(CARNE)
         }
-        if(CARNE.tituloCARNEImpar !== ALLCARNE[i].tituloCARNEImpar){
-            ALLCARNE.push(CARNE)
+        if(CARNE.tituloCARNEImpar !== ADMCARNES[i].tituloCARNEImpar){
+            ADMCARNES.push(CARNE)
         }
     }
 }
@@ -71,10 +70,10 @@ function validUndefined(CARNE){
 function ifCARNEExists(item, search, index){
     if (isPar(index) == 'par'){
         if (item.tituloCARNEPar.toLowerCase().includes(search.toLowerCase())){
-            ALLCARNE.push(item)
+            ADMCARNES.push(item)
         }
         // if (item.tituloCARNEImpar.toLowerCase().includes(search.toLowerCase())){
-        //     ALLCARNE.push(item)
+        //     ADMCARNES.push(item)
         // }
     }   
 }

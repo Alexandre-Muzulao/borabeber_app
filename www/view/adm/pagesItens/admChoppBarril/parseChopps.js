@@ -6,7 +6,7 @@ function isPar(number){
     }
 }
 
-function parseAdmBeer(ADMBEERS){
+function parseAdmChopp(ADMBEERS){
     if (ADMBEERS !== undefined){
         for (i = 0; i < ADMBEERS.length; i++){
             formatBeer(ADMBEERS)

@@ -1,47 +1,45 @@
 <div class="page">
     <div class="header grey-900" data="USER">
         <div class="left">
-            <button class="icon ion-navicon" onclick="openMenu('menuBeers')"></button>
+            <button class="icon ion-navicon" onclick="openMenu('menuCarnes')"></button>
         </div>
+        <h1 class="text-white text-strong align-center">Câmara fria</h1>
         <div class="right">
             <button class="icon ion-chevron-left" onclick="backPage()"></button>
         </div>
-        <h1 id="nameCompany">${nomeCompany}</h1>
     </div>
     <div class="header sub grey-800">
-        <!-- <input class="text-white placeholder-white" type="text" id="marcaBeer" placeholder="Buscar Rótulo, Recipiente ou Tamanho">
-        <button class="small radius grey-200 radius right margin" onclick="getBeers()" id="btnBuscarRotulo">Buscar</button> -->
         <div class="list no-border">
             <div class="item icon ion-search icon-left text-big">
-                <input class="text-white placeholder-white" type="text" id="marcaBeer" placeholder="Buscar Rótulo, Recipiente ou Tamanho" 
+                <input class="text-white placeholder-white" type="text" id="marcaCarne" placeholder="Buscar Rótulo, Recipiente ou Tamanho" 
                 style="max-width: 90%; margin-top: -1em;">
             </div>
         </div>
     </div>
     <div id="mainAdmMenu"></div>
-    <div class="content has-header has-sub-header list-add-bebidas-bar">
-        <div class="item" data="ALLBEER" style="height: 300px;">
+    <div class="content has-header has-sub-header list-add-bebidas-bar grey-900">
+        <div class="item" data="ADMCARNES" style="height: 300px;">
             <div class="row" style="height: 270px;">
-                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerPar}'); background-size: 10vh;" onclick="addCarnes('${idBeerPar}', '${tituloBeerPar}', '${recipientePar}', '${medidaPar}')">
-                    <div class="left" onclick="addCarnes('${idBeerPar}', '${tituloBeerPar}', '${recipientePar}', '${medidaPar}')">
-                        <input type="checkbox" class="green text-huge" id="${idBeerPar}item">
+                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgCarnePar}'); background-size: 100%;" valid-bind="${corteCarnePar}" onclick="addCarnes('${idCarnePar}', '${corteCarnePar}')">
+                    <div class="right" onclick="addCarnes('${idCarnePar}', '${corteCarnePar}', '${recipientePar}', '${medidaPar}')">
+                      <input type="checkbox" class="green text-huge" id="${idCarnePar}item">
                     </div>
-                    <div class="space-huge"></div>
-                    <div class="space-big"></div>
-                    <div class="space-big"></div>
+                    <div class="left">
+                      <h1 class="text-white">${pecuariaPar}</h1>
+                    </div>
                     <div class="bottom gradient padding radius">
-                        <h1 class="text-white">${tituloBeerPar} ${recipientePar} ${medidaPar} ${descricaoBeerPar}</h1>
+                        <h1 class="text-white">${corteCarnePar}</h1>
                     </div>
                 </div>
-                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerImpar}'); background-size: 10vh;" valid-bind="${tituloBeerImpar}"  onclick="addCarnes('${idBeerImpar}', '${tituloBeerImpar}', '${recipienteImpar}', '${medidaImpar}')">
-                    <div class="left" onclick="addCarnes('${idBeerImpar}', '${tituloBeerImpar}', '${recipienteImpar}', '${medidaImpar}')">
-                        <input type="checkbox" class="green text-huge" id="${idBeerImpar}item">
+                <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgCarneImpar}'); background-size: 100%;" valid-bind="${corteCarneImpar}"  onclick="addCarnes('${idCarneImpar}', '${corteCarneImpar}')">
+                    <div class="right" onclick="addCarnes('${idCarneImpar}', '${corteCarneImpar}')">
+                      <input type="checkbox" class="green text-huge" id="${idCarneImpar}item">
                     </div>
-                    <div class="space-huge"></div>
-                    <div class="space-big"></div>
-                    <div class="space-big"></div>
+                    <div class="left">
+                      <h1 class="text-white">${pecuariaImpar}</h1>
+                    </div>
                     <div class="bottom gradient padding radius">
-                        <h1 class="text-white">${tituloBeerImpar} ${recipienteImpar} ${medidaImpar} ${descricaoBeerImpar}</h1>
+                        <h1 class="text-white">${corteCarneImpar}</h1>
                     </div>
                 </div>
             </div>

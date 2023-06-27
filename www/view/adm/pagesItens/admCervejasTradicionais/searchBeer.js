@@ -13,7 +13,7 @@ function getAllBeers(){
                 beers = []
                 ALLBEER = res.body.data
                 searchBeer(ALLBEER)
-                parseAdmBeer(ALLBEER)
+                parseCervejaAdm(ALLBEER)
             })
 
         }
@@ -25,8 +25,7 @@ function getAllBeers(){
     } else {
         setIdHidden('customImgAlert')
         openPage('./view/adm/pagesItens/admCervejasTradicionais/cervejasList', function(){
-            searchBeer(ALLBEER)
-            // parseAdmBeer(ALLBEER)
+            searchBeer(ALLBEER) 
         })
     }
 }
