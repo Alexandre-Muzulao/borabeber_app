@@ -1,20 +1,19 @@
-function addCarnes(idCarne, corte, img){
-    var index
-    if (document.getElementById(idCarne + 'item').checked){
-        document.getElementById(idCarne + 'item').checked = false;
-        for (i = 0; i < carnes.length; i++){
-            if (carnes[i].idCarne == idCarne){
-                index = i
-            }
-        }
-        if (index > -1) {
-            carnes.splice(index, 1);
-        }
-    } else {
-        document.getElementById(idCarne + 'item').checked = true;
-        carnes.push({idCarne, "corte" : corte})
-    }
-    console.log('carnes', carnes)
+function addCarnes(idImgCarnes, corte, img){
+  var index
+  if (document.getElementById(idImgCarnes + 'item').checked){
+      document.getElementById(idImgCarnes + 'item').checked = false;
+      for (i = 0; i < carnes.length; i++){
+          if (carnes[i].idImgCarnes == idImgCarnes){
+              index = i
+          }
+      }
+      if (index > -1) {
+          carnes.splice(index, 1);
+      }
+  } else {
+      document.getElementById(idImgCarnes + 'item').checked = true;
+      carnes.push({idImgCarnes, "corte" : corte})
+  }
 }
 
 function saveCarnes(){

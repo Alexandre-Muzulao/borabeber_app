@@ -1,8 +1,16 @@
 var tp = 'dev'
+var url = ''
+var loginData = ''
 
 switch (tp) {
     case 'dev':
-        var url = 'http://localhost:3000/production'
+        url = 'http://localhost:3000/production'
+        loginData = {
+          email: 'Bar do MuzuMuzu 6610',
+          senha: '1234',
+          tpLogin: 'manual',
+          idFacebook: ''
+      };
     break;
     case 'hml':
         var url = 'https://1i44ejgddg.execute-api.us-east-1.amazonaws.com/dev'
@@ -18,12 +26,6 @@ function openPageTest(){
 
 function logar(){
   try {
-    var loginData = {
-        email: 'Bar do MuzuMuzu 6610',
-        senha: '1234',
-        tpLogin: 'manual',
-        idFacebook: ''
-    };
     getUserCompany(loginData)
   } catch (error) {
     console.log('error: ', error)
@@ -60,7 +62,7 @@ function getUserCompany(loginData){
 function loginCompany(company){
     if (validatorEmpty(company)){
         MobileUI.ajax.get(url + '/getcompanydata')
-        .query('_id=' + IDCOMPANY + '')
+        .query(`_id=${IDCOMPANY}&consultCompanyTypeParam=companyData`)
         .send()
         .then(function (res){
             COMPANY = res.body.data
