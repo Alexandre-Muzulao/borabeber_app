@@ -16,12 +16,18 @@ switch (tp) {
         var url = 'https://1i44ejgddg.execute-api.us-east-1.amazonaws.com/dev'
     break;
     case 'prod':
-        var url = 'https://g34czjej1b.execute-api.us-east-1.amazonaws.com/production'
+      var url = 'https://g34czjej1b.execute-api.us-east-1.amazonaws.com/production'
+      loginData = {
+        email: document.getElementById('loginEmailName').value,
+        senha: document.getElementById('loginPswrd').value,
+        tpLogin: 'manual',
+        idFacebook: ''
+    };
     break;
 }
 
 function openPageTest(){
-    openPage('./view/adm/company/checkout/checkout')    
+  openPage('./view/adm/company/checkout/checkout')
 }
 
 function logar(){
@@ -49,7 +55,8 @@ function getUserCompany(loginData){
                   loginCompany(loginData)
               break
               case 'user':
-                  
+                IDCOMPANY = res.body.data._id
+                loginUser(loginData)
               break
               case 'deliverymen':
                   

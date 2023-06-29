@@ -18,25 +18,25 @@
     </div>
     <div id="mainAdmMenu"></div>
     <div class="content has-header has-sub-header list-add-bebidas-bar grey-900">
-        <div class="item" data="ADMCARNES" style="height: 300px;">
+        <div class="item" data="ALLCARNES" style="height: 300px;">
             <div class="row" style="height: 270px;">
                 <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgCarnePar}'); background-size: 100%;" valid-bind="${corteCarnePar}" onclick="addCarnes('${idCarnePar}', '${corteCarnePar}')">
-                    <div class="right" onclick="addCarnes('${idCarnePar}', '${corteCarnePar}', '${recipientePar}', '${medidaPar}')">
-                      <input type="checkbox" class="green text-huge" id="${idCarnePar}item">
-                    </div>
-                    <div class="left">
-                      <h1 class="text-white">${pecuariaPar}</h1>
-                    </div>
-                    <div class="bottom gradient padding radius">
-                        <h1 class="text-white">${corteCarnePar}</h1>
-                    </div>
+                  <div class="left">
+                    <h1 class="text-white">${pecuariaPar}</h1>
+                  </div>
+                  <div class="right" onclick="addCarnes('${idCarnePar}', '${corteCarnePar}', '${recipientePar}', '${medidaPar}')">
+                    <input type="checkbox" class="green text-huge" id="${idCarnePar}item">
+                  </div>
+                  <div class="bottom gradient padding radius">
+                      <h1 class="text-white">${corteCarnePar}</h1>
+                  </div>
                 </div>
                 <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgCarneImpar}'); background-size: 100%;" valid-bind="${corteCarneImpar}"  onclick="addCarnes('${idCarneImpar}', '${corteCarneImpar}')">
+                  <div class="left">
+                    <h1 class="text-white">${pecuariaImpar}</h1>
+                  </div>
                     <div class="right" onclick="addCarnes('${idCarneImpar}', '${corteCarneImpar}')">
                       <input type="checkbox" class="green text-huge" id="${idCarneImpar}item">
-                    </div>
-                    <div class="left">
-                      <h1 class="text-white">${pecuariaImpar}</h1>
                     </div>
                     <div class="bottom gradient padding radius">
                         <h1 class="text-white">${corteCarneImpar}</h1>

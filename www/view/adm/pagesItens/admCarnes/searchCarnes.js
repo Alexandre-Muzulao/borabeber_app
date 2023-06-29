@@ -1,16 +1,16 @@
 function getAllCarnes(){
   showLoader("alertBoraBeberLoader", 'Buscando os cortes na camara fria!')
-    if (ADMCARNES.length == 0){
+    if (ALLCARNES.length == 0){
         MobileUI.ajax.get(url + '/getcarnes').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
         if(res.body.errorMessage) { 
             alert(res.body.errorMessage)
             setIdHidden('customImgAlert')
         } else { 
             openPage('./view/adm/pagesItens/admCarnes/carnesList', function(){
-                CARNEs = []
-                ADMCARNES = res.body.data
-                searchCarne(ADMCARNES)
-                parseAdmCarnes(ADMCARNES)
+                CARNES = []
+                ALLCARNES = res.body.data
+                searchCarne(ALLCARNES)
+                parseAdmCarnes(ALLCARNES)
                 setIdHidden('customImgAlert')
             })
         }
@@ -22,19 +22,18 @@ function getAllCarnes(){
     } else {
       setIdHidden('customImgAlert')
         openPage('./view/adm/pagesItens/admCarnes/carnesList', function(){
-            searchCarne(ADMCARNES) 
+            searchCarne(ALLCARNES) 
         })
     }
 }
 
-function searchCarne(CARNEs){
-    ADMCARNES_OLD = CARNEs
-    
+function searchCarne(CARNES){
+    ADMCARNES_OLD = CARNES    
     $(document).ready(function(){
         $("#marcaCARNE").keyup(function(){
             var searchVal = $("#marcaCARNE").val()
             if (searchVal.length > 0){
-                ADMCARNES = []
+              ALLCARNES = []
                 for (var i=0 ; i < ADMCARNES_OLD.length ; i++)
                 {
                     if (validUndefined(ADMCARNES_OLD[i])){
@@ -43,7 +42,7 @@ function searchCarne(CARNEs){
                     }
                 }
             } else {
-                ADMCARNES = ADMCARNES_OLD
+              ALLCARNES = ADMCARNES_OLD
             }
 
         })

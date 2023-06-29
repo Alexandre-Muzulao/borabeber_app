@@ -1,19 +1,19 @@
 function createCompany() {
     openPage('./view/adm/company/createCompany', function() {        
-        MobileUI.formByObject('formCreateBar', {
-            docCompany : '38708579000114',
-            nomeCompany : `Bar do MuzuMuzu ${Math.floor(Math.random() * 10000).toString()}`,
-            emailCompany : 'ale.muzulao@gmail.com',
-            tellCompany : '44991569743',
-            userNameCompany : 'Alexandre Muzulão',
-            passwordCompany : '1234',
-            passwordConfirmCompany : '1234'
-        })
+        // MobileUI.formByObject('formCreateBar', {
+        //     docCompany : '38708579000114',
+        //     nomeCompany : `Bar do MuzuMuzu ${Math.floor(Math.random() * 10000).toString()}`,
+        //     emailCompany : 'ale.muzulao@gmail.com',
+        //     tellCompany : '44991569743',
+        //     userNameCompany : 'Alexandre Muzulão',
+        //     passwordCompany : '1234',
+        //     passwordConfirmCompany : '1234'
+        // })
 
-        $("#tellCompany").mask("(99) 9 9999 - 9999")
-        document.getElementById('dadosEndCadBar').style.display='none'
-        document.getElementById('dadosEndBairroCadBar').style.display='none'
-        setMaskCpfCNPJ('#docCompany')
+        // $("#tellCompany").mask("(99) 9 9999 - 9999")
+        // document.getElementById('dadosEndCadBar').style.display='none'
+        // document.getElementById('dadosEndBairroCadBar').style.display='none'
+        // setMaskCpfCNPJ('#docCompany')
         
     })
 }

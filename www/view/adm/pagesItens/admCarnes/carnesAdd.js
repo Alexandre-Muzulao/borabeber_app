@@ -28,7 +28,7 @@ function saveCarnes(){
     buttons:[
       {
         label: '',
-        class: 'text-green ion-checkmark-round',
+        class: 'text-green ion-checkmark-round text-big',
         onclick: function(){
             closeAlert()
             sendToColdRoom()
@@ -36,7 +36,7 @@ function saveCarnes(){
       },
       {
         label: '',
-        class: 'text-red ion-close-round',
+        class: 'text-red ion-close-round text-big',
         onclick: function(){
             closeAlert()
         }
@@ -72,6 +72,7 @@ function sendToColdRoom(){
                 class: 'full text-big text-strong black-opacity-70 text-white radius',
             })
             if (res.body.status){
+              console.log(res.body.data)
                 ADMCARNES = res.body.data
                 parseAdmCarnes(ADMCARNES)
                 setTimeout(function(){

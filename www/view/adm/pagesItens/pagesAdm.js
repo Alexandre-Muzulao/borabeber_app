@@ -113,7 +113,6 @@ function setViewtpProds(module){
             }
         break;
         case "Carnes":
-          console.log('caaarne')
             if(!stModule18){
                 stModule18 = true
                 include('incCarnes', './view/adm/pagesItens/admCarnes/admCarnes.html')

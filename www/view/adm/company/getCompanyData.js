@@ -16,8 +16,6 @@ function getCompanyData(consultCompanyType){
         WHISKY = res.body.data.whiskys
         TAP = res.body.data.tap
         ADMCARNES = res.body.data.dadosCarnes
-        
-        console.log(ADMCARNES)
 
         parseCervejaAdm(ADMBEERS)
         parseAdmVodka(VODKA)
