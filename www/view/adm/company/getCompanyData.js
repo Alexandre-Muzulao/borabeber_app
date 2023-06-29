@@ -16,12 +16,10 @@ function getCompanyData(consultCompanyType){
         WHISKY = res.body.data.whiskys
         TAP = res.body.data.tap
         ADMCARNES = res.body.data.dadosCarnes
-
         parseCervejaAdm(ADMBEERS)
         parseAdmVodka(VODKA)
         parseAdmWhisky(WHISKY)
         parseAdmCarnes(ADMCARNES)
-
         openPage('./view/adm/main/main', function(){
             setTimeout(function(){
               setViewtpProds(res.body.data.tpProds[0].subscription)

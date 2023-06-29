@@ -1,85 +1,59 @@
 var tpUpdate = ''
-function updateValueItemBeer(idBeer){
-    var input = ''
-    input += '<div class="col-15">'
-    input += '    <label class="text-white" style="font-size: 16px;">R$ </label>'
-    input += '</div>'
-    input += '<div class="col-80">'
-    input += '    <input type="tel" class="text-white" id="newPriceBeer'+ idBeer +'" style=" margin-left: 2px; font-size: 16px;">'
-    input += '</div>'
-    document.getElementById('input' + idBeer).innerHTML = input
-    MobileUI.hide('btnDelete' + idBeer)
-    MobileUI.hide('h1PriceBeer' + idBeer)
-    document.getElementById('btnSave' + idBeer).style.marginRight ='-15%'
-    document.getElementById('btnSave' + idBeer).style.display =''
-    document.getElementById('btnCancel' + idBeer).style.display =''
-    var newPriceBeer = document.getElementById('newPriceBeer'+ idBeer)
-    newPriceBeer.classList.add('focus')
-    tpUpdate = 'price'
+function updateValueItemCarnes(idCarne){ 
+  var input = ''
+  input += '<div class="col-15">'
+  input += '    <label class="text-white" style="font-size: 16px;">R$ </label>'
+  input += '</div>'
+  input += '<div class="col-80">'
+  input += '    <input type="tel" class="text-white" id="newPriceCarne'+ idCarne +'" style=" margin-left: 2px; font-size: 16px;">'
+  input += '</div>'
+
+  document.getElementById('inputCarne' + idCarne).innerHTML = input
+  MobileUI.hide('btnDelete' + idCarne)
+  MobileUI.hide('h1PriceCarne' + idCarne)
+
+  document.getElementById('btnSave' + idCarne).style.marginRight ='20%'
+  document.getElementById('btnSave' + idCarne).style.display =''
+  document.getElementById('btnCancel' + idCarne).style.display =''
+
+  var newPriceCarne = document.getElementById('newPriceCarne'+ idCarne)
+
+  newPriceCarne.classList.add('focus')
+  tpUpdate = 'price'
 }
 
-function updateQtdItemBeer(idBeer){
-    var input = ''
-    input += '<div class="col-15">'
-    input += '    <label class="text-white" style="font-size: 16px;">Qtd.: </label>'
-    input += '</div>'
-    input += '<div class="col-80">'
-    input += '    <input type="tel" class="text-white" id="newQtdBeer'+ idBeer +'" style=" margin-left: 2px; font-size: 16px;">'
-    input += '</div>'
-    document.getElementById('input' + idBeer).innerHTML = input
-    MobileUI.hide('btnDelete' + idBeer)
-    MobileUI.hide('h1QtdBeer' + idBeer)
-    document.getElementById('btnSave' + idBeer).style.marginRight ='-15%'
-    document.getElementById('btnSave' + idBeer).style.display =''
-    document.getElementById('btnCancel' + idBeer).style.display =''
-    var newQtdBeer = document.getElementById('newQtdBeer'+ idBeer)
-    newQtdBeer.classList.add('focus')
-    tpUpdate = 'qtd'
+function saveUpdateCarne(idCarne){
+  var item = {}
+  item.idEstabelecimento = IDCOMPANY
+  item.idCarne = idCarne
+  item.precoCarne = document.getElementById('newPriceCarne' + idCarne).value.replace(",", ".")
+  
+  if (item.precoCarne == '' ){
+    alertCenter('A Carne precisa de um preço!','Ops!')
+  } else {
+    showLoader("alertBoraBeberLoader", 'Aguarde por gentileza, <br> atualizando valor da carne!')
+    MobileUI.ajax.post(url + '/updatecarne').send(item).then(function (res){
+      if(res.body.errorMessage) {
+        setIdHidden('customImgAlert')
+        toastCenter(res.body.errorMessage)
+      } else {
+        ADMCARNES = res.body.data.dadosCarnes
+        parseAdmCarnes(res.body.data.dadosCarnes)
+        setIdHidden('customImgAlert')
+        toastCenter(res.body.message)
+      }
+    }).catch(function (err){
+       setIdHidden('customImgAlert')
+       toastCenter(res.body.errorMessage)
+    })    
+  }
 }
 
-function saveUpdateCarne(idBeer){
-    var item = {}
-    item.idBar = IDCOMPANY
-    item.idBeer = idBeer
-    item.tipo = 'beer'
-    if (tpUpdate == 'qtd'){
-        item.qtd = parseInt(document.getElementById('newQtdBeer' + idBeer).value)
-    } else {
-        item.qtd = document.getElementById('h1QtdBeer' + idBeer).innerHTML.replace("Qtd.:", "")
-    }
-    if (tpUpdate == 'price'){
-        item.precoBeer = document.getElementById('newPriceBeer' + idBeer).value.replace(",", ".")
-    } else {
-        item.precoBeer = document.getElementById('h1PriceBeer' + idBeer).innerHTML.replace("R$", "").replace(",", ".")
-    }
-    
-    if (item.precoBeer == '' ){
-        alert('A Beer precisa de um preço!','Ops!')
-    } else {
-        loading('Atualizando Preço e Quantidade!')
-        MobileUI.ajax.post(url + '/updateitembar').send(item).then(function (res){
-            if(res.body.errorMessage) {
-                closeLoading()
-                alert(res.body.errorMessage)
-            } else {
-                ADMBEERS = res.body.data.dadosBeer
-                closeLoading()
-                parseAdmBeer(ADMBEERS)
-                // toast('O Preço foi alterado!', 'Toop !')
-            }
-        }).catch(function (err){
-            closeLoading()
-            alert('Falha ao alterar o valor.')
-        })    
-    }
-}
-
-function cancellUpdate(idBeer){
-    document.getElementById('h1PriceBeer' + idBeer).style.display =''
-    document.getElementById('h1QtdBeer' + idBeer).style.display =''
-    document.getElementById('btnDelete' + idBeer).style.display =''
-    MobileUI.hide('btnSave' + idBeer)
-    MobileUI.hide('btnCancel' + idBeer)
-    var input = ''
-    document.getElementById('input' + idBeer).innerHTML = input
+function cancellUpdateCarne(idCarne){
+  document.getElementById('h1PriceCarne' + idCarne).style.display =''
+  document.getElementById('btnDelete' + idCarne).style.display =''
+  MobileUI.hide('btnSave' + idCarne)
+  MobileUI.hide('btnCancel' + idCarne)
+  var input = ''
+  document.getElementById('inputCarne' + idCarne).innerHTML = input
 }

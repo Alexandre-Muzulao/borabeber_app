@@ -16,14 +16,19 @@
               </div>
                 <div class="bottom gradient padding radius">
                   <h1 class="text-white">${corteCarnePar}</h1>
-                  <h1 class="text-white" onclick="updateValueItemCarnes('${idCarnesPar}')" id="h1PriceCarnes${idCarnesPar}">R$ ${precoCarnesPar}</h1>
-                  <div id="input${idCarnesPar}" class="row" style="margin-top: 5px;"></div>
+                  <h1 class="text-white" onclick="updateValueItemCarnes('${idCarnePar}')" id="h1PriceCarne${idCarnePar}">R$ ${precoCarnePar}</h1>
+                  <div id="inputCarne${idCarnePar}" class="row" style="margin-top: 5px;"></div>
                 </div>
-                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteCarnes{idCarnesPar}">
-                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idCarnesPar}" onclick="dellItemCarnes('${idCarnesPar}', '${tituloCarnesPar} de ${recipientePar} ${medidaPar}', '${precoCarnesPar}')"></button>
-                    <div style="margin-top: 7%;">
-                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idCarnesPar}" onclick="saveUpdateCarne('${idCarnesPar}')" style="display: none;"></button>
-                        <button class="ion-close-round text-big text-red strong" id="btnCancel${idCarnesPar}" onclick="cancellUpdate('${idCarnesPar}')" style="display: none;"></button>
+
+                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteCarne{idCarnePar}">
+                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idCarnePar}" onclick="dellItemCarne('${idCarnePar}', '${corteCarnePar}', '${precoCarnePar}')"></button>
+                    <div class="row" style="margin-top: 20%;">
+                      <div class="col">
+                        <button class="text-huge text-green ion-checkmark-circled" id="btnSave${idCarnePar}" onclick="saveUpdateCarne('${idCarnePar}')" style="display: none;"></button>
+                      </div>
+                      <div class="col">
+                        <button class="text-huge text-red ion-close-circled" id="btnCancel${idCarnePar}" onclick="cancellUpdateCarne('${idCarnePar}')" style="display: none;"></button>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -33,14 +38,18 @@
                 </div>
                 <div class="bottom gradient padding radius">
                   <h1 class="text-white">${corteCarneImpar}</h1>
-                  <h1 class="text-white" onclick="updateValueItemCarnes('${idCarneImpar}')" id="h1PriceCarnes${idCarneImpar}">R$ ${precoCarnesImpar}</h1>
-                  <div id="input${idCarneImpar}" class="row" style="margin-top: 5px;"></div>
+                  <h1 class="text-white" onclick="updateValueItemCarnes('${idCarneImpar}')" id="h1PriceCarne${idCarneImpar}">R$ ${precoCarneImpar}</h1>
+                  <div id="inputCarne${idCarneImpar}" class="row" style="margin-top: 5px;"></div>
                 </div>
-                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteCarnes{idCarneImpar}">
-                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idCarneImpar}" onclick="dellItemCarnes('${idCarneImpar}', '${tituloCarnesImpar} de ${recipienteImpar} ${medidaImpar}', '${precoCarnesImpar}')"></button>
-                    <div style="margin-top: 7%;">
-                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idCarneImpar}" onclick="saveUpdateCarne('${idCarneImpar}')" style="display: none;"></button>
-                        <button class="ion-close-round text-big text-red strong" id="btnCancel${idCarneImpar}" onclick="cancellUpdate('${idCarneImpar}')" style="display: none;"></button>
+                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteCarne{idCarneImpar}">
+                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idCarneImpar}" onclick="dellItemCarne('${idCarneImpar}', '${corteCarneImpar}', '${precoCarneImpar}')"></button>
+                    <div class="row" style="margin-top: 20%;">
+                      <div class="col">
+                        <button class="text-huge text-green ion-checkmark-circled strong" id="btnSave${idCarneImpar}" onclick="saveUpdateCarne('${idCarneImpar}')" style="display: none;"></button>
+                      </div>
+                      <div class="col">
+                        <button class="text-huge text-red ion-close-circled strong" id="btnCancel${idCarneImpar}" onclick="cancellUpdateCarne('${idCarneImpar}')" style="display: none;"></button>
+                      </div>
                     </div>
                 </div>
             </div>

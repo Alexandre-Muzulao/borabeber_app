@@ -10,9 +10,9 @@ function cervejaUpdateQtdItem(idBeer){
   input += '</div>'
 
   document.getElementById('inputQtd' + idBeer).innerHTML = input
-
   MobileUI.hide('btnDelete' + idBeer)
   MobileUI.hide('h1QtdBeer' + idBeer)
+
   document.getElementById('btnSave' + idBeer).style.marginRight ='-15%'
   document.getElementById('btnSave' + idBeer).style.display =''
   document.getElementById('btnCancel' + idBeer).style.display =''
@@ -35,13 +35,14 @@ function cervejaUpdateValueItem(idBeer){
 
   MobileUI.hide('btnDelete' + idBeer)
   MobileUI.hide('h1PriceBeer' + idBeer)
-  document.getElementById('btnSave' + idBeer).style.marginRight ='-15%'
+  document.getElementById('btnSave' + idBeer).style.marginRight ='20%'
   document.getElementById('btnSave' + idBeer).style.display =''
   document.getElementById('btnCancel' + idBeer).style.display =''
 
   var newPriceBeer = document.getElementById('newPriceBeer'+ idBeer)
   newPriceBeer.classList.add('focus') 
   tpUpdate = 'price'
+  toastCenter('Informe o preço em (R$) para vender.')
 }
 
 function cervejaSaveUpdate(idBeer){

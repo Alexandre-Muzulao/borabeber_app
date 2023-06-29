@@ -4,25 +4,20 @@ var loginData = ''
 
 switch (tp) {
     case 'dev':
-        url = 'http://localhost:3000/production'
-        loginData = {
-          email: 'Bar do MuzuMuzu 6610',
-          senha: '1234',
-          tpLogin: 'manual',
-          idFacebook: ''
-      };
-    break;
-    case 'hml':
-        var url = 'https://1i44ejgddg.execute-api.us-east-1.amazonaws.com/dev'
-    break;
-    case 'prod':
-      var url = 'https://g34czjej1b.execute-api.us-east-1.amazonaws.com/production'
+      url = 'http://localhost:3000/production'
       loginData = {
-        email: document.getElementById('loginEmailName').value,
-        senha: document.getElementById('loginPswrd').value,
+        email: 'Bar do MuzuMuzu 6610',
+        senha: '1234',
         tpLogin: 'manual',
         idFacebook: ''
     };
+    break;
+    case 'hml':
+      var url = 'https://1i44ejgddg.execute-api.us-east-1.amazonaws.com/dev'
+    break;
+    case 'prod':
+      var url = 'https://g34czjej1b.execute-api.us-east-1.amazonaws.com/production'
+
     break;
 }
 
@@ -32,6 +27,12 @@ function openPageTest(){
 
 function logar(){
   try {
+    // loginData = {
+    //   email: document.getElementById('loginEmailName').value,
+    //   senha: document.getElementById('loginPswrd').value,
+    //   tpLogin: 'manual',
+    //   idFacebook: ''
+    // }
     getUserCompany(loginData)
   } catch (error) {
     console.log('error: ', error)
