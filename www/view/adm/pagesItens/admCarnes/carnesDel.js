@@ -26,7 +26,6 @@ function dellItemCarne(idCarne, corteCarne, precodCarne){
                         } else {
                             setIdHidden('customImgAlert')
                             ADMCARNES = res.body.data.dadosCarnes
-                            console.log(ADMCARNES)
                             parseAdmCarnes(ADMCARNES)
                             toastCenter(res.body.message)
                         }

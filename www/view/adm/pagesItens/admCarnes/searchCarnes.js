@@ -10,7 +10,7 @@ function getAllCarnes(){
                 CARNES = []
                 ALLCARNES = res.body.data
                 searchCarne(ALLCARNES)
-                parseAdmCarnes(ALLCARNES)
+                parseAllCarnes(ALLCARNES)
                 setIdHidden('customImgAlert')
             })
         }

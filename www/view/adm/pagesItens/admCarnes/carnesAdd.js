@@ -54,8 +54,6 @@ function sendToColdRoom(){
   }
     var erro = ''
     showLoader("alertBoraBeberLoader", 'Colocando cortes na vitrine!')
-    
-    console.log(item)
 
     MobileUI.ajax.post(url + '/postcarne')
         // .set({"token" : ''})
@@ -72,9 +70,8 @@ function sendToColdRoom(){
                 class: 'full text-big text-strong black-opacity-70 text-white radius',
             })
             if (res.body.status){
-              console.log(res.body.data)
-                ADMCARNES = res.body.data
-                parseAdmCarnes(ADMCARNES)
+              ADMCARNES = res.body.data
+                parseAdmCarnes(res.body.data)
                 setTimeout(function(){
                     backPage()
                     ALLcarnes = []

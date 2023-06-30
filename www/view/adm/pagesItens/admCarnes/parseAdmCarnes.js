@@ -50,3 +50,43 @@ function parseAdmCarnes(ADMCARNES){
     console.log(error)
   }
 }
+
+function parseAllCarnes(ALLCARNES){
+  try {
+    if (ALLCARNES !== undefined){
+      for (i = 0; i < ALLCARNES.length; i++){
+        if (isPar(i) == 'par'){
+          ALLCARNES[i].idCarnePar = ALLCARNES[i]._id
+          ALLCARNES[i].corteCarnePar = ALLCARNES[i].corte
+          ALLCARNES[i].imgCarnePar = URLIMAGECARNES + ALLCARNES[i].img          
+          ALLCARNES[i].pecuariaPar = ALLCARNES[i].pecuaria
+          
+          ALLCARNES[i].idCarneImpar = ""
+          ALLCARNES[i].descricaoCarneImpar = ""
+          ALLCARNES[i].imgCarneImpar = ""
+          ALLCARNES[i].precoCarneImpar = ""
+
+          delete ALLCARNES[i]._id
+          delete ALLCARNES[i].corte
+          delete ALLCARNES[i].img
+          delete ALLCARNES[i].tipo
+          delete ALLCARNES[i].precoCarne
+        } else {
+          ALLCARNES[i - 1].idCarneImpar = ALLCARNES[i]._id
+          ALLCARNES[i - 1].corteCarneImpar = ALLCARNES[i].corte
+          ALLCARNES[i - 1].imgCarneImpar = URLIMAGECARNES + ALLCARNES[i].img
+          ALLCARNES[i - 1].pecuariaImpar = ALLCARNES[i].pecuaria
+          
+          delete ALLCARNES[i].idCorte
+          delete ALLCARNES[i].corte
+          delete ALLCARNES[i].img
+          delete ALLCARNES[i].tipo
+          delete ALLCARNES[i].precoCarne
+          delete ALLCARNES[i]
+        }
+      }
+    }    
+  } catch (error) {
+    console.log(error)
+  }
+}
