@@ -10,3 +10,10 @@
 #whiskyPrice {
     margin-left: 3em;
 }
+
+.btnAddWhiskys {
+  position: fixed;
+  bottom: 22px;
+  right: 0px;
+  margin-right: 15px;
+}

@@ -1,10 +1,10 @@
 #admCarnesImparValidBind [valid-bind=''] {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .btnAddCarnes {
-    position: fixed;
-    bottom: 22px;
-    right: 0px;
-    margin-right: 15px;
-  }
+  position: fixed;
+  bottom: 22px;
+  right: 0px;
+  margin-right: 15px;
+}

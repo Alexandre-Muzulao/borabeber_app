@@ -1,0 +1,53 @@
+<div class="page">
+  <div class="header grey-900" data="USER">
+    <div class="left">
+      <button class="icon ion-navicon" onclick="openMenu('menuWhiskys')"></button>
+    </div>
+    <h1 class="text-white text-strong align-center">Depósito de Whiskys</h1>
+    <div class="right">
+      <button class="icon ion-chevron-left" onclick="backPage()"></button>
+    </div>
+  </div>
+  <div class="header sub grey-800">
+    <div class="list no-border">
+      <div class="item icon ion-search icon-left text-big">
+        <input class="text-white placeholder-white" type="text" id="marcaWhisky" placeholder="Buscar Rótulo, Recipiente ou Tamanho" 
+        style="max-width: 90%; margin-top: -1em;">
+      </div>
+    </div>
+  </div>
+  <div id="mainAdmMenu"></div>
+  <div class="content has-header has-sub-header list-add-bebidas-bar grey-900">
+    <div class="item" data="ALLWHISKY" style="height: 300px;">
+      <div class="row" style="height: 270px;">
+        <!-- Par -->
+        <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgWhiskyPar}'); background-size: 100%;" valid-bind="${tituloWhiskyPar}" onclick="addWhiskys('${idWhiskyPar}', '${tituloWhiskyPar}', '${recipientePar}', '${medidaPar}')">
+          <div class="left">
+            <h1 class="text-white">${fabricantePar}</h1>
+          </div>
+          <div class="right">
+            <input type="checkbox" class="green text-huge" id="${idWhiskyPar}item">
+          </div>
+          <div class="bottom gradient padding radius">
+              <h1 class="text-white">${tituloWhiskyPar} ${recipientePar} ${medidaPar}</h1>
+          </div>
+        </div>
+        <!-- Impar -->
+        <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgWhiskyImpar}'); background-size: 100%;" valid-bind="${tituloWhiskyImpar}"  onclick="addWhiskys('${idWhiskyImpar}', '${tituloWhiskyImpar}', '${recipienteImpar}', '${medidaImpar}')">
+          <div class="left">
+            <h1 class="text-white">${fabricanteImpar}</h1>
+          </div>
+            <div class="right">
+              <input type="checkbox" class="green text-huge" id="${idWhiskyImpar}item">
+            </div>
+            <div class="bottom gradient padding radius">
+                <h1 class="text-white">${tituloWhiskyImpar} ${recipienteImpar} ${medidaImpar}</h1>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="btnAddWhiskys">
+      <button class="icon ion-checkmark-circled strong text-green text-huge" style="font-size: 64px!important;" onclick="saveWhiskys()"></button>
+    </div>
+  </div>
+</div>

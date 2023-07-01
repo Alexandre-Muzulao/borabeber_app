@@ -1,50 +1,50 @@
-function getAllWISKISs(){
-    loading('Buscando os cervejas no deposito ...')
-    if (ALLWISKIS.length == 0){
-        MobileUI.ajax.get(url + '/getWISKISs').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+function getAllWhiskys(){
+    showLoader("alertBoraBeberLoader", 'Buscando os Whiskys na depósito')
+    if (ALLWHISKY.length == 0 || ALLWHISKY == undefined){
+        MobileUI.ajax.get(url + '/getwhiskys').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
         if(res.body.errorMessage) {
-            closeLoading()
+            setIdHidden('customImgAlert')
             alert(res.body.errorMessage)
         } else {
-            closeLoading()
-            openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-                WISKISs = []
-                ALLWISKIS = res.body.data
-                searchWISKIS(ALLWISKIS)
-                parseAdmWISKIS(ALLWISKIS)
+            setIdHidden('customImgAlert')
+            openPage('./view/adm/pagesItens/admWhiskys/whiskysList', function(){
+                WHISKY = []
+                ALLWHISKY = res.body.data
+                searchWhiskys(ALLWHISKY)
+                parseAdmWhisky(ALLWHISKY)
             })
         }
         }).catch(function(err) {
-            closeLoading()
+            setIdHidden('customImgAlert')
             alert('Ops! Tive um problema para encontrar a cerveja no Freezer! Vamos tentar novamente daqui a pouco.')
             console.log(err)
         })
     } else {
-        closeLoading()
-        openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-            searchWISKIS(ALLWISKIS)
-            // parseAdmWISKIS(ALLWISKIS)
+        setIdHidden('customImgAlert')
+        openPage('./view/adm/pagesItens/admWhiskys/whiskysList', function(){
+            searchWhiskys(ALLWHISKY)
+            // parseAdmWhisky(ALLWHISKY)
         })
     }
 }
 
-function searchWISKIS(WISKISs){
-    ALLWISKIS_OLD = WISKISs
+function searchWhiskys(WHISKY){
+    ALLWHISKY_OLD = WHISKY
     
     $(document).ready(function(){
         $("#marcaWISKIS").keyup(function(){
             var searchVal = $("#marcaWISKIS").val()
             if (searchVal.length > 0){
-                ALLWISKIS = []
-                for (var i=0 ; i < ALLWISKIS_OLD.length ; i++)
+                ALLWHISKY = []
+                for (var i=0 ; i < ALLWHISKY_OLD.length ; i++)
                 {
-                    if (validUndefined(ALLWISKIS_OLD[i])){
-                        ifWISKISExists(ALLWISKIS_OLD[i], searchVal, i)
-                        // WISKISPushIfNotExist(ifWISKISExists(ALLWISKIS_OLD[i], searchVal))
+                    if (validUndefined(ALLWHISKY_OLD[i])){
+                        ifWISKISExists(ALLWHISKY_OLD[i], searchVal, i)
+                        // WISKISPushIfNotExist(ifWISKISExists(ALLWHISKY_OLD[i], searchVal))
                     }
                 }
             } else {
-                ALLWISKIS = ALLWISKIS_OLD
+                ALLWHISKY = ALLWHISKY_OLD
             }
 
         })
@@ -52,12 +52,12 @@ function searchWISKIS(WISKISs){
 }
 
 function WISKISPushIfNotExist(WISKIS){
-    for (var i=0; i < ALLWISKIS; i++){
-        if(WISKIS.tituloWISKISPar !== ALLWISKIS[i].tituloWISKISPar){
-            ALLWISKIS.push(WISKIS)
+    for (var i=0; i < ALLWHISKY; i++){
+        if(WISKIS.tituloWISKISPar !== ALLWHISKY[i].tituloWISKISPar){
+            ALLWHISKY.push(WISKIS)
         }
-        if(WISKIS.tituloWISKISImpar !== ALLWISKIS[i].tituloWISKISImpar){
-            ALLWISKIS.push(WISKIS)
+        if(WISKIS.tituloWISKISImpar !== ALLWHISKY[i].tituloWISKISImpar){
+            ALLWHISKY.push(WISKIS)
         }
     }
 }
@@ -71,10 +71,10 @@ function validUndefined(WISKIS){
 function ifWISKISExists(item, search, index){
     if (isPar(index) == 'par'){
         if (item.tituloWISKISPar.toLowerCase().includes(search.toLowerCase())){
-            ALLWISKIS.push(item)
+            ALLWHISKY.push(item)
         }
         // if (item.tituloWISKISImpar.toLowerCase().includes(search.toLowerCase())){
-        //     ALLWISKIS.push(item)
+        //     ALLWHISKY.push(item)
         // }
     }   
 }

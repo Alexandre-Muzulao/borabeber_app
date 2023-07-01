@@ -11,15 +11,19 @@ function getCompanyData(consultCompanyType){
     .then(function (res){
         DistanceBaseSettings = res.body.data.deliverySettings
         TPPRODS = res.body.data.tpProds
-        ADMBEERS = res.body.data.dadosBeer
-        VODKA = res.body.data.vodkas
-        WHISKY = res.body.data.whiskys
-        TAP = res.body.data.tap
+
         ADMCARNES = res.body.data.dadosCarnes
-        parseCervejaAdm(ADMBEERS)
-        parseAdmVodka(VODKA)
-        parseAdmWhisky(WHISKY)
+        ADMBEERS = res.body.data.dadosBeer
+        console.log(res.body.data.dadosWhiskys)
+        ADMWHISKY = res.body.data.dadosWhiskys
+        console.log(ADMWHISKY)
+        VODKA = res.body.data.dadosvodkas
+        TAP = res.body.data.tap
         parseAdmCarnes(ADMCARNES)
+        parseCervejaAdm(ADMBEERS)
+        parseAdmWhisky(ADMWHISKY)
+        parseAdmVodka(VODKA)
+
         openPage('./view/adm/main/main', function(){
             setTimeout(function(){
               setViewtpProds(res.body.data.tpProds[0].subscription)

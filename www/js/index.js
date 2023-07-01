@@ -17,9 +17,14 @@ var MODULES = {}
 var TPPRODS = []
 var COMPANY, COMPANYCACH = []
 var IMGCAPAS = []
+
+var ALLWHISKY = []
+var whiskys = []
 var BEERS, WHISKY, VODKA, CONVENIENCIA, TAP = []
 var ADMBEERS, ADMWHISKY, ADMVODKA, ADMCARNES = []
 var ALLBEER, ALLWHISKY, ALLVODKA, ALLCARNES = []
+var beers, carnes, whiskys, vodkas, vinhos, porcoes, espetos, combustiveis, semalcool = []
+
 var DADOSADM = []
 var DEVICES = []
 var companyModules = []
@@ -28,7 +33,6 @@ var qtdDistance = 0
 var DistancePricesSettings = []
 var DistanceBaseSettings = {}
 var htmlDistance = ''
-var beers, carnes = []
 var isLoged = false
 var KEEPLOGIN 
 var PAGENAME = {

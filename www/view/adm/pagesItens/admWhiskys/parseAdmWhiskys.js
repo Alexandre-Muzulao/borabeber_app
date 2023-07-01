@@ -1,75 +1,71 @@
-function parseAdmWhisky(WHISKY){
-    if (WHISKY !== undefined){
-        for (i = 0; i < WHISKY.length; i++){
-            formatWhiskys(WHISKY)
-            if (isPar(i) == 'par'){
-                WHISKY[i].idWhiskyPar = WHISKY[i].idWhisky
-                WHISKY[i].tituloPar = WHISKY[i].titulo
-                WHISKY[i].imgPar = URLWHISKY + WHISKY[i].img
-                WHISKY[i].precoWhiskyPar = WHISKY[i].whiskyPrecoInt + ',' + WHISKY[i].whiskyPrecoCent
-                WHISKY[i].precoWhiskyIntPar = WHISKY[i].whiskyPrecoInt
-                WHISKY[i].precoWhiskyCentPar = WHISKY[i].whiskyPrecoCent
-                WHISKY[i].tituloBeerPar = WHISKY[i].tituloBeer
-                WHISKY[i].medidaPar = WHISKY[i].medida
-                WHISKY[i].qtdWhiskyPar = WHISKY[i].qtd
-                WHISKY[i].recipientePar = WHISKY[i].recipiente
-                WHISKY[i].alcoolPar = WHISKY[i].alcool
-                WHISKY[i].fabricantePar = WHISKY[i].fabricante
-                WHISKY[i].paisOrigemPar = WHISKY[i].paisOrigem
-                WHISKY[i].anosPar = WHISKY[i].anos
-                WHISKY[i].classePar = WHISKY[i].classe
-                WHISKY[i].idWhiskysImpar = ""
-                WHISKY[i].tituloImpar = ""
-                WHISKY[i].imgImpar = ""
-                WHISKY[i].precoWhiskyImpar = ""
-                WHISKY[i].tituloBeerImpar = ""
-                WHISKY[i].medidaImpar = ""
-                WHISKY[i].recipienteImpar = ""
-                WHISKY[i].alcoolImpar = ""
-                WHISKY[i].fabricanteImpar = ""
-                WHISKY[i].paisOrigemImpar = ""
-                WHISKY[i].anosImpar = ""
-                WHISKY[i].classeImpar = ""
-                delete WHISKY[i].idWhiskys
-                delete WHISKY[i].titulo
-                delete WHISKY[i].img
-                delete WHISKY[i].precoWhisky
-                delete WHISKY[i].whiskyPrecoInt
-                delete WHISKY[i].whiskyPrecoCent
-                delete WHISKY[i].tituloBeer
-                delete WHISKY[i].medida
-                delete WHISKY[i].recipiente
-            } else {
-                WHISKY[i - 1].idWhiskyImpar = WHISKY[i].idWhisky
-                WHISKY[i - 1].tituloImpar = WHISKY[i].titulo
-                WHISKY[i - 1].imgImpar = URLWHISKY + WHISKY[i].img
-                WHISKY[i - 1].precoWhiskyImpar = WHISKY[i].whiskyPrecoInt + ',' + WHISKY[i].whiskyPrecoCent
-                WHISKY[i - 1].precoWhiskyIntImpar = WHISKY[i].whiskyPrecoInt
-                WHISKY[i - 1].precoWhiskyCentImpar = WHISKY[i].whiskyPrecoCent
-                WHISKY[i - 1].tituloBeerImpar = WHISKY[i].tituloBeer
-                WHISKY[i - 1].medidaImpar = WHISKY[i].medida
-                WHISKY[i - 1].recipienteImpar = WHISKY[i].recipiente
-                WHISKY[i - 1].alcoolImpar = WHISKY[i].alcool
-                WHISKY[i - 1].fabricanteImpar = WHISKY[i].fabricante
-                WHISKY[i - 1].paisOrigemImpar = WHISKY[i].paisOrigem
-                WHISKY[i - 1].qtdWhiskyImpar = WHISKY[i].qtd
-                WHISKY[i - 1].anosImpar = WHISKY[i].anos
-                WHISKY[i - 1].classeImpar = WHISKY[i].classe
-                delete WHISKY[i].idWhiskys
-                delete WHISKY[i].medida
-                delete WHISKY[i].recipiente
-                delete WHISKY[i].titulo
-                delete WHISKY[i].img
-                delete WHISKY[i].whiskyPrecoInt
-                delete WHISKY[i].whiskyPrecoCent
-                delete WHISKY[i].tituloBeer
-                delete WHISKY[i].alcool
-                delete WHISKY[i].fabricante
-                delete WHISKY[i].paisOrigem
-                delete WHISKY[i].anos
-                delete WHISKY[i].classe
-                delete WHISKY[i]
-            }
-        }
+function parseAdmWhisky(ADMWHISKY){
+  if (ADMWHISKY !== undefined){
+    for (i = 0; i < ADMWHISKY.length; i++){
+      formatWhiskys(ADMWHISKY)
+      if (isPar(i) == 'par'){
+        ADMWHISKY[i].idWhiskyPar = ADMWHISKY[i].idWhisky || ADMWHISKY[i]._id
+        ADMWHISKY[i].tituloWhiskyPar = ADMWHISKY[i].titulo
+        ADMWHISKY[i].imgWhiskyPar = URLIMAGEWHISKY + ADMWHISKY[i].img
+        ADMWHISKY[i].precoWhiskyPar = ADMWHISKY[i].whiskyPrecoInt + ',' + ADMWHISKY[i].whiskyPrecoCent
+        ADMWHISKY[i].precoWhiskyIntPar = ADMWHISKY[i].whiskyPrecoInt
+        ADMWHISKY[i].precoWhiskyCentPar = ADMWHISKY[i].whiskyPrecoCent
+        ADMWHISKY[i].medidaWhiskyPar = ADMWHISKY[i].volume
+        ADMWHISKY[i].qtdWhiskyPar = ADMWHISKY[i].qtd
+        ADMWHISKY[i].recipienteWhiskyPar = ADMWHISKY[i].recipiente
+        ADMWHISKY[i].graduacaoWhiskyPar = ADMWHISKY[i].graduacao
+        ADMWHISKY[i].fabricanteWhiskyPar = ADMWHISKY[i].fabricante
+        ADMWHISKY[i].paisOrigemWhiskyPar = ADMWHISKY[i].paisOrigem
+        ADMWHISKY[i].anosWhiskyPar = ADMWHISKY[i].anos
+        ADMWHISKY[i].classeWhiskyPar = ADMWHISKY[i].classe
+
+        ADMWHISKY[i].idWhiskysWhiskyImpar = ""
+        ADMWHISKY[i].tituloWhiskyImpar = ""
+        ADMWHISKY[i].imgWhiskyImpar = ""
+        ADMWHISKY[i].precoWhiskyWhiskyImpar = ""
+        ADMWHISKY[i].medidaWhiskyImpar = ""
+        ADMWHISKY[i].recipienteWhiskyImpar = ""
+        ADMWHISKY[i].graduacaoWhiskyImpar = ""
+        ADMWHISKY[i].fabricanteWhiskyImpar = ""
+        ADMWHISKY[i].paisOrigemWhiskyImpar = ""
+        ADMWHISKY[i].anosWhiskyImpar = ""
+        ADMWHISKY[i].classeWhiskyImpar = ""
+        delete ADMWHISKY[i].idWhiskys
+        delete ADMWHISKY[i].titulo
+        delete ADMWHISKY[i].img
+        delete ADMWHISKY[i].precoWhisky
+        delete ADMWHISKY[i].whiskyPrecoInt
+        delete ADMWHISKY[i].whiskyPrecoCent
+        delete ADMWHISKY[i].medida
+        delete ADMWHISKY[i].recipiente
+      } else {
+        ADMWHISKY[i - 1].idWhiskyImpar = ADMWHISKY[i].idWhisky || ADMWHISKY[i]._id
+        ADMWHISKY[i - 1].tituloWhiskyImpar = ADMWHISKY[i].titulo
+        ADMWHISKY[i - 1].imgWhiskyImpar = URLIMAGEWHISKY + ADMWHISKY[i].img
+        ADMWHISKY[i - 1].precoWhiskyImpar = ADMWHISKY[i].whiskyPrecoInt + ',' + ADMWHISKY[i].whiskyPrecoCent
+        ADMWHISKY[i - 1].precoWhiskyIntImpar = ADMWHISKY[i].whiskyPrecoInt
+        ADMWHISKY[i - 1].precoWhiskyCentImpar = ADMWHISKY[i].whiskyPrecoCent
+        ADMWHISKY[i - 1].medidaWhiskyImpar = ADMWHISKY[i].volume
+        ADMWHISKY[i - 1].recipienteWhiskyImpar = ADMWHISKY[i].recipiente
+        ADMWHISKY[i - 1].graduacaoWhiskyImpar = ADMWHISKY[i].graduacao
+        ADMWHISKY[i - 1].fabricanteWhiskyImpar = ADMWHISKY[i].fabricante
+        ADMWHISKY[i - 1].paisOrigemWhiskyImpar = ADMWHISKY[i].paisOrigem
+        ADMWHISKY[i - 1].qtdWhiskyWhiskyImpar = ADMWHISKY[i].qtd
+        ADMWHISKY[i - 1].anosWhiskyImpar = ADMWHISKY[i].anos
+        ADMWHISKY[i - 1].classeWhiskyImpar = ADMWHISKY[i].classe
+        delete ADMWHISKY[i].idWhiskys
+        delete ADMWHISKY[i].medida
+        delete ADMWHISKY[i].recipiente
+        delete ADMWHISKY[i].titulo
+        delete ADMWHISKY[i].img
+        delete ADMWHISKY[i].whiskyPrecoInt
+        delete ADMWHISKY[i].whiskyPrecoCent
+        delete ADMWHISKY[i].graduacao
+        delete ADMWHISKY[i].fabricante
+        delete ADMWHISKY[i].paisOrigem
+        delete ADMWHISKY[i].anos
+        delete ADMWHISKY[i].classe
+        delete ADMWHISKY[i]
+      }
     }
+  }
 }
