@@ -10,12 +10,11 @@ function updateValueItemWhisky(idWhisky){
     document.getElementById('input' + idWhisky).innerHTML = input
     MobileUI.hide('btnDelete' + idWhisky)
     MobileUI.hide('h1PriceWhisky' + idWhisky)
-    document.getElementById('btnSave' + idWhisky).style.marginRight ='-15%'
+    document.getElementById('btnSave' + idWhisky).style.marginRight ='20%'
     document.getElementById('btnSave' + idWhisky).style.display =''
     document.getElementById('btnCancel' + idWhisky).style.display =''
     var newPriceWhisky = document.getElementById('newPriceWhisky'+ idWhisky)
     newPriceWhisky.classList.add('focus')
-    tpUpdate = 'price'
 }
 
 function updateQtdItemWhisky(idWhisky){
@@ -39,37 +38,27 @@ function updateQtdItemWhisky(idWhisky){
 
 function whiskySaveUpdate(idWhisky){
     var item = {}
-    item.idBar = IDCOMPANY
-    item.tipo = 'whisky'
+    item.idEstabelecimento = IDCOMPANY
     item.idWhisky = idWhisky
-    item.descricao = document.getElementById('descricaoWhisky' + idWhisky).innerHTML
-    if (tpUpdate == 'qtd'){
-        item.qtd = parseInt(document.getElementById('newQtdWhisky' + idWhisky).value)
-    } else {
-        item.qtd = document.getElementById('h1QtdWhisky' + idWhisky).innerHTML.replace("Qtd.:", "")
-    }
-    if (tpUpdate == 'price'){
-        item.precoWhisky = document.getElementById('newPriceWhisky' + idWhisky).value.replace(",", ".")
-    } else {
-        item.precoWhisky = document.getElementById('h1PriceWhisky' + idWhisky).innerHTML.replace("R$", "").replace(",", ".")
-    }
+    item.precoWhisky = document.getElementById('newPriceWhisky' + idWhisky).value.replace(",", ".")
     
     if (item.precoWhisky == '' ){
-        alert('A Whisky precisa de um preço!','Ops!')
+        alert('O Whisky precisa de um preço.','Ops!')
     } else {
-        loading('Atualizando Preço e Quantidade!')
-        MobileUI.ajax.post(url + '/updateitembar').send(item).then(function (res){
+      showLoader("alertBoraBeberLoader", 'Aguarde por gentileza, <br> atualizando preço do Whisky!')
+        MobileUI.ajax.post(url + '/updatewhisky').send(item).then(function (res){
             if(res.body.errorMessage) {
-                closeLoading()
+                setIdHidden('customImgAlert')
                 alert(res.body.errorMessage)
             } else {
-                WHISKY = res.body.data.whiskys
-                closeLoading()
-                parseAdmWhisky(WHISKY)
+              console.log(res.body.data)
+              ADMWHISKY = res.body.data.dadosWhiskys
+                setIdHidden('customImgAlert')
+                parseAdmWhisky(ADMWHISKY)
                 // toast('O Preço foi alterado!', 'Toop !')
             }
         }).catch(function (err){
-            closeLoading()
+            setIdHidden('customImgAlert')
             alert('Falha ao alterar o valor.')
         })    
     }
@@ -77,7 +66,7 @@ function whiskySaveUpdate(idWhisky){
 
 function whiskyCancellUpdate(idWhisky){
     document.getElementById('h1PriceWhisky' + idWhisky).style.display =''
-    document.getElementById('h1QtdWhisky' + idWhisky).style.display =''
+    // document.getElementById('h1QtdWhisky' + idWhisky).style.display =''
     document.getElementById('btnDelete' + idWhisky).style.display =''
     MobileUI.hide('btnSave' + idWhisky)
     MobileUI.hide('btnCancel' + idWhisky)
