@@ -51,7 +51,6 @@ function sendToShelf(){
     "idEstabelecimento": IDCOMPANY,
     whiskys
   }
-  console.log(item)
   var erro = ''
   showLoader("alertBoraBeberLoader", 'Colocando seus Whiskis na pratelheira!')
   MobileUI.ajax.post(url + '/postwhisky')
@@ -69,7 +68,7 @@ function sendToShelf(){
           class: 'full text-big text-strong black-opacity-70 text-white radius',
         })
         if (res.body.status){
-          ADMWHISKY = res.body.data
+          ADMWHISKY = res.body.data.dadosWhiskys
           parseAdmWhisky(ADMWHISKY)
           setTimeout(function(){
             backPage()

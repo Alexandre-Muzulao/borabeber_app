@@ -1,37 +1,37 @@
-function deleteWhisky(idBeer, titleBeer, priceBeer){
+function dellItemWhisky(idWhisky, titleWhisky, priceWhisky){
     var item = {}
-    item.idBar = IDCOMPANY
-    item.idBeer = idBeer
+    item.idEstabelecimento = IDCOMPANY
+    item.idImgWhisky = idWhisky
     alert({
-        title: 'Remover mesmo ?',
-        message: 'Deseja remover a Cerveja '+ titleBeer +' no valor R$ '+ priceBeer +' da sua lista de produtos ?',
+        title: 'Remover mesmo?',
+        message: 'Deseja remover o Whisky <strong>'+ titleWhisky +'</strong> no valor <strong>R$ '+ priceWhisky +'</strong> da sua lista de produtos ?',
         class: 'grey-50 radius',
         buttons: [
             {
                 label: 'Não',
-                class: 'text-black',
+                class: 'text-red text-huge',
                 onclick: function(){
                     closeAlert()
                 }
             },
             {
                 label: 'Sim',
-                class: 'text-black',
+                class: 'text-green text-huge',
                 onclick: function(){
-                    loading('O item será removido de seus produtos, por favor aguarde!')
-                    MobileUI.ajax.post(url + '/removebeer').send(item).then(function (res){
+                  showLoader("alertBoraBeberLoader", 'O Whisky será removido de seus produtos, por favor aguarde!')
+                    MobileUI.ajax.post(url + '/removewhisky').send(item).then(function (res){
                         if(res.body.errorMessage) {
-                            closeLoading()
+                            setIdHidden('customImgAlert')
                             alert(res.body.errorMessage)
                         } else {
-                            closeLoading()
-                            ADMBEERS = res.body.data.dadosBeer
-                            parseAdmBeer(ADMBEERS)
-                            alert('Item removido com sucesso.')
+                            setIdHidden('customImgAlert')
+                            ADMWHISKY = res.body.data.dadosWhiskys
+                            parseAdmWhisky(ADMWHISKY)
+                            alert('Whisky removido com sucesso.')
                         }
                     }).catch(function (err){
                         console.log(err)
-                        closeLoading()
+                        setIdHidden('customImgAlert')
                         alert('Erro')
                     })
                     closeAlert()

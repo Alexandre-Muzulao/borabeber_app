@@ -14,10 +14,8 @@ function getCompanyData(consultCompanyType){
 
         ADMCARNES = res.body.data.dadosCarnes
         ADMBEERS = res.body.data.dadosBeer
-        console.log(res.body.data.dadosWhiskys)
         ADMWHISKY = res.body.data.dadosWhiskys
-        console.log(ADMWHISKY)
-        VODKA = res.body.data.dadosvodkas
+        VODKA = res.body.data.dadosVodkas
         TAP = res.body.data.tap
         parseAdmCarnes(ADMCARNES)
         parseCervejaAdm(ADMBEERS)

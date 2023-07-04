@@ -6,7 +6,7 @@ switch (tp) {
     case 'dev':
       url = 'http://localhost:3000/production'
       loginData = {
-        email: 'Bar do MuzuMuzu 6610',
+        email: 'Horus',
         senha: '1234',
         tpLogin: 'manual',
         idFacebook: ''
