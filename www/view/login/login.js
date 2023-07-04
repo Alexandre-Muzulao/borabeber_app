@@ -5,12 +5,6 @@ var loginData = ''
 switch (tp) {
     case 'dev':
       url = 'http://localhost:3000/production'
-      loginData = {
-        email: 'Horus',
-        senha: '1234',
-        tpLogin: 'manual',
-        idFacebook: ''
-    };
     break;
     case 'hml':
       var url = 'https://1i44ejgddg.execute-api.us-east-1.amazonaws.com/dev'
@@ -27,12 +21,12 @@ function openPageTest(){
 
 function logar(){
   try {
-    // loginData = {
-    //   email: document.getElementById('loginEmailName').value,
-    //   senha: document.getElementById('loginPswrd').value,
-    //   tpLogin: 'manual',
-    //   idFacebook: ''
-    // }
+    loginData = {
+      email: document.getElementById('loginEmailName').value,
+      senha: document.getElementById('loginPswrd').value,
+      tpLogin: 'manual',
+      idFacebook: ''
+    }
     getUserCompany(loginData)
   } catch (error) {
     console.log('error: ', error)
@@ -45,10 +39,9 @@ function getUserCompany(loginData){
   .send(loginData)
   .then(function(res){
       // Tratar erros com códigos
-      if(res.body.message == "Os dados do login não conferem, verifique e tente novamente." 
-      || res.body.message == 'Usuário não cadastrado'){
+      if(res.body.errorMessage ){
           resetLoginData()
-          alert(res.body.message)
+          alert(res.body.errorMessage)
       } else {
           switch (res.body.data.typeAccount){
               case 'company':

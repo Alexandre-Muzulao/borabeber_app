@@ -7,14 +7,19 @@ function updateValueItemWhisky(idWhisky){
     input += '<div class="col-80">'
     input += '    <input type="tel" class="text-white" id="newPriceWhisky'+ idWhisky +'" style=" margin-left: 2px; font-size: 16px;">'
     input += '</div>'
-    document.getElementById('input' + idWhisky).innerHTML = input
+
+    document.getElementById('inputWhisky' + idWhisky).innerHTML = input    
     MobileUI.hide('btnDelete' + idWhisky)
     MobileUI.hide('h1PriceWhisky' + idWhisky)
+    
     document.getElementById('btnSave' + idWhisky).style.marginRight ='20%'
     document.getElementById('btnSave' + idWhisky).style.display =''
     document.getElementById('btnCancel' + idWhisky).style.display =''
+
     var newPriceWhisky = document.getElementById('newPriceWhisky'+ idWhisky)
+
     newPriceWhisky.classList.add('focus')
+
 }
 
 function updateQtdItemWhisky(idWhisky){
@@ -51,11 +56,10 @@ function whiskySaveUpdate(idWhisky){
                 setIdHidden('customImgAlert')
                 alert(res.body.errorMessage)
             } else {
-              console.log(res.body.data)
               ADMWHISKY = res.body.data.dadosWhiskys
-                setIdHidden('customImgAlert')
-                parseAdmWhisky(ADMWHISKY)
-                // toast('O Preço foi alterado!', 'Toop !')
+              setIdHidden('customImgAlert')
+              parseAdmWhisky(ADMWHISKY)
+              toastCenter(res.body.message)
             }
         }).catch(function (err){
             setIdHidden('customImgAlert')

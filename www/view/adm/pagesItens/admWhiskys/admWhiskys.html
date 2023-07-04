@@ -12,10 +12,8 @@
         <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgWhiskyPar}'); background-size: 100%;" valid-bind="${tituloWhiskyPar}">
             <div class="bottom gradient padding radius">
                 <p class="text-white" id="descricaoWhisky${idWhiskyPar}">${tituloWhiskyPar} ${recipienteWhiskyPar} ${medidaWhiskyPar}</p>
-                <!-- <h1 class="text-white" onclick="updateQtdItemWhisky('${idWhiskyPar}')" id="h1QtdWhisky${idWhiskyPar}">Qtd.: ${qtdWhiskyPar}</h1>
-                <div id="input${idWhiskyPar}" class="row" style="margin-top: 5px;"></div> -->
                 <h1 class="text-white" onclick="updateValueItemWhisky('${idWhiskyPar}')" id="h1PriceWhisky${idWhiskyPar}">R$ ${precoWhiskyPar}</h1>
-                <div id="input${idWhiskyPar}" class="row" style="margin-top: 5px;"></div>
+                <div id="inputWhisky${idWhiskyPar}" class="row" style="margin-top: 5px;"></div>
             </div>
 
             <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteWhisky{idWhiskyPar}">
@@ -29,23 +27,13 @@
                 </div>
               </div>
           </div>
-
-            <!-- <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteWhisky{idWhiskyPar}">
-                <button class="text-big text-red ion-trash-a strong" id="btnDelete${idWhiskyPar}" onclick="dellItemWhisky('${idWhiskyPar}', '${tituloWhiskyPar} de ${recipienteWhiskyPar} ${medidaWhiskyPar}', '${precoWhiskyPar}')"></button>
-                <div style="margin-top: 7%;">
-                    <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idWhiskyPar}" onclick="whiskySaveUpdate('${idWhiskyPar}')" style="display: none;"></button>
-                    <button class="ion-close-round text-big text-red strong" id="btnCancel${idWhiskyPar}" onclick="whiskyCancellUpdate('${idWhiskyPar}')" style="display: none;"></button>
-                </div>
-            </div> -->
         </div>
         <div class="col-55 cover radius margin no-padding"
             style="background-image:url('${imgWhiskyImpar}'); background-size: 100%;" valid-bind="${tituloWhiskyImpar}">
             <div class="bottom gradient padding radius">
                 <p class="text-white" id="descricaoWhisky${idWhiskyImpar}">${tituloWhiskyImpar} ${recipienteWhiskyImpar} ${medidaWhiskyImpar}</p>
-                <!-- <h1 class="text-white" onclick="updateQtdItemWhisky('${idWhiskyImpar}')" id="h1QtdWhisky${idWhiskyImpar}">Qtd.: ${qtdWhiskyImpar}</h1>
-                <div id="input${idWhiskyImpar}" class="row" style="margin-top: 5px;"></div> -->
                 <h1 class="text-white" onclick="updateValueItemWhisky('${idWhiskyImpar}')" id="h1PriceWhisky${idWhiskyImpar}">R$ ${precoWhiskyImpar}</h1>
-                <div id="input${idWhiskyImpar}" class="row" style="margin-top: 5px;"></div>
+                <div id="inputWhisky${idWhiskyImpar}" class="row" style="margin-top: 5px;"></div>
             </div>
 
             <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteWhisky{idWhiskyImpar}">
@@ -59,14 +47,6 @@
                 </div>
               </div>
           </div>
-
-            <!-- <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteWhisky{idWhiskyImpar}">
-                <button class="text-big text-red ion-trash-a strong" id="btnDelete${idWhiskyImpar}" onclick="dellItemWhisky('${idWhiskyImpar}', '${tituloWhiskyImpar} de ${recipienteWhiskyImpar} ${medidaWhiskyImpar}', '${precoWhiskyImpar}')"></button>
-                <div style="margin-top: 7%;">
-                    <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idWhiskyImpar}" onclick="whiskySaveUpdate('${idWhiskyImpar}')" style="display: none;"></button>
-                    <button class="ion-close-round text-big text-red strong" id="btnCancel${idWhiskyImpar}" onclick="whiskyCancellUpdate('${idWhiskyImpar}')" style="display: none;"></button>
-                </div>
-            </div> -->
         </div>
     </div>
   </div>
