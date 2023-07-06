@@ -27,7 +27,7 @@ function saveWhiskys(){
     class: 'grey-800 radius',
     buttons:[
       {
-        label: 'Salvar',
+        label: 'Sim',
         class: 'text-green ion-checkmark-round text-huge',
         onclick: function(){
           closeAlert()
@@ -35,7 +35,7 @@ function saveWhiskys(){
         }
       },
       {
-        label: 'Cancelar',
+        label: 'Não',
         class: 'text-red ion-close-round text-huge',
         onclick: function(){
           closeAlert()
@@ -63,7 +63,7 @@ function sendToShelf(){
     } else {
         setIdHidden('customImgAlert')
         openToast({
-          message: "Pronto, as cervejas estão no freezer!",
+          message: "Pronto, os Whiskys estão na pratelheira!",
           position: 'center',
           class: 'full text-big text-strong black-opacity-70 text-white radius',
         })

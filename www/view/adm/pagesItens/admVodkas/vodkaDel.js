@@ -19,14 +19,14 @@ function dellItemVodka(idVodka, titleVodka, priceVodka){
                 class: 'text-black',
                 onclick: function(){
                     loading('O item será removido de seus produtos, por favor aguarde!')
-                    MobileUI.ajax.post(url + '/removeVodka').send(item).then(function (res){
+                    MobileUI.ajax.post(url + '/removevodka').send(item).then(function (res){
                         if(res.body.errorMessage) {
                             closeLoading()
                             alert(res.body.errorMessage)
                         } else {
                             closeLoading()
-                            ADMVodkaS = res.body.data.dadosVodka
-                            parseAdmVodka(ADMVodkaS)
+                            ADMVODKA = res.body.data.dadosVodkas
+                            parseAdmVodka(ADMVODKA)
                             alert('Item removido com sucesso.')
                         }
                     }).catch(function (err){

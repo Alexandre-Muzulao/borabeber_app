@@ -15,12 +15,12 @@ function getCompanyData(consultCompanyType){
         ADMCARNES = res.body.data.dadosCarnes
         ADMBEERS = res.body.data.dadosBeer
         ADMWHISKY = res.body.data.dadosWhiskys
-        VODKA = res.body.data.dadosVodkas
+        ADMVODKA = res.body.data.dadosVodkas
         TAP = res.body.data.tap
         parseAdmCarnes(ADMCARNES)
         parseCervejaAdm(ADMBEERS)
         parseAdmWhisky(ADMWHISKY)
-        parseAdmVodka(VODKA)
+        parseAdmVodka(ADMVODKA)
 
         openPage('./view/adm/main/main', function(){
             setTimeout(function(){

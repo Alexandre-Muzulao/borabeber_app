@@ -1,0 +1,53 @@
+<div class="page">
+  <div class="header grey-900" data="USER">
+    <div class="left">
+      <button class="icon ion-navicon" onclick="openMenu('menuVodkass')"></button>
+    </div>
+    <h1 class="text-white text-strong align-center">Depósito de Vodkas</h1>
+    <div class="right">
+      <button class="icon ion-chevron-left" onclick="backPage()"></button>
+    </div>
+  </div>
+  <div class="header sub grey-800">
+    <div class="list no-border">
+      <div class="item icon ion-search icon-left text-big">
+        <input class="text-white placeholder-white" type="text" id="marcaVodkas" placeholder="Buscar Rótulo, Recipiente ou Tamanho" 
+        style="max-width: 90%; margin-top: -1em;">
+      </div>
+    </div>
+  </div>
+  <div id="mainAdmMenu"></div>
+  <div class="content has-header has-sub-header list-add-bebidas-bar grey-900">
+    <div class="item" data="ALLVODKAS" style="height: 300px;">
+      <div class="row" style="height: 270px;">
+        <!-- Par -->
+        <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgVodkaPar}'); background-size: 100%;" valid-bind="${tituloVodkaPar}" onclick="addVodkas('${idVodkaPar}')">
+          <div class="left">
+            <h1 class="text-white">${fabricanteVodkaPar}</h1>
+          </div>
+          <div class="right">
+            <input type="checkbox" class="green text-huge" id="${idVodkaPar}item">
+          </div>
+          <div class="bottom gradient padding radius">
+              <h1 class="text-white">${tituloVodkaPar} ${recipienteVodkaPar} ${medidaVodkaPar}</h1>
+          </div>
+        </div>
+        <!-- Impar -->
+        <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgVodkaImpar}'); background-size: 100%;" valid-bind="${tituloVodkaImpar}"  onclick="addVodkas('${idVodkaImpar}')">
+          <div class="left">
+            <h1 class="text-white">${fabricanteVodkaImpar}</h1>
+          </div>
+            <div class="right">
+              <input type="checkbox" class="green text-huge" id="${idVodkaImpar}item">
+            </div>
+            <div class="bottom gradient padding radius">
+                <h1 class="text-white">${tituloVodkaImpar} ${recipienteVodkaImpar} ${medidaodkaImpar}</h1>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="btnAddVodkass">
+      <button class="icon ion-checkmark-circled strong text-green text-huge" style="font-size: 64px!important;" onclick="saveVodkas()"></button>
+    </div>
+  </div>
+</div>

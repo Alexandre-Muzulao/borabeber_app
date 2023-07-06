@@ -12,20 +12,12 @@ var URLIMAGECOMBUSTIVEL = `${S3URLIMAGES}/combustiveis/`
 var URLIMAGETAP = `${S3URLIMAGES}/taps/`
 var URLIMAGECERVEJARIA = `${S3URLIMAGES}/cervejarias/`
 var IDCOMPANY = ""
-var USER = {}
-var MODULES = {}
-var TPPRODS = []
-var COMPANY, COMPANYCACH = []
-var IMGCAPAS = []
-
-var ALLWHISKY = []
-var whiskys = []
-var BEERS, WHISKY, VODKA, CONVENIENCIA, TAP = []
-var ADMBEERS, ADMWHISKY, ADMVODKA, ADMCARNES = []
-var ALLBEER, ALLWHISKY, ALLVODKA, ALLCARNES = []
-var beers, carnes, whiskys, vodkas, vinhos, porcoes, espetos, combustiveis, semalcool = []
-
-var DADOSADM = []
+var USER = {}, MODULES = {}
+var TPPRODS = [], COMPANY = [], COMPANYCACH = [], IMGCAPAS = [], DADOSADM = []
+var BEERS = [], WHISKY = [], VODKA = [], CONVENIENCIA = [], TAP = []
+var ADMBEERS = [], ADMWHISKY = [], ADMVODKA = [], ADMCARNES = []
+var ALLBEER = [], ALLWHISKY = [], ALLVODKAS = [], ALLCARNES = []
+var beers = [], carnes = [], whiskys = [], vodkas = [], vinhos = [], porcoes = [], espetos = [], combustiveis = [], semalcool = []
 var DEVICES = []
 var companyModules = []
 var DEFAULTPRINT = {}
