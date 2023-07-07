@@ -54,8 +54,8 @@ function vodkaSaveUpdate(idVodka){
                setIdHidden('customImgAlert')
                 alert(res.body.errorMessage)
             } else {
-              setIdHidden('customImgAlert')
               ADMVODKA = res.body.data.dadosVodkas
+              setIdHidden('customImgAlert')
               parseAdmVodka(ADMVODKA)
               toastCenter(res.body.message)
             }

@@ -4,7 +4,7 @@ function dellItemWhisky(idWhisky, titleWhisky, priceWhisky){
     item.idImgWhisky = idWhisky
     alert({
         title: 'Remover mesmo?',
-        message: 'Deseja remover o Whisky <strong>'+ titleWhisky +'</strong> no valor <strong>R$ '+ priceWhisky +'</strong> da sua lista de produtos ?',
+        message: 'Deseja remover o Whisky <strong>'+ titleWhisky +'</strong> no valor <strong>R$ '+ priceWhisky +'</strong> da sua lista de produtos?',
         class: 'grey-50 radius',
         buttons: [
             {
