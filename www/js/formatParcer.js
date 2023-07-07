@@ -61,6 +61,24 @@ function formatVodkas(VODKA){
     }
 }
 
+function formatVinho(VINHO){
+    if (VINHO[i].titulo == "" || VINHO[i].titulo == undefined){
+        VINHO[i].titulo = ""
+    }
+    if (VINHO[i].vinhoPrecoInt == "" || VINHO[i].vinhoPrecoInt == undefined){
+        VINHO[i].vinhoPrecoInt = "0"
+    } else {
+        VINHO[i].vinhoPrecoInt = VINHO[i].vinhoPrecoInt
+    }
+    if (VINHO[i].vinhoPrecoCent == "" || VINHO[i].vinhoPrecoCent == undefined){
+        VINHO[i].vinhoPrecoCent = "00"
+    } else {
+        if (VINHO[i].vinhoPrecoCent.toString().length == 1){
+            VINHO[i].vinhoPrecoCent = VINHO[i].vinhoPrecoCent + "0"
+        }
+    }
+}
+
 function formatWhiskys(WHISKY){
     if (WHISKY[i].titulo == "" || WHISKY[i].titulo == undefined){
         WHISKY[i].titulo = ""

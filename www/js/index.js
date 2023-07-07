@@ -15,8 +15,8 @@ var IDCOMPANY = ""
 var USER = {}, MODULES = {}
 var TPPRODS = [], COMPANY = [], COMPANYCACH = [], IMGCAPAS = [], DADOSADM = []
 var BEERS = [], WHISKY = [], VODKA = [], CONVENIENCIA = [], TAP = []
-var ADMBEERS = [], ADMWHISKY = [], ADMVODKA = [], ADMCARNES = []
-var ALLBEER = [], ALLWHISKY = [], ALLVODKAS = [], ALLCARNES = []
+var ADMBEERS = [], ADMWHISKY = [], ADMVODKA = [], ADMCARNES = [], ADMVINHOS = []
+var ALLBEER = [], ALLWHISKY = [], ALLVODKAS = [], ALLCARNES = [], ALLVINHOS = []
 var beers = [], carnes = [], whiskys = [], vodkas = [], vinhos = [], porcoes = [], espetos = [], combustiveis = [], semalcool = []
 var DEVICES = []
 var companyModules = []

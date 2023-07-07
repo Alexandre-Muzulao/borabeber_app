@@ -1,34 +1,34 @@
-function getAllVINHOSs(){
-    loading('Buscando os cervejas no deposito ...')
-    if (ALLVINHOS.length == 0){
-        MobileUI.ajax.get(url + '/getVINHOSs').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
+function getAllVinhos(){
+  showLoader("alertBoraBeberLoader", 'Buscando os Vinhos na depósito')
+    if (ALLVINHOS == undefined || ALLVINHOS.length == 0){
+        MobileUI.ajax.get(url + '/getvinhos').query('marca=todas' + '&' + 'userId=' + IDCOMPANY + '').send().then(function (res){
         if(res.body.errorMessage) {
-            closeLoading()
+            setIdHidden('customImgAlert')
             alert(res.body.errorMessage)
         } else {
-            closeLoading()
-            openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
+            setIdHidden('customImgAlert')
+            openPage('./view/adm/pagesItens/admVinhos/vinhosList', function(){
                 VINHOSs = []
                 ALLVINHOS = res.body.data
-                searchVINHOS(ALLVINHOS)
-                parseAdmVINHOS(ALLVINHOS)
+                searchVinhos(ALLVINHOS)
+                parseAdmVinhos(ALLVINHOS)
             })
         }
         }).catch(function(err) {
-            closeLoading()
+            setIdHidden('customImgAlert')
             alert('Ops! Tive um problema para encontrar a cerveja no Freezer! Vamos tentar novamente daqui a pouco.')
             console.log(err)
         })
     } else {
-        closeLoading()
-        openPage('./view/adm/pagesItens/admCervejas/cervejasList', function(){
-            searchVINHOS(ALLVINHOS)
-            // parseAdmVINHOS(ALLVINHOS)
+        setIdHidden('customImgAlert')
+        openPage('./view/adm/pagesItens/admVinhos/vinhosList', function(){
+            searchVinhos(ALLVINHOS)
+            // parseAdmVinhos(ALLVINHOS)
         })
     }
 }
 
-function searchVINHOS(VINHOSs){
+function searchVinhos(VINHOSs){
     ALLVINHOS_OLD = VINHOSs
     
     $(document).ready(function(){

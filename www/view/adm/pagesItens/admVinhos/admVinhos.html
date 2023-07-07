@@ -1,49 +1,53 @@
 <div class="list no-border">
-    <div class="item">
-        <button class="radius shadow full grey-800 text-center" onclick="getAllVinhos()">
-            <p><i class="text-strong white icon ion-plus-circled text-big"></i>Adicionar Vinhos</p>
-        </button>
-    </div>
-    <div class="item shadow radius icon grey-800 ion-search icon-left">
-        <input type="text" class="text-white placeholder-white" placeholder="Buscar Rótulo, Recipiente ou Tamanho">
-    </div>
-    <div id="mainAdmMenu"></div>
-    <div class="item" data="ADMVinhoS">
-        <div class="row" style="height: 270px;">
-            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgVinhoPar}'); background-size: 12vh;" valid-bind="${precoVinhoPar}">
-                <div class="bottom gradient padding radius">
-                    <p class="text-white">${tituloVinhoPar} ${recipientePar} ${medidaPar}</p>
-                    <h1 class="text-white" onclick="updateQtdItemVinho('${idVinhoPar}')" id="h1QtdVinho${idVinhoPar}">Qtd.: ${qtdVinhoPar}</h1>
-                    <div id="input${idVinhoPar}" class="row" style="margin-top: 5px;"></div>
-                    <h1 class="text-white" onclick="updateValueItemVinho('${idVinhoPar}')" id="h1PriceVinho${idVinhoPar}">R$ ${precoVinhoPar}</h1>
-                    <div id="input${idVinhoPar}" class="row" style="margin-top: 5px;"></div>
-                </div>
-                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteVinho{idVinhoPar}">
-                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idVinhoPar}" onclick="dellItemVinho('${idVinhoPar}', '${tituloVinhoPar} de ${recipientePar} ${medidaPar}', '${precoVinhoPar}')"></button>
-                    <div style="margin-top: 7%;">
-                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idVinhoPar}" onclick="saveUpdate('${idVinhoPar}')" style="display: none;"></button>
-                        <button class="ion-close-round text-big text-red strong" id="btnCancel${idVinhoPar}" onclick="cancellUpdate('${idVinhoPar}')" style="display: none;"></button>
+  <div class="item">
+    <button class="radius shadow full grey-800 text-center" onclick="getAllVinhos()">
+      <p>Adicionar Vinhos<i class="text-strong white icon ion-plus-circled text-big"></i></p>
+  </button>
+  </div>
+  <div class="item shadow radius icon grey-800 ion-search icon-left">
+      <input type="text" class="text-white placeholder-white" placeholder="Buscar Rótulo, Recipiente ou Tamanho">
+  </div>
+  <div id="mainAdmMenu"></div>
+  <div class="item" data="ADMVINHOS">
+      <div class="row" style="height: 270px;">
+          <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgVinhoPar}'); background-size: contain">
+              <div class="bottom gradient padding radius">
+                  <p class="text-white" id="descricaoVinho${idVinhoPar}">${tituloVinhoPar} ${recipienteVinhoPar} ${volumeVinhoPar}</p>
+                  <h1 class="text-white" onclick="updateValueItemVinho('${idVinhoPar}')" id="h1PriceVinho${idVinhoPar}">R$ ${precoVinhoPar}</h1>
+                  <div id="inputVinho${idVinhoPar}" class="row" style="margin-top: 5px;"></div>
+              </div>
+              
+              <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteVinho{idVinhoPar}">
+                  <button class="text-big text-red ion-trash-a strong" id="btnDelete${idVinhoPar}" onclick="dellItemVinho('${idVinhoPar}', '${tituloVinhoPar} de ${recipienteVinhoPar} ${volumeVinhoPar}', '${precoVinhoPar}')"></button>
+                  <div class="row" style="margin-top: 20%;">
+                    <div class="col">
+                      <button class="text-huge text-green ion-checkmark-circled" id="btnSave${idVinhoPar}" onclick="VinhoSaveUpdate('${idVinhoPar}')" style="display: none;"></button>
                     </div>
-                </div>
-            </div>
-            <div class="col-55 cover radius margin no-padding"
-                style="background-image:url('${imgVinhoImpar}'); background-size: 12vh;"
-                valid-bind="${precoVinhoImpar}">
-                <div class="bottom gradient padding radius">
-                    <p class="text-white">${tituloVinhoImpar} ${recipienteImpar} ${medidaImpar}</p>
-                    <h1 class="text-white" onclick="updateQtdItemVinho('${idVinhoImpar}')" id="h1QtdVinho${idVinhoImpar}">Qtd.: ${qtdVinhoImpar}</h1>
-                    <div id="input${idVinhoImpar}" class="row" style="margin-top: 5px;"></div>
-                    <h1 class="text-white" onclick="updateValueItemVinho('${idVinhoImpar}')" id="h1PriceVinho${idVinhoImpar}">R$ ${precoVinhoImpar}</h1>
-                    <div id="input${idVinhoImpar}" class="row" style="margin-top: 5px;"></div>
-                </div>
-                <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteVinho{idVinhoImpar}">
-                    <button class="text-big text-red ion-trash-a strong" id="btnDelete${idVinhoImpar}" onclick="dellItemVinho('${idVinhoImpar}', '${tituloVinhoImpar} de ${recipienteImpar} ${medidaImpar}', '${precoVinhoImpar}')"></button>
-                    <div style="margin-top: 7%;">
-                        <button class="text-green text-big ion-checkmark-round strong" id="btnSave${idVinhoImpar}" onclick="saveUpdate('${idVinhoImpar}')" style="display: none;"></button>
-                        <button class="ion-close-round text-big text-red strong" id="btnCancel${idVinhoImpar}" onclick="cancellUpdate('${idVinhoImpar}')" style="display: none;"></button>
+                    <div class="col">
+                      <button class="text-huge text-red ion-close-circled" id="btnCancel${idVinhoPar}" onclick="VinhoCancellUpdate('${idVinhoPar}')" style="display: none;"></button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgVinhoImpar}'); background-size: contain"
+              valid-bind="${precoVinhoImpar}">
+              <div class="bottom gradient padding radius">
+                  <p class="text-white" id="descricaoVinho${idVinhoImpar}">${tituloVinhoImpar} ${recipienteVinhoImpar} ${volumeVinhoImpar}</p>
+                  <h1 class="text-white" onclick="updateValueItemVinho('${idVinhoImpar}')" id="h1PriceVinho${idVinhoImpar}">R$ ${precoVinhoImpar}</h1>
+                  <div id="inputVinho${idVinhoImpar}" class="row" style="margin-top: 5px;"></div>
+              </div>
+              <div style="margin-top: 1%; text-align: right;" id="$divBtnDeleteVinho{idVinhoImpar}">
+                  <button class="text-big text-red ion-trash-a strong" id="btnDelete${idVinhoImpar}" onclick="dellItemVinho('${idVinhoImpar}', '${tituloVinhoImpar} de ${recipienteVinhoImpar} ${volumeVinhoImpar}', '${precoVinhoImpar}')"></button>
+                  <div class="row" style="margin-top: 20%;">
+                    <div class="col">
+                      <button class="text-huge text-green ion-checkmark-circled strong" id="btnSave${idVinhoImpar}" onclick="VinhoSaveUpdate('${idVinhoImpar}')" style="display: none;"></button>
+                    </div>
+                    <div class="col">
+                      <button class="text-huge text-red ion-close-circled strong" id="btnCancel${idVinhoImpar}" onclick="VinhoCancellUpdate('${idVinhoImpar}')" style="display: none;"></button>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>

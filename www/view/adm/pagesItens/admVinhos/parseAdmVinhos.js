@@ -1,65 +1,65 @@
-function isPar(number){
-    if(number & 1){
-        return('impar');
-    } else {
-        return('par');
+function parseAdmVinhos(ADMVINHOS){
+  console.log('ADMVINHOS', ADMVINHOS)
+  if (ADMVINHOS !== undefined){
+    for (i = 0; i < ADMVINHOS.length; i++){
+      formatVinho(ADMVINHOS)
+      if (isPar(i) == 'par'){
+        ADMVINHOS[i].idVinhoPar = ADMVINHOS[i]._id
+        ADMVINHOS[i].descricaoVinhoPar = ADMVINHOS[i].descricao
+        ADMVINHOS[i].imgVinhoPar = URLIMAGEVINHO + ADMVINHOS[i].img
+        ADMVINHOS[i].precoVinhoPar = ADMVINHOS[i].precoVinhoInt + ',' + ADMVINHOS[i].precoVinhoCent
+        ADMVINHOS[i].precoVinhoIntPar = ADMVINHOS[i].precoVinhoInt
+        ADMVINHOS[i].precoVinhoCentPar = ADMVINHOS[i].precoVinhoCent
+        ADMVINHOS[i].tituloVinhoPar = ADMVINHOS[i].titulo
+        ADMVINHOS[i].volumeVinhoPar = ADMVINHOS[i].volume
+        ADMVINHOS[i].recipientePar = ADMVINHOS[i].recipiente
+        ADMVINHOS[i].graduacaoPar = ADMVINHOS[i].graduacao
+        ADMVINHOS[i].produtorPar = ADMVINHOS[i].produtor
+        ADMVINHOS[i].paisOrigemPar = ADMVINHOS[i].paisOrigem
+        ADMVINHOS[i].regiaoPar = ADMVINHOS[i].regiao
+        ADMVINHOS[i].safraPar = ADMVINHOS[i].safra
+        ADMVINHOS[i].uvaPar = ADMVINHOS[i].uva
+        ADMVINHOS[i].tipoPar = ADMVINHOS[i].tipo
+        ADMVINHOS[i].idVinhoImpar = ""
+        ADMVINHOS[i].descricaoVinhoImpar = ""
+        ADMVINHOS[i].imgVinhoImpar = ""
+        ADMVINHOS[i].precoVinhoImpar = ""
+        ADMVINHOS[i].tituloVinhoImpar = ""
+        ADMVINHOS[i].recipienteImpar = ""
+        delete ADMVINHOS[i]._id
+        delete ADMVINHOS[i].descricaoVinho
+        delete ADMVINHOS[i].imgVinho
+        delete ADMVINHOS[i].precoVinhoCent
+        delete ADMVINHOS[i].precoVinhoInt
+        delete ADMVINHOS[i].precoVinho
+        delete ADMVINHOS[i].tituloVinho
+        delete ADMVINHOS[i].recipiente
+      } else {
+        ADMVINHOS[i - 1].idVinhoImpar = ADMVINHOS[i]._id
+        ADMVINHOS[i - 1].descricaoVinhoImpar = ADMVINHOS[i].descricao
+        ADMVINHOS[i - 1].imgVinhoImpar = URLIMAGEVINHO + ADMVINHOS[i].img
+        ADMVINHOS[i - 1].precoVinhoImpar = ADMVINHOS[i].precoVinhoInt + ',' + ADMVINHOS[i].precoVinhoCent
+        ADMVINHOS[i - 1].precoVinhoIntImpar = ADMVINHOS[i].precoVinhoInt
+        ADMVINHOS[i - 1].precoVinhoCentImpar = ADMVINHOS[i].precoVinhoCent
+        ADMVINHOS[i - 1].tituloVinhoImpar = ADMVINHOS[i].titulo
+        ADMVINHOS[i - 1].volumeVinhoImpar = ADMVINHOS[i].volume
+        ADMVINHOS[i - 1].recipienteImpar = ADMVINHOS[i].recipiente
+        ADMVINHOS[i - 1].graduacaoImpar  = ADMVINHOS[i].graduacao
+        ADMVINHOS[i - 1].produtorImpar = ADMVINHOS[i].produtor
+        ADMVINHOS[i - 1].paisOrigemImpar = ADMVINHOS[i].paisOrigem
+        ADMVINHOS[i - 1].regiaoImpar = ADMVINHOS[i].regiao
+        ADMVINHOS[i - 1].safraImpar = ADMVINHOS[i].safra
+        ADMVINHOS[i - 1].uvaImpar = ADMVINHOS[i].uva
+        ADMVINHOS[i - 1].tipoImpar = ADMVINHOS[i].tipo
+        delete ADMVINHOS[i]._id
+        delete ADMVINHOS[i].recipiente
+        delete ADMVINHOS[i].descricaoVinho
+        delete ADMVINHOS[i].imgVinho
+        delete ADMVINHOS[i].precoVinhoInt
+        delete ADMVINHOS[i].precoVinhoCent
+        delete ADMVINHOS[i].tituloVinho
+        delete ADMVINHOS[i]
+      }
     }
-}
-
-function parseAdmVinhos(ADMBEERS){
-    if (ADMBEERS !== undefined){
-        for (i = 0; i < ADMBEERS.length; i++){
-            formatBeer(ADMBEERS)
-            if (isPar(i) == 'par'){
-                ADMBEERS[i].idBeerPar = ADMBEERS[i].idBeer
-                ADMBEERS[i].descricaoBeerPar = ADMBEERS[i].descricaoBeer
-                ADMBEERS[i].imgBeerPar = URLBEERS + ADMBEERS[i].imgBeer
-                ADMBEERS[i].precoBeerPar = ADMBEERS[i].precoBeerInt + ',' + ADMBEERS[i].precoBeerCent
-                ADMBEERS[i].precoBeerIntPar = ADMBEERS[i].precoBeerInt
-                ADMBEERS[i].precoBeerCentPar = ADMBEERS[i].precoBeerCent
-                ADMBEERS[i].tituloBeerPar = ADMBEERS[i].tituloBeer
-                ADMBEERS[i].medidaPar = ADMBEERS[i].medida
-                ADMBEERS[i].recipientePar = ADMBEERS[i].recipiente
-                ADMBEERS[i].qtdBeerPar = ADMBEERS[i].qtd
-                ADMBEERS[i].idBeerImpar = ""
-                ADMBEERS[i].descricaoBeerImpar = ""
-                ADMBEERS[i].imgBeerImpar = ""
-                ADMBEERS[i].precoBeerImpar = ""
-                ADMBEERS[i].tituloBeerImpar = ""
-                ADMBEERS[i].medidaImpar = ""
-                ADMBEERS[i].recipienteImpar = ""
-                delete ADMBEERS[i].idBeer
-                delete ADMBEERS[i].descricaoBeer
-                delete ADMBEERS[i].imgBeer
-                delete ADMBEERS[i].precoBeerCent
-                delete ADMBEERS[i].precoBeerInt
-                delete ADMBEERS[i].precoBeer
-                delete ADMBEERS[i].tituloBeer
-                delete ADMBEERS[i].medida
-                delete ADMBEERS[i].recipiente
-                delete ADMBEERS[i].qtd
-            } else {
-                ADMBEERS[i - 1].idBeerImpar = ADMBEERS[i].idBeer
-                ADMBEERS[i - 1].descricaoBeerImpar = ADMBEERS[i].descricaoBeer
-                ADMBEERS[i - 1].imgBeerImpar = URLBEERS + ADMBEERS[i].imgBeer
-                ADMBEERS[i - 1].precoBeerImpar = ADMBEERS[i].precoBeerInt + ',' + ADMBEERS[i].precoBeerCent
-                ADMBEERS[i - 1].precoBeerIntImpar = ADMBEERS[i].precoBeerInt
-                ADMBEERS[i - 1].precoBeerCentImpar = ADMBEERS[i].precoBeerCent
-                ADMBEERS[i - 1].tituloBeerImpar = ADMBEERS[i].tituloBeer
-                ADMBEERS[i - 1].medidaImpar = ADMBEERS[i].medida
-                ADMBEERS[i - 1].recipienteImpar = ADMBEERS[i].recipiente
-                ADMBEERS[i - 1].qtdBeerImpar = ADMBEERS[i].qtd
-                delete ADMBEERS[i].idBeer
-                delete ADMBEERS[i].medida
-                delete ADMBEERS[i].recipiente
-                delete ADMBEERS[i].descricaoBeer
-                delete ADMBEERS[i].imgBeer
-                delete ADMBEERS[i].precoBeerInt
-                delete ADMBEERS[i].precoBeerCent
-                delete ADMBEERS[i].tituloBeer
-                delete ADMBEERS[i].qtd
-                delete ADMBEERS[i]
-            }
-        }
-    }
+  }
 }

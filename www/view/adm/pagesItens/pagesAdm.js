@@ -4,7 +4,7 @@ stModule11, stModule12, stModule13, stModule14, stModule15, stModule16, stModule
 var moduleOld = '';
 
 function setViewtpProds(module){
-  try {
+  // try {
     switch (module) {
       case "TAP Cervejas Artesanais":
         if(!stModule1){
@@ -132,9 +132,9 @@ function setViewtpProds(module){
 
   moduleOld = module
 
-  } catch (error) {
-    console.log(error)
-  }
+  // } catch (error) {
+  //   console.log(error)
+  // }
 }
 
 function returnToHome(){
