@@ -4,7 +4,7 @@ function parseAdmVinhos(ADMVINHOS){
     for (i = 0; i < ADMVINHOS.length; i++){
       formatVinho(ADMVINHOS)
       if (isPar(i) == 'par'){
-        ADMVINHOS[i].idVinhoPar = ADMVINHOS[i]._id
+        ADMVINHOS[i].idVinhoPar = ADMVINHOS[i].idvinho
         ADMVINHOS[i].descricaoVinhoPar = ADMVINHOS[i].descricao
         ADMVINHOS[i].imgVinhoPar = URLIMAGEVINHO + ADMVINHOS[i].img
         ADMVINHOS[i].precoVinhoPar = ADMVINHOS[i].precoVinhoInt + ',' + ADMVINHOS[i].precoVinhoCent
@@ -12,21 +12,21 @@ function parseAdmVinhos(ADMVINHOS){
         ADMVINHOS[i].precoVinhoCentPar = ADMVINHOS[i].precoVinhoCent
         ADMVINHOS[i].tituloVinhoPar = ADMVINHOS[i].titulo
         ADMVINHOS[i].volumeVinhoPar = ADMVINHOS[i].volume
-        ADMVINHOS[i].recipientePar = ADMVINHOS[i].recipiente
-        ADMVINHOS[i].graduacaoPar = ADMVINHOS[i].graduacao
-        ADMVINHOS[i].produtorPar = ADMVINHOS[i].produtor
-        ADMVINHOS[i].paisOrigemPar = ADMVINHOS[i].paisOrigem
-        ADMVINHOS[i].regiaoPar = ADMVINHOS[i].regiao
-        ADMVINHOS[i].safraPar = ADMVINHOS[i].safra
-        ADMVINHOS[i].uvaPar = ADMVINHOS[i].uva
-        ADMVINHOS[i].tipoPar = ADMVINHOS[i].tipo
+        ADMVINHOS[i].recipienteVinhoPar = ADMVINHOS[i].recipiente
+        ADMVINHOS[i].graduacaoVinhoPar = ADMVINHOS[i].graduacao
+        ADMVINHOS[i].produtorVinhoPar = ADMVINHOS[i].produtor
+        ADMVINHOS[i].paisOrigemVinhoPar = ADMVINHOS[i].paisOrigem
+        ADMVINHOS[i].regiaoVinhoPar = ADMVINHOS[i].regiao
+        ADMVINHOS[i].safraVinhoPar = ADMVINHOS[i].safra
+        ADMVINHOS[i].uvaVinhoPar = ADMVINHOS[i].uva
+        ADMVINHOS[i].tipoVinhoPar = ADMVINHOS[i].tipo
         ADMVINHOS[i].idVinhoImpar = ""
         ADMVINHOS[i].descricaoVinhoImpar = ""
         ADMVINHOS[i].imgVinhoImpar = ""
         ADMVINHOS[i].precoVinhoImpar = ""
         ADMVINHOS[i].tituloVinhoImpar = ""
         ADMVINHOS[i].recipienteImpar = ""
-        delete ADMVINHOS[i]._id
+        delete ADMVINHOS[i].idvinho
         delete ADMVINHOS[i].descricaoVinho
         delete ADMVINHOS[i].imgVinho
         delete ADMVINHOS[i].precoVinhoCent
@@ -35,7 +35,7 @@ function parseAdmVinhos(ADMVINHOS){
         delete ADMVINHOS[i].tituloVinho
         delete ADMVINHOS[i].recipiente
       } else {
-        ADMVINHOS[i - 1].idVinhoImpar = ADMVINHOS[i]._id
+        ADMVINHOS[i - 1].idVinhoImpar = ADMVINHOS[i].idvinho
         ADMVINHOS[i - 1].descricaoVinhoImpar = ADMVINHOS[i].descricao
         ADMVINHOS[i - 1].imgVinhoImpar = URLIMAGEVINHO + ADMVINHOS[i].img
         ADMVINHOS[i - 1].precoVinhoImpar = ADMVINHOS[i].precoVinhoInt + ',' + ADMVINHOS[i].precoVinhoCent
@@ -43,15 +43,15 @@ function parseAdmVinhos(ADMVINHOS){
         ADMVINHOS[i - 1].precoVinhoCentImpar = ADMVINHOS[i].precoVinhoCent
         ADMVINHOS[i - 1].tituloVinhoImpar = ADMVINHOS[i].titulo
         ADMVINHOS[i - 1].volumeVinhoImpar = ADMVINHOS[i].volume
-        ADMVINHOS[i - 1].recipienteImpar = ADMVINHOS[i].recipiente
-        ADMVINHOS[i - 1].graduacaoImpar  = ADMVINHOS[i].graduacao
-        ADMVINHOS[i - 1].produtorImpar = ADMVINHOS[i].produtor
-        ADMVINHOS[i - 1].paisOrigemImpar = ADMVINHOS[i].paisOrigem
-        ADMVINHOS[i - 1].regiaoImpar = ADMVINHOS[i].regiao
-        ADMVINHOS[i - 1].safraImpar = ADMVINHOS[i].safra
-        ADMVINHOS[i - 1].uvaImpar = ADMVINHOS[i].uva
-        ADMVINHOS[i - 1].tipoImpar = ADMVINHOS[i].tipo
-        delete ADMVINHOS[i]._id
+        ADMVINHOS[i - 1].recipienteVinhoImpar = ADMVINHOS[i].recipiente
+        ADMVINHOS[i - 1].graduacaoVinhoImpar  = ADMVINHOS[i].graduacao
+        ADMVINHOS[i - 1].produtorVinhoImpar = ADMVINHOS[i].produtor
+        ADMVINHOS[i - 1].paisOrigemVinhoImpar = ADMVINHOS[i].paisOrigem
+        ADMVINHOS[i - 1].regiaoVinhoImpar = ADMVINHOS[i].regiao
+        ADMVINHOS[i - 1].safraVinhoImpar = ADMVINHOS[i].safra
+        ADMVINHOS[i - 1].uvaVinhoImpar = ADMVINHOS[i].uva
+        ADMVINHOS[i - 1].tipoVinhoImpar = ADMVINHOS[i].tipo
+        delete ADMVINHOS[i].idvinho
         delete ADMVINHOS[i].recipiente
         delete ADMVINHOS[i].descricaoVinho
         delete ADMVINHOS[i].imgVinho

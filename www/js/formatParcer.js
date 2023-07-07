@@ -65,16 +65,16 @@ function formatVinho(VINHO){
     if (VINHO[i].titulo == "" || VINHO[i].titulo == undefined){
         VINHO[i].titulo = ""
     }
-    if (VINHO[i].vinhoPrecoInt == "" || VINHO[i].vinhoPrecoInt == undefined){
-        VINHO[i].vinhoPrecoInt = "0"
+    if (VINHO[i].precoVinhoInt == "" || VINHO[i].precoVinhoInt == undefined){
+        VINHO[i].precoVinhoInt = "0"
     } else {
-        VINHO[i].vinhoPrecoInt = VINHO[i].vinhoPrecoInt
+        VINHO[i].precoVinhoInt = VINHO[i].precoVinhoInt
     }
-    if (VINHO[i].vinhoPrecoCent == "" || VINHO[i].vinhoPrecoCent == undefined){
-        VINHO[i].vinhoPrecoCent = "00"
+    if (VINHO[i].precoVinhoCent == "" || VINHO[i].precoVinhoCent == undefined){
+        VINHO[i].precoVinhoCent = "00"
     } else {
-        if (VINHO[i].vinhoPrecoCent.toString().length == 1){
-            VINHO[i].vinhoPrecoCent = VINHO[i].vinhoPrecoCent + "0"
+        if (VINHO[i].precoVinhoCent.toString().length == 1){
+            VINHO[i].precoVinhoCent = VINHO[i].precoVinhoCent + "0"
         }
     }
 }
