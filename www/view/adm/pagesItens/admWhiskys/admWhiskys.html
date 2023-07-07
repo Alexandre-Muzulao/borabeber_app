@@ -9,7 +9,7 @@
   </div>
   <div class="item" data="ADMWHISKY">
     <div class="row" style="height: 270px;">
-        <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgWhiskyPar}'); background-size: 100%;" valid-bind="${tituloWhiskyPar}">
+        <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgWhiskyPar}'); background-size: contain;" valid-bind="${tituloWhiskyPar}">
             <div class="bottom gradient padding radius">
                 <p class="text-white" id="descricaoWhisky${idWhiskyPar}">${tituloWhiskyPar} ${recipienteWhiskyPar} ${medidaWhiskyPar}</p>
                 <h1 class="text-white" onclick="updateValueItemWhisky('${idWhiskyPar}')" id="h1PriceWhisky${idWhiskyPar}">R$ ${precoWhiskyPar}</h1>
@@ -29,8 +29,7 @@
               
           </div>
         </div>
-        <div class="col-55 cover radius margin no-padding"
-            style="background-image:url('${imgWhiskyImpar}'); background-size: 100%;" valid-bind="${tituloWhiskyImpar}">
+        <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgWhiskyImpar}'); background-size: contain;" valid-bind="${tituloWhiskyImpar}">
             <div class="bottom gradient padding radius">
                 <p class="text-white" id="descricaoWhisky${idWhiskyImpar}">${tituloWhiskyImpar} ${recipienteWhiskyImpar} ${medidaWhiskyImpar}</p>
                 <h1 class="text-white" onclick="updateValueItemWhisky('${idWhiskyImpar}')" id="h1PriceWhisky${idWhiskyImpar}">R$ ${precoWhiskyImpar}</h1>

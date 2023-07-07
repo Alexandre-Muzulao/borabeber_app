@@ -10,7 +10,7 @@
   <div id="mainAdmMenu"></div>
   <div class="item" data="ADMVODKA">
       <div class="row" style="height: 270px;">
-          <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgVodkaPar}'); background-size: 14em, 10vh;">
+          <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgVodkaPar}'); background-size: contain">
               <div class="bottom gradient padding radius">
                   <p class="text-white" id="descricaoVodka${idVodkaPar}">${tituloVodkaPar} ${recipienteVodkaPar} ${medidaVodkaPar}</p>
                   <h1 class="text-white" onclick="updateValueItemVodka('${idVodkaPar}')" id="h1PriceVodka${idVodkaPar}">R$ ${precoVodkaPar}</h1>
@@ -29,7 +29,7 @@
                   </div>
               </div>
           </div>
-          <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgVodkaImpar}'); background-size: 14em, 10vh;"
+          <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgVodkaImpar}'); background-size: contain"
               valid-bind="${precoVodkaImpar}">
               <div class="bottom gradient padding radius">
                   <p class="text-white" id="descricaoVodka${idVodkaImpar}">${tituloVodkaImpar} ${recipienteVodkaImpar} ${medidaodkaImpar}</p>

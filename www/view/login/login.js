@@ -58,6 +58,11 @@ function getUserCompany(loginData){
           }
       }
   })
+  .catch(function (err){
+    console.log(err)
+    resetLoginData()
+    alert('Ops, tive um probleminha ao realizar o Login!<br> Tente novamente por gentileza.')
+  })
 }
 
 function loginCompany(company){
@@ -105,6 +110,11 @@ function loginUser(loginData){
                     },1000)
                 })
             }
+        })
+        .catch(function (err){
+          console.log(err)
+          resetLoginData()
+          alert('Ops, tive um probleminha ao realizar o Login!<br> Tente novamente por gentileza.')
         })
     }
 }

@@ -10,7 +10,7 @@
     <div id="mainAdmMenu"></div>
     <div class="item" data="ADMBEERS">
         <div class="row" style="height: 270px;">
-            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerPar}'); background-size: 12vh;" valid-bind="${precoBeerPar}">
+            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerPar}'); background-size: contain;" valid-bind="${precoBeerPar}">
                 <div class="bottom gradient padding radius">
                     <p class="text-white">${tituloBeerPar} ${recipientePar} ${medidaPar}</p>
                     <h1 class="text-white" onclick="cervejaUpdateQtdItem('${idBeerPar}')" id="h1QtdBeer${idBeerPar}">Qtd.: ${qtdBeerPar}</h1>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerImpar}'); background-size: 12vh;" valid-bind="${precoBeerImpar}">
+            <div class="col-55 cover radius margin no-padding" style="background-image:url('${imgBeerImpar}'); background-size: contain;" valid-bind="${precoBeerImpar}">
                 <div class="bottom gradient padding radius">
                     <p class="text-white">${tituloBeerImpar} ${recipienteImpar} ${medidaImpar}</p>
                     <h1 class="text-white" onclick="cervejaUpdateQtdItem('${idBeerImpar}')" id="h1QtdBeer${idBeerImpar}">Qtd.: ${qtdBeerImpar}</h1>
